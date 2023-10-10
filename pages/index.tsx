@@ -1,7 +1,6 @@
 import React from 'react';
 import CountdownTimer from '../components/CountdownTimer';
 import MapsParty from '@/components/MapsParty';
-import {  Grid } from '@mui/material';
 import Carousel from '@/components/Carrousel';
 import ModalsParty from '@/components/ModalsParty';
 import GifParty from '@/components/GifParty';
