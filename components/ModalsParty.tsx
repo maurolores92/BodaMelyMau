@@ -1,4 +1,5 @@
-import { Box, Typography } from '@mui/material';
+import { Box, Button, Typography } from '@mui/material';
+import Image from 'next/image';
 import React, { useState } from 'react';
 import Modal from 'react-modal';
 
@@ -29,9 +30,11 @@ function ModalsParty() {
       <Box className="contenedor-tarjeta-fiesta">
         <Box className="tarjeta-fiesta">
           <Typography variant='h3'>Música</Typography>
-          <img src="img/musica.gif" alt="" style={{ width: '80px', margin: '10px' }} />
+          <Box>
+            <img src="img/musica.gif" alt="" style={{ width: '80px', margin: '10px' }} />
+          </Box>
           <Typography variant='body1'>¿Cuál es la canción que no debe faltar en la playlist de la fiesta?</Typography>
-          <button id="open-form-btn3" className="botones" onClick={openCancionModal}> Sugerir Canción </button>
+          <Button id="open-form-btn3" className="botones" onClick={openCancionModal}> Sugerir Canción </Button>
         </Box>
         <Modal
           isOpen={cancionModalIsOpen}
@@ -44,14 +47,16 @@ function ModalsParty() {
             <input type="text" id="nombre" className="form-input" name="nombre" placeholder="Escriba su nombre" required /> <br />
             <input type="text" id="cancion" className="form-input" name="cancion" placeholder="Nombre de la canción y autor" required /> <br />
             <input type="text" id="link" className="form-input" name="link" placeholder="Link de YouTube o Spotify" /> <br />
-            <button type="submit" className="botones"> Enviar </button>
+            <Button type="submit" className="botones"> Enviar </Button>
           </form>
         </Modal>
         <Box className="tarjeta-fiesta">
           <Typography variant='h3'>Tips y notas</Typography>
+          <Box>
           <img src="img/cuaderno.gif" alt="" style={{ width: '80px', margin: '10px' }} />
+          </Box>
           <Typography variant='body1'>Información adicional para tener en cuenta</Typography>
-          <button id="open-info-btn" className="botones" onClick={openInfoModal}> Tips </button>
+          <Button id="open-info-btn" className="botones" onClick={openInfoModal}> Tips </Button>
         </Box>
         <Modal
           isOpen={infoModalIsOpen}

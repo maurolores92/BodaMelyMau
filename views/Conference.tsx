@@ -1,3 +1,4 @@
+import { Box, Button, Container, Typography } from '@mui/material';
 import React, { useState } from 'react';
 import Modal from 'react-modal';
 // Esto asegura que react-modal funcione correctamente
@@ -25,30 +26,27 @@ function Conference() {
   };
 
   return (
-    <section>
+    <Box>
       <img src="./img/boda.gif" alt="" className="fiesta-confeti" /><br />
-      <h2>Conferencia de Boda</h2>
-      <div>
-        <h3>DIA</h3>
-        <p>Viernes 15 de Diciembre - 20Hs</p>
-        <button id="btn-agendar-conferencia" className="botones">
+      <Typography variant='h2'>Conferencia de Boda</Typography>
+      <Box>
+        <Typography variant='h3'>DIA</Typography>
+        <Typography variant='body1'>Viernes 15 de Diciembre - 20Hs</Typography>
+        <Button id="btn-agendar-conferencia" className="botones">
           <a target="_blank" href="https://calendar.google.com/calendar/event?action=TEMPLATE&amp;tmeid=NXByZzNwcmw0Mmg5MzF2ZmVpamcy4" className="enlaceAgendar">Agendar Evento</a>
-        </button>
-      </div>
-      <div>
-        <h3>LUGAR</h3>
-        <p>Salón del Reino de los testigos de Jehová</p>
-        <button onClick={openModal} className="botones">
-          Confirmar Asistencia
-        </button>
-      </div>
+        </Button>
+      </Box>
+      <Box>
+        <Typography variant='h3'>LUGAR</Typography>
+        <Typography variant='body1'>Salón del Reino de los testigos de Jehová</Typography>
+        <Button onClick={openModal} className="botones"> Confirmar Asistencia </Button>
+      </Box>
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
         contentLabel="Confirmar Asistencia Modal"
-        className="custom-modal" 
-      >
-        <h4>Confirmar asistencia</h4>
+        className="custom-modal">
+        <Typography variant='h4'>Confirmar asistencia</Typography>
         <form onSubmit={handleSubmit} className="form" id="form">
           <span className="close4" onClick={closeModal}></span>
           <input
@@ -56,22 +54,17 @@ function Conference() {
             id="nombreyapellido"
             className="form-input"
             name="nombreyapellido"
-            placeholder="Ingrese su nombre completo"
-          />
-          <br />
-          <button type="submit" className="botones">
-            Enviar
-          </button>
+            placeholder="Ingrese su nombre completo" /> 
+            <br />
+            <Button type="submit" className="botones"> Enviar </Button>
         </form>
       </Modal>
-      <div>
-        <h3>DIRECCION</h3>
-        <p>Cramer 2880, Belgrano - CABA</p>
-        <button onClick={openMapsConferencia} className="botones">
-  ¿Cómo llegar?
-</button>
-      </div>
-    </section>
+      <Box>
+        <Typography variant='h3'>DIRECCION</Typography>
+        <Typography variant='body1'>Cramer 2880, Belgrano - CABA</Typography>
+        <Button onClick={openMapsConferencia} className="botones"> ¿Cómo llegar? </Button>
+      </Box>
+    </Box>
   );
 }
 

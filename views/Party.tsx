@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
 import invitados from '../data/invitados.json';
+import { Box, Button, Typography } from '@mui/material';
 
 function Party() {
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -42,30 +43,30 @@ function Party() {
   };
 
   return (
-    <section className="conferenciaDeBoda">
+    <Box className="conferenciaDeBoda">
       <img src="./img/fiesta.gif" alt="" className="fiesta-confeti" /><br />
-      <h2>Fiesta</h2>
-      <div>
-        <h3>DIA</h3>
-        <p>Viernes 15 de Diciembre - 21.30Hs</p>
-        <button id="btn-agendar" className="botones">
+      <Typography variant='h2'>Fiesta</Typography>
+      <Box>
+        <Typography variant='h3'>DIA</Typography>
+        <Typography variant='body1'>Viernes 15 de Diciembre - 21.30Hs</Typography>
+        <Button id="btn-agendar" className="botones">
           <a target="_blank" href="https://calendar.google.com/calendar/event?action=TEMPLATE&amp;tmeid=NzBpZDAyMmtjOTI0cXRocHRnamRrNzFjZjIgbWF1cm9sb3JlczE5OTJAbQ&amp;tmsrc=maurolores1992%40gmail.com" className="enlaceAgendar">Agendar evento</a>
-        </button>
-      </div>
-      <div>
-        <h3>LUGAR</h3>
-        <p>Salon de fiesta NyA Celebraciones</p>
-        <button onClick={openModal} className="botones">
+        </Button>
+      </Box>
+      <Box>
+      <Typography variant='h3'>LUGAR</Typography>
+      <Typography variant='body1'>Salon de fiesta NyA Celebraciones</Typography>
+        <Button onClick={openModal} className="botones">
           Confirmar Asistencia
-        </button>
-      </div>
+        </Button>
+      </Box>
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
         contentLabel="Confirmar Asistencia Modal"
         className="custom-modal"
       >
-        <h4>Confirmar asistencia</h4>
+        <Typography variant='h4'>Confirmar asistencia</Typography>
         <form onSubmit={handleSubmit} className="form" id="form">
           <span className="close5" onClick={closeModal}></span>
           <input type="text" id="nombre" className="form-input" name="nombre" placeholder="Ingrese su nombre completo" /><br />
@@ -78,7 +79,7 @@ function Party() {
           />
           <span id="codigo-icon" className="icon"></span><br />
           <input type="text" id="datoImportante" className="form-input" name="datoImportante" placeholder="Ingrese algún dato importante. Ej: Soy vegetariano" /><br />
-          <button type="submit" className="botones">Enviar</button>
+          <Button type="submit" className="botones">Enviar</Button>
         </form>
       </Modal>
       <Modal
@@ -87,17 +88,17 @@ function Party() {
         contentLabel="Mensaje del invitado"
         className="custom-modal"
       >
-        <h4>Asistencia Confirmada</h4>
-        <p>{mensaje}</p>
+        <Typography variant='h4'>Asistencia Confirmada</Typography>
+        <Typography variant='body1'>{mensaje}</Typography>
       </Modal>
-      <div>
-        <h3>DIRECCION</h3>
-        <p>Av. 101 Dr. Ricardo Balbín 5580, Billinghurst</p>
-        <button onClick={openMapsFiesta} className="botones">
+      <Box>
+        <Typography variant='h3'>DIRECCION</Typography>
+        <Typography variant='body1'>Av. 101 Dr. Ricardo Balbín 5580, Billinghurst</Typography>
+        <Button onClick={openMapsFiesta} className="botones">
           ¿Cómo llegar?
-        </button>
-      </div>
-    </section>
+        </Button>
+      </Box>
+    </Box>
   );
 }
 

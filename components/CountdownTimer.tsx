@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Typography from '@mui/material/Typography';
-import { Container, Grid } from '@mui/material';
+import { Box, Container, Grid } from '@mui/material';
 
 function CountdownTimer({ deadline }: { deadline: Date }) {
   
@@ -42,25 +42,25 @@ function CountdownTimer({ deadline }: { deadline: Date }) {
           <Typography variant="h4" id="days" sx={{padding:'10px', fontSize:'1.5rem,', fontWeight:'bold'}}>
             {timeLeft.days}
           </Typography>
-          <div style={{padding:'10px'}}>DÍAS</div>
+          <Box sx={{padding:'10px'}}>DÍAS</Box>
         </Grid>
         <Grid item className='timer'>
         <Typography variant="h4" id="days" sx={{padding:'10px', fontSize:'1.5rem,', fontWeight:'bold'}}>
             {('0' + timeLeft.hours).slice(-2)}
           </Typography>
-          <div style={{padding:'10px'}}>HS</div>
+          <Box sx={{padding:'10px'}}>HS</Box>
         </Grid>
         <Grid item className='timer'>
         <Typography variant="h4" id="days" sx={{padding:'10px', fontSize:'1.5rem,', fontWeight:'bold'}}>
             {('0' + timeLeft.minutes).slice(-2)}
           </Typography>
-          <div style={{padding:'10px'}}>MIN</div>
+          <Box sx={{padding:'10px'}}>MIN</Box>
         </Grid>
         <Grid item className='timer-ultimo'>
         <Typography variant="h4" id="days" sx={{padding:'10px', fontSize:'1.5rem,', fontWeight:'bold'}}>
             {('0' + timeLeft.seconds).slice(-2)}
           </Typography>
-          <div style={{padding:'10px'}}>SEG</div>
+          <Box sx={{padding:'10px'}}>SEG</Box>
         </Grid>
     </Container>
   );

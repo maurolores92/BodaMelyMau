@@ -1,3 +1,4 @@
+import { Button, Typography } from '@mui/material';
 import React from 'react';
 
 function GifParty() {
@@ -5,14 +6,14 @@ function GifParty() {
   const mercadolibreLink = 'ENLACE_DE_PAGO_DE_MERCADOLIBRE';
 
   return (
-    <div>
-      <h4>Regalos</h4>
+    <>
+      <Typography variant='h4'>Regalos</Typography>
       <img src="img/regalo.gif" alt="" style={{ width: '80px', margin: '25px' }} />
-      <p>Nuestro mejor regalo es su presencia en este día tan especial, pero si desean colaborar con nuestra luna de miel...</p>
-      <button className="botones" onClick={() => window.location.href = mercadolibreLink}>
+      <Typography variant='body1'>Nuestro mejor regalo es su presencia en este día tan especial, pero si desean colaborar con nuestra luna de miel...</Typography>
+      <Button className="botones" onClick={() => window.location.href = mercadolibreLink}>
         Pulsa aquí
-      </button>
-    </div>
+      </Button>
+    </>
   );
 }
 

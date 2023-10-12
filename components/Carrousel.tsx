@@ -1,3 +1,4 @@
+import { Box, Typography } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 
 const images = [
@@ -25,12 +26,12 @@ function Carousel() {
   }, []);
 
   return (
-    <section>
-      <h4>Retratos de Nuestro Amor</h4>
-      <p>Un minuto, un segundo, un instante que queda en la eternidad</p>
+    <>
+      <Typography variant='h4'>Retratos de Nuestro Amor</Typography>
+      <Typography variant='body1'>Un minuto, un segundo, un instante que queda en la eternidad</Typography>
       <img src="/img/destello.gif" alt="" className="imagen-animacion" />
-      <section className="slider">
-        <div className="slideshow-container">
+      <Box className="slider">
+        <Box className="slideshow-container">
           {images.map((src, index) => (
             <img
               key={index}
@@ -40,9 +41,9 @@ function Carousel() {
               style={{ display: index === slideIndex ? 'block' : 'none' }}
             />
           ))}
-        </div>
-      </section>
-    </section>
+        </Box>
+      </Box>
+    </>
   );
 }
 
