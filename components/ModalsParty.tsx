@@ -1,78 +1,75 @@
+import { Box, Typography } from '@mui/material';
 import React, { useState } from 'react';
+import Modal from 'react-modal';
 
 function ModalsParty() {
-  const [showCancionModal, setShowCancionModal] = useState(false);
-  const [showInfoModal, setShowInfoModal] = useState(false);
+  const [cancionModalIsOpen, setCancionModalIsOpen] = useState(false);
+  const [infoModalIsOpen, setInfoModalIsOpen] = useState(false);
 
   const openCancionModal = () => {
-    setShowCancionModal(true);
+    setCancionModalIsOpen(true);
   };
 
   const closeCancionModal = () => {
-    setShowCancionModal(false);
+    setCancionModalIsOpen(false);
   };
 
   const openInfoModal = () => {
-    setShowInfoModal(true);
+    setInfoModalIsOpen(true);
   };
 
   const closeInfoModal = () => {
-    setShowInfoModal(false);
+    setInfoModalIsOpen(false);
   };
 
   return (
-    <section>
-      <h4>Fiesta</h4>
-      <p>Hagamos juntos una fiesta épica. Aquí los detalles a tener en cuenta.</p>
-      <div className="contenedor-tarjeta-fiesta">
-        <div className="tarjeta-fiesta">
-          <h3>Música</h3>
+    <>
+      <Typography variant='h4'>Fiesta</Typography>
+      <Typography variant='body1'>Hagamos juntos una fiesta épica. Aquí los detalles a tener en cuenta.</Typography>
+      <Box className="contenedor-tarjeta-fiesta">
+        <Box className="tarjeta-fiesta">
+          <Typography variant='h3'>Música</Typography>
           <img src="img/musica.gif" alt="" style={{ width: '80px', margin: '10px' }} />
-          <p>¿Cuál es la canción que no debe faltar en la playlist de la fiesta?</p>
-          <button id="open-form-btn3" className="botones" onClick={openCancionModal}>
-            Sugerir Canción
-          </button>
-        </div>
-        {showCancionModal && (
-          <div id="form-modal3" className="modal modal-cancion">
-            <div className="modal-content">
-              <h4>Sugerir Canción</h4>
-              <form action="php/enviarmensajefiesta.php" method="post" className="form" id="form">
-                <span className="close3" onClick={closeCancionModal}></span>
-                <input type="text" id="nombre" className="form-input" name="nombre" placeholder="Escriba su nombre" required /> <br />
-                <input type="text" id="cancion" className="form-input" name="cancion" placeholder="Nombre de la canción y autor" required /> <br />
-                <input type="text" id="link" className="form-input" name="link" placeholder="Link de YouTube o Spotify" /> <br />
-                <button type="submit" className="botones">
-                  Enviar
-                </button>
-              </form>
-            </div>
-          </div>
-        )}
-        <div className="tarjeta-fiesta">
-          <h3>Tips y notas</h3>
+          <Typography variant='body1'>¿Cuál es la canción que no debe faltar en la playlist de la fiesta?</Typography>
+          <button id="open-form-btn3" className="botones" onClick={openCancionModal}> Sugerir Canción </button>
+        </Box>
+        <Modal
+          isOpen={cancionModalIsOpen}
+          onRequestClose={closeCancionModal}
+          contentLabel="Modal de Sugerir Canción">
+          <span className="close-modal" onClick={closeCancionModal}> X </span>
+          <Typography variant='h4'>Sugerir Canción</Typography>
+          <form action="php/enviarmensajefiesta.php" method="post" className="form" id="form">
+            <span className="close4" onClick={closeCancionModal}></span>
+            <input type="text" id="nombre" className="form-input" name="nombre" placeholder="Escriba su nombre" required /> <br />
+            <input type="text" id="cancion" className="form-input" name="cancion" placeholder="Nombre de la canción y autor" required /> <br />
+            <input type="text" id="link" className="form-input" name="link" placeholder="Link de YouTube o Spotify" /> <br />
+            <button type="submit" className="botones"> Enviar </button>
+          </form>
+        </Modal>
+        <Box className="tarjeta-fiesta">
+          <Typography variant='h3'>Tips y notas</Typography>
           <img src="img/cuaderno.gif" alt="" style={{ width: '80px', margin: '10px' }} />
-          <p>Información adicional para tener en cuenta</p>
-          <button id="open-info-btn" className="botones" onClick={openInfoModal}>
-            Tips
-          </button>
-        </div>
-        {showInfoModal && (
-          <div id="info-modal" className="modal">
-            <div className="modal-content">
-              <span className="close1" onClick={closeInfoModal}></span>
-              <h4>Información de interés</h4>
-              <p>
-                <i className="bi bi-star-fill"></i> Adoramos a sus hijos, pero creemos que necesitan una noche libre. Niños: dulces sueños. Adultos: Busquen sus zapatos de baile.
-              </p>
-              <p>
-                <i className="bi bi-star-fill"></i> Les dejamos una mejor ruta para llegar al salón de fiestas <a href="">Google Maps</a>.
-              </p>
-            </div>
-          </div>
-        )}
-      </div>
-    </section>
+          <Typography variant='body1'>Información adicional para tener en cuenta</Typography>
+          <button id="open-info-btn" className="botones" onClick={openInfoModal}> Tips </button>
+        </Box>
+        <Modal
+          isOpen={infoModalIsOpen}
+          onRequestClose={closeInfoModal}
+          contentLabel="Modal de Tips" >
+          <span className="close-modal" onClick={closeInfoModal}> X </span>
+          <Typography variant='h3'>Información de interés</Typography>
+          <ul style={{maxWidth:'600px', margin:'0 auto', textAlign:'justify'}}>
+            <li>
+              <i className="bi bi-star-fill"></i> Adoramos a sus hijos, pero creemos que necesitan una noche libre. Niños: dulces sueños. Adultos: Busquen sus zapatos de baile.
+            </li>
+            <li>
+              <i className="bi bi-star-fill"></i> Les dejamos una mejor ruta para llegar al salón de fiestas <a href="">Google Maps</a>.
+            </li>
+          </ul>
+        </Modal>
+      </Box>
+    </>
   );
 }
 

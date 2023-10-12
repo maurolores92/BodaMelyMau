@@ -1,20 +1,27 @@
 import React, { useState } from 'react';
+import Modal from 'react-modal';
+// Esto asegura que react-modal funcione correctamente
 
 function Conference() {
-  const [modalVisible, setModalVisible] = useState(false);
-
-  const openModal = () => {
-    setModalVisible(true);
-  };
-
-  const closeModal = () => {
-    setModalVisible(false);
-  };
+  const [modalIsOpen, setModalIsOpen] = useState(false);
 
   const openMapsConferencia = () => {
     var direccion = "Cramer 2880 belgrano CABA";
     var mapsUrl = "https://www.google.com/maps/place/" + encodeURIComponent(direccion);
     window.open(mapsUrl, "_blank");
+  };
+
+  const openModal = () => {
+    setModalIsOpen(true);
+  };
+
+  const closeModal = () => { 
+    setModalIsOpen(false);
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault(); // Por ejemplo, puedes prevenir el envío del formulario aquí
+    // Resto del código de tu función
   };
 
   return (
@@ -31,24 +38,38 @@ function Conference() {
       <div>
         <h3>LUGAR</h3>
         <p>Salón del Reino de los testigos de Jehová</p>
-        <button onClick={openModal} className="botones">Confirmar Asistencia</button>
+        <button onClick={openModal} className="botones">
+          Confirmar Asistencia
+        </button>
       </div>
-      {modalVisible && (
-        <div id="form-modal4" className="modal modal-cancion">
-          <div className="modal-content">
-            <h4>Confirmar asistencia</h4>
-            <form action="php/asistenciaCeremonia.php" method="post" className="form" id="form">
-              <span className="close4" onClick={closeModal}></span>
-              <input type="text" id="nombreyapellido" className="form-input" name="nombreyapellido" placeholder="Ingrese su nombre completo" /><br />
-              <button type="submit" className="botones">Enviar</button>
-            </form>
-          </div>
-        </div>
-      )}
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        contentLabel="Confirmar Asistencia Modal"
+        className="custom-modal" 
+      >
+        <h4>Confirmar asistencia</h4>
+        <form onSubmit={handleSubmit} className="form" id="form">
+          <span className="close4" onClick={closeModal}></span>
+          <input
+            type="text"
+            id="nombreyapellido"
+            className="form-input"
+            name="nombreyapellido"
+            placeholder="Ingrese su nombre completo"
+          />
+          <br />
+          <button type="submit" className="botones">
+            Enviar
+          </button>
+        </form>
+      </Modal>
       <div>
         <h3>DIRECCION</h3>
         <p>Cramer 2880, Belgrano - CABA</p>
-        <button onClick={openMapsConferencia} className="botones">¿Cómo llegar?</button>
+        <button onClick={openMapsConferencia} className="botones">
+  ¿Cómo llegar?
+</button>
       </div>
     </section>
   );

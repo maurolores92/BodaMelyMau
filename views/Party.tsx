@@ -1,20 +1,44 @@
 import React, { useState } from 'react';
+import Modal from 'react-modal';
+import invitados from '../data/invitados.json';
 
 function Party() {
-  const [modalVisible, setModalVisible] = useState(false);
-
-  const openModal = () => {
-    setModalVisible(true);
-  };
-
-  const closeModal = () => {
-    setModalVisible(false);
-  };
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [mensajeModalIsOpen, setMensajeModalIsOpen] = useState(false);
+  const [mensaje, setMensaje] = useState('');
 
   const openMapsFiesta = () => {
     var direccion = "Av. 101 Dr. Ricardo Balbín 5580, Billinghurst, Provincia de Buenos Aires, Argentina";
     var mapsUrl = "https://www.google.com/maps/place/" + encodeURIComponent(direccion);
     window.open(mapsUrl, "_blank");
+  };
+
+  const openModal = () => {
+    setModalIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalIsOpen(false);
+  };
+
+  const closeMensajeModal = () => {
+    setMensajeModalIsOpen(false);
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const codigoIngresado = e.currentTarget.codigo.value;
+
+    const invitado = invitados.find((invitado) => invitado.codigo === codigoIngresado);
+
+    if (invitado) {
+      setMensaje(invitado.mensaje);
+      setMensajeModalIsOpen(true);
+    } else {
+      alert('Código no válido');
+    }
+
+    closeModal();
   };
 
   return (
@@ -31,27 +55,47 @@ function Party() {
       <div>
         <h3>LUGAR</h3>
         <p>Salon de fiesta NyA Celebraciones</p>
-        <button onClick={openModal} className="botones">Confirmar Asistencia</button>
+        <button onClick={openModal} className="botones">
+          Confirmar Asistencia
+        </button>
       </div>
-      {modalVisible && (
-        <div id="form-modal5" className="modal modal-cancion">
-          <div className="modal-content">
-            <h4>Confirmar asistencia</h4>
-            <form action="php/asistenciaCeremonia.php" method="post" className="form" id="form">
-              <span className="close5" onClick={closeModal}></span>
-              <input type="text" id="NombreApellido" className="form-input" name="nombre" placeholder="Ingrese su nombre completo" /><br />
-              <input type="text" id="codigo-input" className="form-input" name="codigo" placeholder="Ingrese su código de confirmación" />
-              <span id="codigo-icon" className="icon"></span><br />
-              <input type="text" id="datoImportante" className="form-input" name="datoImportante" placeholder="Ingrese algún dato importante. Ej: Soy vegetariano" /><br />
-              <button type="submit" className="botones">Enviar</button>
-            </form>
-          </div>
-        </div>
-      )}
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        contentLabel="Confirmar Asistencia Modal"
+        className="custom-modal"
+      >
+        <h4>Confirmar asistencia</h4>
+        <form onSubmit={handleSubmit} className="form" id="form">
+          <span className="close5" onClick={closeModal}></span>
+          <input type="text" id="nombre" className="form-input" name="nombre" placeholder="Ingrese su nombre completo" /><br />
+          <input
+            type="text"
+            id="codigo-input"
+            className="form-input"
+            name="codigo"
+            placeholder="Ingrese su código de confirmación"
+          />
+          <span id="codigo-icon" className="icon"></span><br />
+          <input type="text" id="datoImportante" className="form-input" name="datoImportante" placeholder="Ingrese algún dato importante. Ej: Soy vegetariano" /><br />
+          <button type="submit" className="botones">Enviar</button>
+        </form>
+      </Modal>
+      <Modal
+        isOpen={mensajeModalIsOpen}
+        onRequestClose={closeMensajeModal}
+        contentLabel="Mensaje del invitado"
+        className="custom-modal"
+      >
+        <h4>Asistencia Confirmada</h4>
+        <p>{mensaje}</p>
+      </Modal>
       <div>
         <h3>DIRECCION</h3>
         <p>Av. 101 Dr. Ricardo Balbín 5580, Billinghurst</p>
-        <button onClick={openMapsFiesta} className="botones">Cómo llegar</button>
+        <button onClick={openMapsFiesta} className="botones">
+          ¿Cómo llegar?
+        </button>
       </div>
     </section>
   );
