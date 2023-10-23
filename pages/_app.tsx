@@ -26,8 +26,8 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return  <>
   <Head>
-    <title>Tu Título Aquí</title>
-    <meta name="description" content="Descripción de tu página" />
+    <title>Melisa & Mauricio</title>
+    <meta name="description" content="Invitacion Boda Melisa y Mauricio" />
     {/* Agrega otros metadatos, enlaces a hojas de estilo, etc. */}
   </Head>
   <Component {...pageProps} />
