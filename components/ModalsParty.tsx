@@ -31,10 +31,10 @@ function ModalsParty() {
   return (
     <Container sx={{backgroundColor:'#002434', paddingTop:'5rem', paddingBottom:'2rem'}}>
       <Box sx={{width:'100%', textAlign:'center'}}>
-      <Typography variant='body1' color='#FFFFFF' fontFamily='Inria_Sans' >HAGAMOS JUNTOS UNA FIESTA EPICA. AQUI LOS DETALLES A TENER EN CUENTA</Typography>
+      <Typography variant='body1' color='#FFFFFF' fontFamily='Inria_Sans' fontWeight='bold'>HAGAMOS JUNTOS UNA FIESTA EPICA. AQUI LOS DETALLES A TENER EN CUENTA</Typography>
       </Box>
 
-      <Card sx={{width:'270px', margin:'2rem auto', borderRadius:'10px', display:'flex'}}>
+      <Card sx={{width:'320px', margin:'2rem auto', borderRadius:'10px', display:'flex'}}>
         <Box>
         <Icon icon="foundation:music" style={{fontSize:'3rem', margin:'1rem 10px', color:'#34ABA6'}}/>
         </Box>
@@ -64,7 +64,7 @@ function ModalsParty() {
         </Modal>
 
 
-        <Card sx={{width:'270px', margin:'2rem auto', borderRadius:'10px', display:'flex'}}>
+        <Card sx={{width:'320px', margin:'2rem auto', borderRadius:'10px', display:'flex'}}>
         <Box>
         <Icon icon="ion:gift" style={{fontSize:'3rem',margin:'1rem 10px', color:'#AF0F1B'}}/>
         </Box>
@@ -80,7 +80,7 @@ function ModalsParty() {
       </Card>
 
       
-      <Card sx={{width:'270px', margin:'2rem auto', borderRadius:'10px', display:'flex'}}>
+      <Card sx={{width:'320px', margin:'2rem auto', borderRadius:'10px', display:'flex'}}>
         <Box>
         <Icon icon="ph:star-fill"  style={{fontSize:'3rem', margin:'1rem 10px', color:'#F48FB1'}}/>
         </Box>
