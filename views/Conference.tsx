@@ -65,7 +65,7 @@ function Conference() {
           }}
         />
       </Box>
-        <Typography variant='h6' textAlign={'center'} fontFamily={'Inknut_Antiqua'} fontWeight='bold' color='#206D7F' margin={2}>Conferencia de Boda</Typography>
+        <Typography variant='h5' textAlign={'center'} fontFamily={'Inknut_Antiqua'} fontWeight='bold' color='#206D7F' margin={2}>Conferencia de Boda</Typography>
         <Box>
         <Box sx={{height:'200px'}}>
       <Carousel
@@ -81,7 +81,7 @@ function Conference() {
         <Box className="carousel-card">
             <Card>
             <CardContent sx={{ textAlign:'justify'}}>
-                <Typography variant='body1' fontWeight='bold' color='#206D7F'>Fecha</Typography>
+                <Typography variant='body1' fontWeight='bold' color='#206D7F' fontSize={18} >Fecha</Typography>
                 <Typography variant='body2' fontWeight='bold'>Viernes 15/12/2023</Typography>
                 <Typography variant='body2' fontWeight='bold'>Hora 20:00 Hs</Typography>
                 <Button sx={{ background: '#FFFFFF', border:'#206D7F 1px solid',  textDecoration:'none', margin:'1rem auto', display:'flex', textTransform: 'none', fontWeight:'bold'}}>
@@ -100,7 +100,7 @@ function Conference() {
             <Box className="carousel-card">
             <Card >
             <CardContent sx={{ textAlign:'justify'}}>
-                <Typography variant='body1' fontWeight='bold' color='#206D7F' fontSize={14}>Direccion</Typography>
+                <Typography variant='body1' fontWeight='bold' color='#206D7F' fontSize={18}>Direccion</Typography>
                 <Typography variant='body2' fontWeight='bold' fontSize={14}>Salon del Reino de los Testigos de Jehova</Typography>
                 <Typography variant='body2' fontWeight='bold' fontSize={14}>Cramer 2880, Belgrano.</Typography>
                 <Button onClick={openMapsConferencia} sx={{ background: '#FFFFFF', border:'#206D7F 1px solid', color:'#206D7F', textDecoration:'none', margin:'1rem auto', display:'flex', textTransform: 'none', fontWeight:'bold'}}>

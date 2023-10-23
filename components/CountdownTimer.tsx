@@ -53,8 +53,8 @@ function CountdownTimer({ deadline }: { deadline: Date }) {
         <Image
           src='/images/imagenPrincipal.svg'
           alt=''
-          width={250}
-          height={250}
+          width={290}
+          height={290}
           style={{
             color: '#206D7F',
             position: 'absolute',
@@ -65,8 +65,8 @@ function CountdownTimer({ deadline }: { deadline: Date }) {
         <Image
           src='/images/floresPrincipal.svg'
           alt=''
-          width={300}
-          height={300}
+          width={350}
+          height={350}
           style={{
             color: '#206D7F',
             position: 'absolute',
@@ -78,27 +78,27 @@ function CountdownTimer({ deadline }: { deadline: Date }) {
         <Image src='/images/titulo.svg' alt='' width={300} height={100} style={{color:'#206D7F'}}></Image> 
       </Grid>
       <Grid item xs={12}  className='textBible' textAlign={'center'} color={'#206D7F'}  margin={2}>
-        <Typography variant='body1' fontFamily={'Inria_Sans'}>El amor es paciente y bondadoso [...] todo lo soporta, todo lo cree, todo lo espera, todo lo aguanta</Typography>
-        <Typography variant='body1' fontFamily={'Inria_Sans'}>(1 Corintios 13:4-7)</Typography>
+        <Typography variant='body1' fontFamily={'Inria_Sans'} fontSize={18}  fontWeight='bold'>El amor es paciente y bondadoso [...] todo lo soporta, todo lo cree, todo lo espera, todo lo aguanta</Typography>
+        <Typography variant='body1' fontFamily={'Inria_Sans'} fontSize={18}  fontWeight='bold'>(1 Corintios 13:4-7)</Typography>
       </Grid>
       <Grid  className='countdown' margin={2}>
         <Grid item  >
-            <Typography variant="body1" padding={'10px 3px'} fontFamily={'Inria_Sans'}>
+            <Typography variant="body1" padding={'10px 3px'} fontFamily={'Inria_Sans'} fontSize={18} fontWeight='bold'>
               {timeLeft.days} DIAS /
             </Typography>
           </Grid>
           <Grid item>
-          <Typography variant="body1" padding={'10px 3px'} fontFamily={'Inria_Sans'}>
+          <Typography variant="body1" padding={'10px 3px'} fontFamily={'Inria_Sans'} fontSize={18} fontWeight='bold'>
               {('0' + timeLeft.hours).slice(-2)} HS /
             </Typography>
           </Grid>
           <Grid item>
-          <Typography variant="body1" padding={'10px 3px'} fontFamily={'Inria_Sans'}>
+          <Typography variant="body1" padding={'10px 3px'} fontFamily={'Inria_Sans'} fontSize={18} fontWeight='bold'>
               {('0' + timeLeft.minutes).slice(-2)} MIN /
             </Typography>
           </Grid>
           <Grid item>
-          <Typography variant="body1" padding={'10px 3px'} fontFamily={'Inria_Sans'}>
+          <Typography variant="body1" padding={'10px 3px'} fontFamily={'Inria_Sans'} fontSize={18} fontWeight='bold'>
               {('0' + timeLeft.seconds).slice(-2)} SEG 
             </Typography>
           </Grid>

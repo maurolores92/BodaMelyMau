@@ -92,7 +92,7 @@ function Party() {
           }}
         />
       </Box>
-      <Typography variant='h6' textAlign={'center'} fontFamily={'Inknut_Antiqua'} fontWeight='bold' color='#AE739E' margin={2}>Fiesta</Typography>
+      <Typography variant='h5' textAlign={'center'} fontFamily={'Inknut_Antiqua'} fontWeight='bold' color='#AE739E' margin={2}>Fiesta</Typography>
 
       <Box>
         <Box sx={{height:'200px'}}>
@@ -108,7 +108,7 @@ function Party() {
       >
         <Box className="carousel-card">
           <CardContent sx={{ textAlign:'justify'}}>
-            <Typography variant='body1' fontWeight='bold' color='#AE739E'>Fecha</Typography>
+            <Typography variant='body1' fontWeight='bold' color='#AE739E' fontSize={18}>Fecha</Typography>
             <Typography variant='body2' fontWeight='bold'>Viernes 15/12/2023</Typography>
             <Typography variant='body2' fontWeight='bold'>Hora 21:00 Hs</Typography>
             <Button onClick={openMapsFiesta} sx={{ background: '#FFFFFF', border:'#AE739E 1px solid', textDecoration:'none', margin:'.5rem auto', display:'flex', textTransform: 'none', fontWeight:'bold'}}>
@@ -118,7 +118,7 @@ function Party() {
         </Box>
         <Box className="carousel-card">
         <CardContent sx={{ textAlign:'justify'}}>
-            <Typography variant='body1' fontWeight='bold' color='#AE739E'>Direccion</Typography>
+            <Typography variant='body1' fontWeight='bold' color='#AE739E' fontSize={18}>Direccion</Typography>
             <Typography variant='body2' fontWeight='bold'>Salon de fiesta NyA Celebraciones</Typography>
             <Typography variant='body2' fontWeight='bold'>Av. 101 Dr. Ricardo Balbín 5580, Billinghurst</Typography>
             <Button onClick={openMapsFiesta} sx={{ background: '#FFFFFF', border: '#AE739E 1px solid', color: '#AE739E', textDecoration: 'none', margin: '.5rem auto', display: 'flex', textTransform: 'none', fontWeight: 'bold' }}>

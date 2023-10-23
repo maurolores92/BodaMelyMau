@@ -38,8 +38,8 @@ const Carousel = () => {
     <>    
       <Box style={sliderContainerStyles} >
         <Box display={'flex'}  sx={{justifyContent:'space-between', color:'#FFFFFF'}}>
-          <Typography margin={2} fontFamily={'Inria_Sans'}>GALERIA DE FOTOS</Typography>
-          <Typography margin={2} fontFamily={'Inria_Sans'}>Reproducir Musica</Typography>
+          <Typography margin={2} fontFamily={'Inria_Sans'}  fontWeight='bold' fontSize={16}>GALERIA DE FOTOS</Typography>
+          <Typography margin={2} fontFamily={'Inria_Sans'}  fontWeight='bold'>Reproducir Musica</Typography>
         </Box>
 
         <Slider {...settings}>
@@ -57,7 +57,7 @@ const Carousel = () => {
         </Slider>
 
         <Box display={'flex'}  sx={{justifyContent:'space-between', color:'#FFFFFF'}}>
-          <Typography fontFamily={'Inria_Sans'} sx={{margin:'1rem auto'}}>VER GALERIA COMPLETA</Typography>
+          <Typography fontFamily={'Inria_Sans'} sx={{margin:'1rem auto'}}  fontWeight='bold' fontSize={16}>VER GALERIA COMPLETA</Typography>
         </Box>
       </Box>
     </>
