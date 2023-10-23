@@ -1,50 +1,70 @@
+import React from 'react';
+import Slider from 'react-slick';
 import { Box, Typography } from '@mui/material';
-import React, { useEffect, useState } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+
+const sliderContainerStyles = {
+  margin: '0px auto',
+  backgroundColor:'#002434'
+  
+};
+
+const imageStyles = {
+  border: '1px solid',
+  borderRadius: '5px',
+  margin: '10px',
+};
 
 const images = [
-  '/img/2.jpg',
-  '/img/3.jpg',
-  '/img/4.jpg',
-  '/img/1.jpg',
-  '/img/5.jpg',
-  '/img/6.jpg',
+  { src: '/img/2.jpg', width: 100, height: 140 },
+  { src: '/img/3.jpg', width: 100, height: 140 },
+  { src: '/img/4.jpg', width: 100, height: 140 },
+  { src: '/img/1.jpg', width: 100, height: 140 },
+  { src: '/img/5.jpg', width: 100, height: 140 },
+  { src: '/img/6.jpg', width: 100, height: 140 },
 ];
 
-function Carousel() {
-  const [slideIndex, setSlideIndex] = useState(0);
-
-  useEffect(() => {
-    const showSlides = () => {
-      setSlideIndex((prevIndex) => (prevIndex + 1) % images.length);
-    };
-
-    const intervalId = setInterval(showSlides, 4000);
-
-    return () => {
-      clearInterval(intervalId);
-    };
-  }, []);
+const Carousel = () => {
+  const settings = {
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 2, 
+    arrows: false,
+  };
 
   return (
-    <>
-      <Typography variant='h4'>Retratos de Nuestro Amor</Typography>
-      <Typography variant='body1'>Un minuto, un segundo, un instante que queda en la eternidad</Typography>
-      <img src="/img/destello.gif" alt="" className="imagen-animacion" />
-      <Box className="slider">
-        <Box className="slideshow-container">
-          {images.map((src, index) => (
-            <img
-              key={index}
-              src={src}
-              alt="Imagen del slider gamer"
-              className={`img-slides mySlides fade ${index === slideIndex ? 'active' : ''}`}
-              style={{ display: index === slideIndex ? 'block' : 'none' }}
+    <>    
+      <Box style={sliderContainerStyles} >
+        <Box display={'flex'}  sx={{justifyContent:'space-between', color:'#FFFFFF'}}>
+          <Typography margin={2} fontFamily={'Inria_Sans'}>GALERIA DE FOTOS</Typography>
+          <Typography margin={2} fontFamily={'Inria_Sans'}>Reproducir Musica</Typography>
+        </Box>
+
+        <Slider {...settings}>
+          {images.map((image, index) => (
+            <Box key={index}>
+              <Image
+              src={image.src}
+              alt={`Imagen ${index + 1}`}
+              width={image.width}
+              height={image.height}
+              style={imageStyles}
             />
+            </Box>
           ))}
+        </Slider>
+
+        <Box display={'flex'}  sx={{justifyContent:'space-between', color:'#FFFFFF'}}>
+          <Typography fontFamily={'Inria_Sans'} sx={{margin:'1rem auto'}}>VER GALERIA COMPLETA</Typography>
         </Box>
       </Box>
     </>
+
   );
-}
+};
 
 export default Carousel;
+
+

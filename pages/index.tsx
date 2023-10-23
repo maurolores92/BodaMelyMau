@@ -1,9 +1,10 @@
 import React from 'react';
 import CountdownTimer from '../components/CountdownTimer';
-import MapsParty from '@/components/MapsParty';
 import Carousel from '@/components/Carrousel';
 import ModalsParty from '@/components/ModalsParty';
 import GifParty from '@/components/GifParty';
+import Conference from '@/views/Conference';
+import Party from '@/views/Party';
 
 const deadline = new Date('2023-12-15T20:00:00');
 
@@ -11,10 +12,10 @@ function Home() {
   return (
     <>
     <CountdownTimer deadline={deadline} />
-    <MapsParty/>
     <Carousel />
+    <Conference />
+    <Party />
     <ModalsParty/>
-    <GifParty/>
     </>
   );
 }

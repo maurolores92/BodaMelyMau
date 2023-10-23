@@ -1,7 +1,10 @@
-import { Box, Button, Typography } from '@mui/material';
+import { Box, Button, Typography, Container } from '@mui/material';
+import { Inria_Sans } from 'next/font/google';
 import Image from 'next/image';
 import React, { useState } from 'react';
 import Modal from 'react-modal';
+import { Card, CardContent  } from '@mui/material';
+import { Icon } from '@iconify/react';
 
 function ModalsParty() {
   const [cancionModalIsOpen, setCancionModalIsOpen] = useState(false);
@@ -23,20 +26,29 @@ function ModalsParty() {
     setInfoModalIsOpen(false);
   };
 
+  const mercadolibreLink = 'ENLACE_DE_PAGO_DE_MERCADOLIBRE';
+
   return (
-    <>
-      <Typography variant='h4'>Fiesta</Typography>
-      <Typography variant='body1'>Hagamos juntos una fiesta épica. Aquí los detalles a tener en cuenta.</Typography>
-      <Box className="contenedor-tarjeta-fiesta">
-        <Box className="tarjeta-fiesta">
-          <Typography variant='h3'>Música</Typography>
-          <Box>
-            <img src="img/musica.gif" alt="" style={{ width: '80px', margin: '10px' }} />
-          </Box>
-          <Typography variant='body1'>¿Cuál es la canción que no debe faltar en la playlist de la fiesta?</Typography>
-          <Button id="open-form-btn3" className="botones" onClick={openCancionModal}> Sugerir Canción </Button>
+    <Container sx={{backgroundColor:'#002434', paddingTop:'5rem', paddingBottom:'2rem'}}>
+      <Box sx={{width:'100%', textAlign:'center'}}>
+      <Typography variant='body1' color='#FFFFFF' fontFamily='Inria_Sans' >HAGAMOS JUNTOS UNA FIESTA EPICA. AQUI LOS DETALLES A TENER EN CUENTA</Typography>
+      </Box>
+
+      <Card sx={{width:'270px', margin:'2rem auto', borderRadius:'10px', display:'flex'}}>
+        <Box>
+        <Icon icon="foundation:music" style={{fontSize:'3rem', margin:'1rem 10px', color:'#34ABA6'}}/>
         </Box>
-        <Modal
+        <Box>
+        <CardContent>
+          <Typography variant='body1' fontWeight='bold' color='#34ABA6' fontSize={14}>MUSICA</Typography>
+          <Typography variant='body2' fontWeight='bold' marginBottom={1.5} fontSize={13}>¿Cuál es la canción que no debe faltar en la playlist de la fiesta?</Typography>
+          <Button onClick={openCancionModal} sx={{ background: '#FFFFFF', border:'#34ABA6 1px solid', color:'#34ABA6',  textDecoration:'none', margin:' 0 auto', display:'flex', textTransform: 'none', fontWeight:'bold'}}>
+          <Icon icon="foundation:music" style={{fontSize:'1.8rem'}}/>  Sugerir Cancion
+          </Button>
+        </CardContent>
+        </Box>
+      </Card>
+      <Modal
           isOpen={cancionModalIsOpen}
           onRequestClose={closeCancionModal}
           contentLabel="Modal de Sugerir Canción">
@@ -50,15 +62,39 @@ function ModalsParty() {
             <Button type="submit" className="botones"> Enviar </Button>
           </form>
         </Modal>
-        <Box className="tarjeta-fiesta">
-          <Typography variant='h3'>Tips y notas</Typography>
-          <Box>
-          <img src="img/cuaderno.gif" alt="" style={{ width: '80px', margin: '10px' }} />
-          </Box>
-          <Typography variant='body1'>Información adicional para tener en cuenta</Typography>
-          <Button id="open-info-btn" className="botones" onClick={openInfoModal}> Tips </Button>
+
+
+        <Card sx={{width:'270px', margin:'2rem auto', borderRadius:'10px', display:'flex'}}>
+        <Box>
+        <Icon icon="ion:gift" style={{fontSize:'3rem',margin:'1rem 10px', color:'#AF0F1B'}}/>
         </Box>
-        <Modal
+        <Box>
+        <CardContent>
+          <Typography variant='body1' fontWeight='bold' color='#AF0F1B' fontSize={14}>REGALOS</Typography>
+          <Typography variant='body2' fontWeight='bold' marginBottom={1.5} fontSize={13}>Nuestro mejor regalo es su presencia en este dia tan especial, pero si deseas colaborar con nuestra luna de miel...</Typography>
+          <Button  onClick={() => window.location.href = mercadolibreLink} sx={{ background: '#FFFFFF', border:'#AF0F1B 1px solid', color:'#AF0F1B', textDecoration:'none', margin:' 0 auto', display:'flex', textTransform: 'none', fontWeight:'bold'}}>
+          <Icon icon="ion:gift" style={{fontSize:'1.8rem'}}/>  Pulsa aqui
+          </Button>
+        </CardContent>
+        </Box>
+      </Card>
+
+      
+      <Card sx={{width:'270px', margin:'2rem auto', borderRadius:'10px', display:'flex'}}>
+        <Box>
+        <Icon icon="ph:star-fill"  style={{fontSize:'3rem', margin:'1rem 10px', color:'#F48FB1'}}/>
+        </Box>
+        <Box>
+        <CardContent>
+          <Typography variant='body1' fontWeight='bold' color='#F48FB1' fontSize={14}>CONSEJOS PARA LA FIESTA</Typography>
+          <Typography variant='body2' fontWeight='bold' marginBottom={1.5} fontSize={13}>Nos encantaria que tuvieses en cuenta estos detalles</Typography>
+          <Button onClick={openInfoModal} sx={{ background: '#FFFFFF', border:'#F48FB1 1px solid', color:'#F48FB1', textDecoration:'none', margin:' 0 auto', display:'flex', textTransform: 'none', fontWeight:'bold'}}>
+          <Icon icon="ph:star-fill" style={{fontSize:'1.8rem'}}/>Sugerir Cancion
+          </Button>
+        </CardContent>
+        </Box>
+      </Card>
+      <Modal
           isOpen={infoModalIsOpen}
           onRequestClose={closeInfoModal}
           contentLabel="Modal de Tips" >
@@ -73,8 +109,8 @@ function ModalsParty() {
             </li>
           </ul>
         </Modal>
-      </Box>
-    </>
+
+    </Container>
   );
 }
 
