@@ -17,12 +17,12 @@ const imageStyles = {
 };
 
 const images = [
-  { src: '/img/2.jpg', width: 240, height: 300 },
-  { src: '/img/3.jpg', width: 240, height: 300 },
-  { src: '/img/4.jpg', width: 240, height: 300 },
-  { src: '/img/1.jpg', width: 240, height: 300 },
-  { src: '/img/5.jpg', width: 240, height: 300 },
-  { src: '/img/6.jpg', width: 240, height: 300 },
+  { src: '/images/book/1.jpg', width: 320, height: 300 },
+  { src: '/images/book/2.jpg', width: 320, height: 300 },
+  { src: '/images/book/3.jpg', width: 320, height: 300 },
+  { src: '/images/book/4.jpg', width: 320, height: 300 },
+  { src: '/images/book/5.jpg', width: 320, height: 300 },
+  { src: '/images/book/6.jpg', width: 320, height: 300 },
 ];
 
 function Carousel(): React.ReactNode {
@@ -44,7 +44,7 @@ function Carousel(): React.ReactNode {
   const settings = {
     infinite: true,
     speed: 500,
-    slidesToShow: 1.7,
+    slidesToShow: 1.3,
     slidesToScroll: 1, 
     arrows: false,
   };
