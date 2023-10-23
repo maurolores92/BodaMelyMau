@@ -17,12 +17,12 @@ const imageStyles = {
 };
 
 const images = [
-  { src: '/img/2.jpg', width: 180, height: 200 },
-  { src: '/img/3.jpg', width: 180, height: 200 },
-  { src: '/img/4.jpg', width: 180, height: 200 },
-  { src: '/img/1.jpg', width: 180, height: 200 },
-  { src: '/img/5.jpg', width: 180, height: 200 },
-  { src: '/img/6.jpg', width: 180, height: 200 },
+  { src: '/img/2.jpg', width: 180, height: 260 },
+  { src: '/img/3.jpg', width: 180, height: 260 },
+  { src: '/img/4.jpg', width: 180, height: 260 },
+  { src: '/img/1.jpg', width: 180, height: 260 },
+  { src: '/img/5.jpg', width: 180, height: 260 },
+  { src: '/img/6.jpg', width: 180, height: 260 },
 ];
 
 const Carousel = () => {

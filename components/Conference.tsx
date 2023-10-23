@@ -29,11 +29,9 @@ function Conference() {
     
   };
 
-
   return (
-      <Box sx={{ boxShadow: '0 2px 4px rgba(0, 0, 0, 0.4)', borderRadius: '5px', margin: '20px 10px', paddingBottom:'1rem' }}>
+      <Box sx={{ boxShadow: '0 2px 4px rgba(0, 0, 0, 0.4)', borderRadius: '5px', margin: '4rem 1rem', paddingBottom:'1rem' }}>
         <Box
-        height={'260px'}
         sx={{ backgroundColor:'#206D7F',
         borderRadius: '5px 5px 0 0',
         display: 'flex',
@@ -69,14 +67,11 @@ function Conference() {
         <Box>
         <Box sx={{height:'200px'}}>
       <Carousel
-        showStatus={true}
-        showThumbs={true}
-        showArrows={true}
-        showIndicators={true}
-        emulateTouch={true}
-        infiniteLoop={false} 
-        useKeyboardArrows={true}
-        interval={5000}
+         showIndicators={true}
+         emulateTouch={true}
+         useKeyboardArrows={true}
+         centerMode={true} 
+         centerSlidePercentage={80}
       >
         <Box className="carousel-card">
             <Card>
@@ -84,8 +79,8 @@ function Conference() {
                 <Typography variant='body1' fontWeight='bold' color='#206D7F' fontSize={18} >Fecha</Typography>
                 <Typography variant='body2' fontWeight='bold'>Viernes 15/12/2023</Typography>
                 <Typography variant='body2' fontWeight='bold'>Hora 20:00 Hs</Typography>
-                <Button sx={{ background: '#FFFFFF', border:'#206D7F 1px solid',  textDecoration:'none', margin:'1rem auto', display:'flex', textTransform: 'none', fontWeight:'bold'}}>
-                  <CalendarMonthIcon sx={{marginRight:'1rem', color:'#206D7F'}}/>
+                <Button sx={{ background: '#FFFFFF', border:'#206D7F 1px solid',  textDecoration:'none', margin:'2rem auto 0', display:'flex', textTransform: 'none', fontWeight:'bold'}}>
+                  <CalendarMonthIcon sx={{color:'#206D7F'}}/>
                   <a
                     target="_blank"
                     href="https://calendar.google.com/calendar/event?action=TEMPLATE&amp;tmeid=NXByZzNwcmw0Mmg5MzF2ZmVpamcy4"
@@ -103,7 +98,7 @@ function Conference() {
                 <Typography variant='body1' fontWeight='bold' color='#206D7F' fontSize={18}>Direccion</Typography>
                 <Typography variant='body2' fontWeight='bold' fontSize={14}>Salon del Reino de los Testigos de Jehova</Typography>
                 <Typography variant='body2' fontWeight='bold' fontSize={14}>Cramer 2880, Belgrano.</Typography>
-                <Button onClick={openMapsConferencia} sx={{ background: '#FFFFFF', border:'#206D7F 1px solid', color:'#206D7F', textDecoration:'none', margin:'1rem auto', display:'flex', textTransform: 'none', fontWeight:'bold'}}>
+                <Button onClick={openMapsConferencia} sx={{ background: '#FFFFFF', border:'#206D7F 1px solid', color:'#206D7F', textDecoration:'none', display:'flex', textTransform: 'none', fontWeight:'bold', margin:'.8rem auto 0'}}>
                   <LocationOnIcon/>Como llegar
                 </Button>
               </CardContent>

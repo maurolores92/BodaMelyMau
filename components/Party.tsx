@@ -57,10 +57,9 @@ function Party() {
 
   return (
 
-<Box sx={{ boxShadow: '0 2px 4px rgba(0, 0, 0, 0.4)', borderRadius: '5px', margin: '20px 10px', paddingBottom:'1rem' }}>
+<Box sx={{ boxShadow: '0 2px 4px rgba(0, 0, 0, 0.4)', borderRadius: '5px', margin: '4rem 1rem', paddingBottom:'1rem' }}>
 
 <Box
-        height={'260px'}
         sx={{ backgroundColor:'#AE739E',
         borderRadius: '5px 5px 0 0',
         display: 'flex',
@@ -97,21 +96,18 @@ function Party() {
       <Box>
         <Box sx={{height:'200px'}}>
       <Carousel
-        showStatus={true}
-        showThumbs={true}
-        showArrows={true}
         showIndicators={true}
         emulateTouch={true}
-        infiniteLoop={false} 
         useKeyboardArrows={true}
-        interval={5000}
+        centerMode={true} 
+        centerSlidePercentage={80}
       >
         <Box className="carousel-card">
           <CardContent sx={{ textAlign:'justify'}}>
             <Typography variant='body1' fontWeight='bold' color='#AE739E' fontSize={18}>Fecha</Typography>
             <Typography variant='body2' fontWeight='bold'>Viernes 15/12/2023</Typography>
             <Typography variant='body2' fontWeight='bold'>Hora 21:00 Hs</Typography>
-            <Button onClick={openMapsFiesta} sx={{ background: '#FFFFFF', border:'#AE739E 1px solid', textDecoration:'none', margin:'.5rem auto', display:'flex', textTransform: 'none', fontWeight:'bold'}}>
+            <Button onClick={openMapsFiesta} sx={{ background: '#FFFFFF', border:'#AE739E 1px solid', textDecoration:'none',  margin:'2rem auto 0', display:'flex', textTransform: 'none', fontWeight:'bold'}}>
                 <CalendarMonthIcon  sx={{marginRight:'1rem', color:'#AE739E'}}/><a target="_blank" href="https://calendar.google.com/calendar/event?action=TEMPLATE&amp;tmeid=NzBpZDAyMmtjOTI0cXRocHRnamRrNzFjZjIgbWF1cm9sb3JlczE5OTJAbQ&amp;tmsrc=maurolores1992%40gmail.com" style={{ textDecoration:'none', color:'#AE739E'}}>Agendar evento</a>
               </Button>
           </CardContent>
@@ -121,7 +117,7 @@ function Party() {
             <Typography variant='body1' fontWeight='bold' color='#AE739E' fontSize={18}>Direccion</Typography>
             <Typography variant='body2' fontWeight='bold'>Salon de fiesta NyA Celebraciones</Typography>
             <Typography variant='body2' fontWeight='bold'>Av. 101 Dr. Ricardo Balbín 5580, Billinghurst</Typography>
-            <Button onClick={openMapsFiesta} sx={{ background: '#FFFFFF', border: '#AE739E 1px solid', color: '#AE739E', textDecoration: 'none', margin: '.5rem auto', display: 'flex', textTransform: 'none', fontWeight: 'bold' }}>
+            <Button onClick={openMapsFiesta} sx={{ background: '#FFFFFF', border: '#AE739E 1px solid', color: '#AE739E', textDecoration: 'none', margin:'.8rem auto 0', display: 'flex', textTransform: 'none', fontWeight: 'bold' }}>
               <LocationOnIcon /> Como llegar
             </Button>
           </CardContent>
