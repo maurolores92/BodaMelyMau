@@ -3,6 +3,9 @@ import '../src/globals.css';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { useEffect } from 'react';
+import Modal from 'react-modal';
+
+Modal.setAppElement('#__next');
 
 function MyApp({ Component, pageProps }: AppProps) {
 
@@ -17,6 +20,8 @@ function MyApp({ Component, pageProps }: AppProps) {
 
     document.head.appendChild(slickCSS);
     document.head.appendChild(slickJS);
+
+    Modal.setAppElement('#__next');
 
     return () => {
       document.head.removeChild(slickCSS);

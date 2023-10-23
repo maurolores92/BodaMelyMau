@@ -5,10 +5,12 @@ import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import Image from 'next/image';
 import { Carousel } from 'react-responsive-carousel';
+import TextField from '@mui/material/TextField';
 
 
 function Conference() {
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [nombreyapellido, setNombreyapellido] = useState('');
 
   const openMapsConferencia = () => {
     var direccion = "Cramer 2880 belgrano CABA";
@@ -125,18 +127,52 @@ function Conference() {
             isOpen={modalIsOpen}
             onRequestClose={closeModal}
             contentLabel="Confirmar Asistencia Modal"
-            className="custom-modal">
-            <Typography variant='h4'>Confirmar asistencia</Typography>
+            className="custom-modal"
+            style={{
+              overlay: {
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              },
+              content: {
+                backgroundColor:'white',
+                border: '1px solid #206D7F', 
+                borderRadius: '5px', 
+                width: '80%', 
+                maxWidth: '400px',
+                maxHeight: '80%', 
+                margin: '0 auto',
+                padding: '20px', 
+              },
+            }}
+          >
+            <Typography variant='h5' textAlign={'center'} fontFamily={'Inknut_Antiqua'} fontWeight='bold' color='#206D7F' margin={2}>Confirmar asistencia</Typography>
             <form onSubmit={handleSubmit} className="form" id="form">
               <span className="close4" onClick={closeModal}></span>
-              <input
-                type="text"
-                id="nombreyapellido"
-                className="form-input"
-                name="nombreyapellido"
-                placeholder="Ingrese su nombre completo" /> 
-                <br />
-                <Button type="submit" className="botones"> Enviar </Button>
+              <TextField
+            id="nombreyapellido"
+            label="Ingrese su nombre completo"
+            variant="filled"
+            fullWidth 
+            value={nombreyapellido} 
+            onChange={(e) => setNombreyapellido(e.target.value)}
+          />
+              <br />
+              <Button
+                      sx={{
+                        fontFamily: 'Inknut_Antiqua',
+                        fontWeight: 'bold',
+                        backgroundColor: '#206D7F',
+                        margin: '1rem auto',
+                        display: 'flex',
+                        textTransform: 'none',
+                        padding: '.5rem 3rem',
+                        textDecoration: 'none',
+                        color: 'white'
+                        
+                      }}> 
+                          Confirmar Asistencia
+                    </Button>
             </form>
           </Modal>
         </Box>

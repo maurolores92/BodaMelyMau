@@ -7,6 +7,7 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import Image from 'next/image';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import { TextField } from '@mui/material';
 
 const cardStyles = {
   borderRadius: '5px',
@@ -139,25 +140,76 @@ function Party() {
             Confirmar Asistencia
       </Button>
       <Modal
-        isOpen={modalIsOpen}
-        onRequestClose={closeModal}
-        contentLabel="Confirmar Asistencia Modal"
-        className="custom-modal"
-      >
-        <Typography variant='h4'>Confirmar asistencia</Typography>
+            isOpen={modalIsOpen}
+            onRequestClose={closeModal}
+            contentLabel="Confirmar Asistencia Modal"
+            className="custom-modal"
+            style={{
+              overlay: {
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              },
+              content: {
+                backgroundColor:'white',
+                border: '1px solid #AE739E', 
+                borderRadius: '5px', 
+                width: '80%', 
+                maxWidth: '400px',
+                maxHeight: '80%', 
+                margin: '0 auto',
+                padding: '20px', 
+              },
+            }}
+          >
+        <Typography variant='h5' textAlign={'center'} fontFamily={'Inknut_Antiqua'} fontWeight='bold' color='#AE739E' margin={2}>Confirmar asistencia</Typography>
         <form onSubmit={handleSubmit} className="form" id="form">
           <span className="close5" onClick={closeModal}></span>
-          <input type="text" id="nombre" className="form-input" name="nombre" placeholder="Ingrese su nombre completo" /><br />
-          <input
-            type="text"
-            id="codigo-input"
-            className="form-input"
-            name="codigo"
-            placeholder="Ingrese su código de confirmación"
-          />
-          <span id="codigo-icon" className="icon"></span><br />
-          <input type="text" id="datoImportante" className="form-input" name="datoImportante" placeholder="Ingrese algún dato importante. Ej: Soy vegetariano" /><br />
-          <Button type="submit" className="botones">Enviar</Button>
+          <TextField
+  id="nombre"
+  className="form-input"
+  name="nombre"
+  label="Ingrese su nombre completo"
+  variant="filled"
+  fullWidth
+  margin="normal"
+  // Otros atributos o props que desees agregar
+/>
+
+<TextField
+  id="codigo-input"
+  className="form-input"
+  name="codigo"
+  label="Ingrese su código de confirmación"
+  variant="filled"
+  fullWidth
+  margin="normal"
+  // Otros atributos o props que desees agregar
+/>
+
+<TextField
+  id="datoImportante"
+  className="form-input"
+  name="datoImportante"
+  label="Ingrese algún dato importante. Ej: Soy vegetariano"
+  variant="filled"
+  fullWidth
+  margin="normal"
+  // Otros atributos o props que desees agregar
+/>
+<Button
+        sx={{
+            fontFamily:'Inknut_Antiqua',
+            fontWeight:'bold',
+            color:'white', 
+            backgroundColor:'#AE739E', 
+            margin:'1rem auto', 
+            display:'flex', 
+            textTransform: 'none', 
+            textDecoration:'none',
+            padding:'.5rem 3rem'}}> 
+            Confirmar Asistencia
+      </Button>
         </form>
       </Modal>
       <Modal
