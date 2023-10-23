@@ -1,10 +1,8 @@
-import { Box, Button, Typography, Container } from '@mui/material';
-import { Inria_Sans } from 'next/font/google';
-import Image from 'next/image';
+import { Box, Button, Typography, Container, Link, List, ListItem, ListItemText, TextField, Card, CardContent } from '@mui/material';
 import React, { useState } from 'react';
 import Modal from 'react-modal';
-import { Card, CardContent  } from '@mui/material';
 import { Icon } from '@iconify/react';
+
 
 function ModalsParty() {
   const [cancionModalIsOpen, setCancionModalIsOpen] = useState(false);
@@ -53,13 +51,52 @@ function ModalsParty() {
           onRequestClose={closeCancionModal}
           contentLabel="Modal de Sugerir Canción">
           <span className="close-modal" onClick={closeCancionModal}> X </span>
-          <Typography variant='h4'>Sugerir Canción</Typography>
+          <Typography variant='h5' textAlign={'center'} fontFamily={'Inknut_Antiqua'} fontWeight='bold' color='#34ABA6' margin={2}>Sugerir Canción</Typography>
           <form action="php/enviarmensajefiesta.php" method="post" className="form" id="form">
             <span className="close4" onClick={closeCancionModal}></span>
-            <input type="text" id="nombre" className="form-input" name="nombre" placeholder="Escriba su nombre" required /> <br />
-            <input type="text" id="cancion" className="form-input" name="cancion" placeholder="Nombre de la canción y autor" required /> <br />
-            <input type="text" id="link" className="form-input" name="link" placeholder="Link de YouTube o Spotify" /> <br />
-            <Button type="submit" className="botones"> Enviar </Button>
+            <TextField
+              id="nombre"
+              className="form-input"
+              name="nombre"
+              label="Escriba su nombre"
+              variant="filled"
+              fullWidth
+              margin="normal"
+              required
+            />
+            <TextField
+              id="cancion"
+              className="form-input"
+              name="cancion"
+              label="Nombre de la canción y autor"
+              variant="filled"
+              fullWidth
+              margin="normal"
+              required
+            />
+            <TextField
+              id="link"
+              className="form-input"
+              name="link"
+              label="Link de YouTube o Spotify"
+              variant="filled"
+              fullWidth
+              margin="normal"
+            />
+            
+            <Button type="submit"
+        sx={{
+            fontFamily:'Inknut_Antiqua',
+            fontWeight:'bold',
+            color:'white', 
+            backgroundColor:'#34ABA6', 
+            margin:'1rem auto', 
+            display:'flex', 
+            textTransform: 'none', 
+            textDecoration:'none',
+            padding:'.5rem 3rem'}}> 
+            Enviar
+      </Button>
           </form>
         </Modal>
 
@@ -99,15 +136,26 @@ function ModalsParty() {
           onRequestClose={closeInfoModal}
           contentLabel="Modal de Tips" >
           <span className="close-modal" onClick={closeInfoModal}> X </span>
-          <Typography variant='h3'>Información de interés</Typography>
-          <ul style={{maxWidth:'600px', margin:'0 auto', textAlign:'justify'}}>
-            <li>
-              <i className="bi bi-star-fill"></i> Adoramos a sus hijos, pero creemos que necesitan una noche libre. Niños: dulces sueños. Adultos: Busquen sus zapatos de baile.
-            </li>
-            <li>
-              <i className="bi bi-star-fill"></i> Les dejamos una mejor ruta para llegar al salón de fiestas <a href="">Google Maps</a>.
-            </li>
-          </ul>
+          <Typography variant='h5' textAlign={'center'} fontFamily={'Inknut_Antiqua'} fontWeight='bold' color='#F48FB1' margin={2}>Información de interés</Typography>
+          <List style={{ maxWidth: '600px', margin: '0 auto', textAlign: 'justify' }}>
+    <ListItem>
+      <i className="bi bi-star-fill" style={{ color: '#F48FB1', marginRight: '8px' }}></i>
+      <ListItemText primary="Adoramos a sus hijos, pero creemos que necesitan una noche libre. Niños: dulces sueños. Adultos: Busquen sus zapatos de baile." />
+    </ListItem>
+    <ListItem>
+      <i className="bi bi-star-fill" style={{ color: '#F48FB1', marginRight: '8px' }}></i>
+      <ListItemText
+        primary={
+          <span>
+            Les dejamos una mejor ruta para llegar al salón de fiestas{' '}
+            <Link href="#" style={{ textDecoration: 'none', color: '#F48FB1' }}>
+              Google Maps
+            </Link>
+          </span>
+        }
+      />
+    </ListItem>
+  </List>
         </Modal>
 
     </Container>

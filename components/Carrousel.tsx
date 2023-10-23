@@ -1,8 +1,8 @@
-import React from 'react';
+
 import Slider from 'react-slick';
 import { Box, Typography } from '@mui/material';
 import Image from 'next/image';
-import Link from 'next/link';
+import React, { useState, useRef } from 'react';
 
 const sliderContainerStyles = {
   margin: '0px auto',
@@ -17,20 +17,35 @@ const imageStyles = {
 };
 
 const images = [
-  { src: '/img/2.jpg', width: 180, height: 260 },
-  { src: '/img/3.jpg', width: 180, height: 260 },
-  { src: '/img/4.jpg', width: 180, height: 260 },
-  { src: '/img/1.jpg', width: 180, height: 260 },
-  { src: '/img/5.jpg', width: 180, height: 260 },
-  { src: '/img/6.jpg', width: 180, height: 260 },
+  { src: '/img/2.jpg', width: 240, height: 300 },
+  { src: '/img/3.jpg', width: 240, height: 300 },
+  { src: '/img/4.jpg', width: 240, height: 300 },
+  { src: '/img/1.jpg', width: 240, height: 300 },
+  { src: '/img/5.jpg', width: 240, height: 300 },
+  { src: '/img/6.jpg', width: 240, height: 300 },
 ];
 
-const Carousel = () => {
+function Carousel(): React.ReactNode {
+  const [reproduciendo, setReproduciendo] = useState(false);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  const reproducirPausarMusica = () => {
+    if (audioRef.current) {
+      if (reproduciendo) {
+        audioRef.current.pause();
+      } else {
+        audioRef.current.play();
+      }
+      setReproduciendo(!reproduciendo);
+    }
+  };
+
+  
   const settings = {
     infinite: true,
     speed: 500,
-    slidesToShow: 2.2,
-    slidesToScroll: 2, 
+    slidesToShow: 1.7,
+    slidesToScroll: 1, 
     arrows: false,
   };
 
@@ -39,8 +54,20 @@ const Carousel = () => {
       <Box style={sliderContainerStyles} >
         <Box display={'flex'}  sx={{justifyContent:'space-between', color:'#FFFFFF'}}>
           <Typography margin={2} fontFamily={'Inria_Sans'}  fontWeight='bold' fontSize={16}>GALERIA DE FOTOS</Typography>
-          <Typography margin={2} fontFamily={'Inria_Sans'}  fontWeight='bold'>Reproducir Musica</Typography>
+          <div>
+          <Typography
+            margin={2}
+            fontFamily="Inria_Sans"
+            fontWeight="bold"
+            onClick={reproducirPausarMusica}
+            style={{ cursor: 'pointer' }}
+          >
+            {reproduciendo ? 'Pausar Música' : 'Reproducir Música'}
+          </Typography>
+        </div>
         </Box>
+          <audio ref={audioRef} src="Cant-help-falling-in-love.mp3"></audio>
+      
 
         <Slider {...settings}>
           {images.map((image, index) => (
@@ -66,5 +93,3 @@ const Carousel = () => {
 };
 
 export default Carousel;
-
-
