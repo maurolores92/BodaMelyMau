@@ -6,8 +6,9 @@ import React, { useState, useRef } from 'react';
 
 const sliderContainerStyles = {
   margin: '0px auto',
-  backgroundColor:'#002434'
-  
+  backgroundImage: `url('/images/fondo-invitacion.png')`,
+  backgroundSize: 'cover',
+  backgroundRepeat: 'no-repeat',
 };
 
 const imageStyles = {
@@ -40,7 +41,6 @@ function Carousel(): React.ReactNode {
     }
   };
 
-  
   const settings = {
     infinite: true,
     speed: 500,
@@ -52,23 +52,26 @@ function Carousel(): React.ReactNode {
   return (
     <>    
       <Box style={sliderContainerStyles} >
-        <Box display={'flex'}  sx={{justifyContent:'space-between', color:'#FFFFFF'}}>
-          <Typography margin={2} fontFamily={'Inria_Sans'}  fontWeight='bold' fontSize={16}>GALERIA DE FOTOS</Typography>
-          <div>
-          <Typography
-            margin={2}
-            fontFamily="Inria_Sans"
-            fontWeight="bold"
-            onClick={reproducirPausarMusica}
-            style={{ cursor: 'pointer' }}
-          >
-            {reproduciendo ? 'Pausar Música' : 'Reproducir Música'}
-          </Typography>
-        </div>
+        <Box display={'flex'}  sx={{
+          justifyContent:'space-between', 
+          color:'#FFFFFF', 
+          backgroundImage: `url('/images/fondo-invitacion.png')`,
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat',}}>
+          <Typography margin={2} fontFamily={'Inria_Sans'}  fontWeight='bold' fontSize={16} color={'#206D7F'} >GALERIA DE FOTOS</Typography>
+          <Box>
+            <Typography
+            color={'#206D7F'} 
+              margin={2}
+              fontFamily="Inria_Sans"
+              fontWeight="bold"
+              onClick={reproducirPausarMusica}
+              style={{ cursor: 'pointer' }}>
+              {reproduciendo ? 'Pausar Música' : 'Reproducir Música'}
+            </Typography>
+          </Box>
         </Box>
-          <audio ref={audioRef} src="Cant-help-falling-in-love.mp3"></audio>
-      
-
+        <audio ref={audioRef} src="Cant-help-falling-in-love.mp3"></audio>
         <Slider {...settings}>
           {images.map((image, index) => (
             <Box key={index}>
@@ -77,18 +80,15 @@ function Carousel(): React.ReactNode {
               alt={`Imagen ${index + 1}`}
               width={image.width}
               height={image.height}
-              style={imageStyles}
-            />
+              style={imageStyles}/>
             </Box>
           ))}
         </Slider>
-
         <Box display={'flex'}  sx={{justifyContent:'space-between', color:'#FFFFFF'}}>
-          <Typography fontFamily={'Inria_Sans'} sx={{margin:'1rem auto'}}  fontWeight='bold' fontSize={16}>VER GALERIA COMPLETA</Typography>
+          <Typography fontFamily={'Inria_Sans'} sx={{margin:'1rem auto'}}  fontWeight='bold' fontSize={16} color={'#206D7F'} >VER GALERIA COMPLETA</Typography>
         </Box>
       </Box>
     </>
-
   );
 };
 

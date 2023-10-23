@@ -27,23 +27,28 @@ function ModalsParty() {
   const mercadolibreLink = 'ENLACE_DE_PAGO_DE_MERCADOLIBRE';
 
   return (
-    <Container sx={{backgroundColor:'#002434', paddingTop:'5rem', paddingBottom:'2rem'}}>
+    <Container 
+    sx={{
+      backgroundImage: `url('/images/fondo-invitacion.png')`,
+      backgroundSize: 'cover',
+      backgroundRepeat: 'no-repeat',
+      paddingTop: '5rem',
+      paddingBottom: '2rem',}}>
       <Box sx={{width:'100%', textAlign:'center'}}>
-      <Typography variant='body1' color='#FFFFFF' fontFamily='Inria_Sans' fontWeight='bold'>HAGAMOS JUNTOS UNA FIESTA EPICA. AQUI LOS DETALLES A TENER EN CUENTA</Typography>
+        <Typography variant='body1' fontFamily='Inria_Sans' fontWeight='bold' color={'#206D7F'} >HAGAMOS JUNTOS UNA FIESTA EPICA. AQUI LOS DETALLES A TENER EN CUENTA</Typography>
       </Box>
-
       <Card sx={{width:'320px', margin:'2rem auto', borderRadius:'10px', display:'flex'}}>
         <Box>
-        <Icon icon="foundation:music" style={{fontSize:'3rem', margin:'1rem 10px', color:'#34ABA6'}}/>
+          <Icon icon="foundation:music" style={{fontSize:'3rem', margin:'1rem 10px', color:'#34ABA6'}}/>
         </Box>
         <Box>
-        <CardContent>
-          <Typography variant='body1' fontWeight='bold' color='#34ABA6' fontSize={14}>MUSICA</Typography>
-          <Typography variant='body2' fontWeight='bold' marginBottom={1.5} fontSize={13}>¿Cuál es la canción que no debe faltar en la playlist de la fiesta?</Typography>
-          <Button onClick={openCancionModal} sx={{ background: '#FFFFFF', border:'#34ABA6 1px solid', color:'#34ABA6',  textDecoration:'none', margin:' 0 auto', display:'flex', textTransform: 'none', fontWeight:'bold'}}>
-          <Icon icon="foundation:music" style={{fontSize:'1.8rem'}}/>  Sugerir Cancion
-          </Button>
-        </CardContent>
+          <CardContent>
+            <Typography variant='body1' fontWeight='bold' color='#34ABA6' fontSize={14}>MUSICA</Typography>
+            <Typography variant='body2' fontWeight='bold' marginBottom={1.5} fontSize={13}>¿Cuál es la canción que no debe faltar en la playlist de la fiesta?</Typography>
+            <Button onClick={openCancionModal} sx={{ background: '#FFFFFF', border:'#34ABA6 1px solid', color:'#34ABA6',  textDecoration:'none', margin:' 0 auto', display:'flex', textTransform: 'none', fontWeight:'bold'}}>
+            <Icon icon="foundation:music" style={{fontSize:'1.8rem'}}/>  Sugerir Cancion
+            </Button>
+          </CardContent>
         </Box>
       </Card>
       <Modal
@@ -55,109 +60,82 @@ function ModalsParty() {
           <form action="php/enviarmensajefiesta.php" method="post" className="form" id="form">
             <span className="close4" onClick={closeCancionModal}></span>
             <TextField
-              id="nombre"
-              className="form-input"
-              name="nombre"
-              label="Escriba su nombre"
-              variant="filled"
-              fullWidth
-              margin="normal"
-              required
-            />
+              id="nombre" className="form-input" name="nombre" label="Escriba su nombre" variant="filled" fullWidth margin="normal" required/>
             <TextField
-              id="cancion"
-              className="form-input"
-              name="cancion"
-              label="Nombre de la canción y autor"
-              variant="filled"
-              fullWidth
-              margin="normal"
-              required
-            />
-            <TextField
-              id="link"
-              className="form-input"
-              name="link"
-              label="Link de YouTube o Spotify"
-              variant="filled"
-              fullWidth
-              margin="normal"
-            />
-            
+              id="cancion" className="form-input" name="cancion"
+              label="Nombre de la canción y autor" variant="filled" fullWidth margin="normal" required />
+            <TextField id="link" className="form-input" name="link" label="Link de YouTube o Spotify" variant="filled" fullWidth margin="normal"/>
             <Button type="submit"
-        sx={{
-            fontFamily:'Inknut_Antiqua',
-            fontWeight:'bold',
-            color:'white', 
-            backgroundColor:'#34ABA6', 
-            margin:'1rem auto', 
-            display:'flex', 
-            textTransform: 'none', 
-            textDecoration:'none',
-            padding:'.5rem 3rem'}}> 
-            Enviar
-      </Button>
+              sx={{
+                fontFamily:'Inknut_Antiqua',
+                fontWeight:'bold',
+                color:'white', 
+                backgroundColor:'#34ABA6', 
+                margin:'1rem auto', 
+                display:'flex', 
+                textTransform: 'none', 
+                textDecoration:'none',
+                padding:'.5rem 3rem'}}> 
+                Enviar
+            </Button>
           </form>
         </Modal>
-
-
         <Card sx={{width:'320px', margin:'2rem auto', borderRadius:'10px', display:'flex'}}>
-        <Box>
-        <Icon icon="ion:gift" style={{fontSize:'3rem',margin:'1rem 10px', color:'#AF0F1B'}}/>
-        </Box>
-        <Box>
-        <CardContent>
-          <Typography variant='body1' fontWeight='bold' color='#AF0F1B' fontSize={14}>REGALOS</Typography>
-          <Typography variant='body2' fontWeight='bold' marginBottom={1.5} fontSize={13}>Nuestro mejor regalo es su presencia en este dia tan especial, pero si deseas colaborar con nuestra luna de miel...</Typography>
-          <Button  onClick={() => window.location.href = mercadolibreLink} sx={{ background: '#FFFFFF', border:'#AF0F1B 1px solid', color:'#AF0F1B', textDecoration:'none', margin:' 0 auto', display:'flex', textTransform: 'none', fontWeight:'bold'}}>
-          <Icon icon="ion:gift" style={{fontSize:'1.8rem'}}/>  Pulsa aqui
-          </Button>
-        </CardContent>
-        </Box>
+          <Box>
+            <Icon icon="ion:gift" style={{fontSize:'3rem',margin:'1rem 10px', color:'#AF0F1B'}}/>
+          </Box>
+          <Box>
+            <CardContent>
+              <Typography variant='body1' fontWeight='bold' color='#AF0F1B' fontSize={14}>REGALOS</Typography>
+              <Typography variant='body2' fontWeight='bold' marginBottom={1.5} fontSize={13}>Nuestro mejor regalo es su presencia en este dia tan especial, pero si deseas colaborar con nuestra luna de miel...</Typography>
+              <Button  onClick={() => window.location.href = mercadolibreLink} sx={{ background: '#FFFFFF', border:'#AF0F1B 1px solid', color:'#AF0F1B', textDecoration:'none', margin:' 0 auto', display:'flex', textTransform: 'none', fontWeight:'bold'}}>
+                <Icon icon="ion:gift" style={{fontSize:'1.8rem'}}/>  Pulsa aqui
+              </Button>
+            </CardContent>
+          </Box>
       </Card>
-
-      
       <Card sx={{width:'320px', margin:'2rem auto', borderRadius:'10px', display:'flex'}}>
         <Box>
-        <Icon icon="ph:star-fill"  style={{fontSize:'3rem', margin:'1rem 10px', color:'#F48FB1'}}/>
+          <Icon icon="ph:star-fill"  style={{fontSize:'3rem', margin:'1rem 10px', color:'#F48FB1'}}/>
         </Box>
         <Box>
-        <CardContent>
-          <Typography variant='body1' fontWeight='bold' color='#F48FB1' fontSize={14}>CONSEJOS PARA LA FIESTA</Typography>
-          <Typography variant='body2' fontWeight='bold' marginBottom={1.5} fontSize={13}>Nos encantaria que tuvieses en cuenta estos detalles</Typography>
-          <Button onClick={openInfoModal} sx={{ background: '#FFFFFF', border:'#F48FB1 1px solid', color:'#F48FB1', textDecoration:'none', margin:' 0 auto', display:'flex', textTransform: 'none', fontWeight:'bold'}}>
-          <Icon icon="ph:star-fill" style={{fontSize:'1.8rem'}}/>Sugerir Cancion
-          </Button>
-        </CardContent>
+          <CardContent>
+            <Typography variant='body1' fontWeight='bold' color='#F48FB1' fontSize={14}>CONSEJOS PARA LA FIESTA</Typography>
+            <Typography variant='body2' fontWeight='bold' marginBottom={1.5} fontSize={13}>Nos encantaria que tuvieses en cuenta estos detalles</Typography>
+            <Button onClick={openInfoModal} sx={{ background: '#FFFFFF', border:'#F48FB1 1px solid', color:'#F48FB1', textDecoration:'none', margin:' 0 auto', display:'flex', textTransform: 'none', fontWeight:'bold'}}>
+            <Icon icon="ph:star-fill" style={{fontSize:'1.8rem'}}/>Pulsa aqui
+            </Button>
+          </CardContent>
         </Box>
       </Card>
       <Modal
-          isOpen={infoModalIsOpen}
-          onRequestClose={closeInfoModal}
-          contentLabel="Modal de Tips" >
-          <span className="close-modal" onClick={closeInfoModal}> X </span>
-          <Typography variant='h5' textAlign={'center'} fontFamily={'Inknut_Antiqua'} fontWeight='bold' color='#F48FB1' margin={2}>Información de interés</Typography>
-          <List style={{ maxWidth: '600px', margin: '0 auto', textAlign: 'justify' }}>
-    <ListItem>
-      <i className="bi bi-star-fill" style={{ color: '#F48FB1', marginRight: '8px' }}></i>
-      <ListItemText primary="Adoramos a sus hijos, pero creemos que necesitan una noche libre. Niños: dulces sueños. Adultos: Busquen sus zapatos de baile." />
-    </ListItem>
-    <ListItem>
-      <i className="bi bi-star-fill" style={{ color: '#F48FB1', marginRight: '8px' }}></i>
-      <ListItemText
-        primary={
-          <span>
-            Les dejamos una mejor ruta para llegar al salón de fiestas{' '}
-            <Link href="#" style={{ textDecoration: 'none', color: '#F48FB1' }}>
-              Google Maps
-            </Link>
-          </span>
-        }
-      />
-    </ListItem>
-  </List>
-        </Modal>
-
+        isOpen={infoModalIsOpen}
+        onRequestClose={closeInfoModal}
+        contentLabel="Modal de Tips" >
+        <span className="close-modal" onClick={closeInfoModal}> X </span>
+        <Typography variant='h5' textAlign={'center'} fontFamily={'Inknut_Antiqua'} fontWeight='bold' color='#F48FB1' margin={2}>Información de interés</Typography>
+        <List style={{ maxWidth: '600px', margin: '0 auto', textAlign: 'justify' }}>
+        <ListItem>
+          <i className="bi bi-star-fill" style={{ color: '#F48FB1', marginRight: '8px' }}></i>
+          <ListItemText primary="Adoramos a sus hijos, pero creemos que necesitan una noche libre. Niños: dulces sueños. Adultos: Busquen sus zapatos de baile." />
+        </ListItem>
+        <ListItem>
+          <i className="bi bi-star-fill" style={{ color: '#F48FB1', marginRight: '8px' }}></i>
+          <ListItemText primary="Si eres celiaco, vegano o vegetariano haznoslo saber, asi te preparamos un menu especial" />
+        </ListItem>
+        <ListItem>
+          <i className="bi bi-star-fill" style={{ color: '#F48FB1', marginRight: '8px' }}></i>
+          <ListItemText
+            primary={
+              <span>
+                Les dejamos una mejor ruta para llegar al salón de fiestas{' '}
+                <Link href="#" style={{ textDecoration: 'none', color: '#F48FB1' }}>
+                  Google Maps
+                </Link>
+              </span>}/>
+          </ListItem>
+        </List>
+      </Modal>
     </Container>
   );
 }
