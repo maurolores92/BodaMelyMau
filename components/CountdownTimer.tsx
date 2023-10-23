@@ -53,8 +53,8 @@ function CountdownTimer({ deadline }: { deadline: Date }) {
         <Image
           src='/images/imagenPrincipal.svg'
           alt=''
-          width={290}
-          height={290}
+          width={300}
+          height={300}
           style={{
             color: '#206D7F',
             position: 'absolute',
@@ -65,8 +65,8 @@ function CountdownTimer({ deadline }: { deadline: Date }) {
         <Image
           src='/images/floresPrincipal.svg'
           alt=''
-          width={350}
-          height={350}
+          width={360}
+          height={360}
           style={{
             color: '#206D7F',
             position: 'absolute',
