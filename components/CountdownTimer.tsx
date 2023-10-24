@@ -66,8 +66,8 @@ function CountdownTimer({ deadline }: { deadline: Date }) {
             position: 'absolute',
             marginTop:'6rem'}}/>
       </Grid>
-      <Grid item xs={12}  className='textBible' textAlign={'center'}  display={'flex'} justifyContent={'center'} marginTop={5}>
-        <Image src='/images/titulo.svg' alt='' width={300} height={100} style={{color:'#206D7F'}}></Image> 
+      <Grid item xs={12}  className='textBible' textAlign={'center'}  display={'flex'} justifyContent={'center'} marginTop={8}>
+        <Image src='/images/titulo.svg' alt='' width={380} height={100} style={{color:'#206D7F'}}></Image> 
       </Grid>
       <Grid item xs={12}  className='textBible' textAlign={'center'} color={'#206D7F'}  margin={2}>
         <Typography variant='body1' fontFamily={'Inria_Sans'} fontSize={18}  fontWeight='bold'>El amor es paciente y bondadoso [...] todo lo soporta, todo lo cree, todo lo espera, todo lo aguanta</Typography>

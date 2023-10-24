@@ -132,8 +132,11 @@ function Conference() {
               alignItems: 'center',
               justifyContent: 'center',},
               content: {
-                backgroundColor:'white',
-                border: '1px solid #206D7F', 
+                
+                  backgroundImage: `url('/images/fondo2.jpeg')`,
+                  backgroundSize: 'cover',
+                  backgroundRepeat: 'no-repeat',
+                border: '1px solid #18264D', 
                 borderRadius: '5px', 
                 width: '80%', 
                 maxWidth: '400px',
@@ -141,7 +144,7 @@ function Conference() {
                 margin: '0 auto',
                 padding: '20px', 
               },}}>
-            <Typography variant='h5' textAlign={'center'} fontFamily={'Inknut_Antiqua'} fontWeight='bold' color='#206D7F' margin={2}>Confirmar asistencia</Typography>
+            <Typography variant='h5' textAlign={'center'} fontFamily={'Inknut_Antiqua'} fontWeight='bold' color='#18264D' margin={2}>Confirmar asistencia</Typography>
             <form onSubmit={handleSubmit}  action="php/asistenciaCeremonia.php" method="post"  className="form" id="form">
               <span className="close4" onClick={closeModal}></span>
               <TextField

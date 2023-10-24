@@ -54,9 +54,27 @@ function ModalsParty() {
       <Modal
           isOpen={cancionModalIsOpen}
           onRequestClose={closeCancionModal}
-          contentLabel="Modal de Sugerir Canción">
+          contentLabel="Modal de Sugerir Canción"
+          style={{
+            overlay: {
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',},
+            content: {
+              
+                backgroundImage: `url('/images/fondo2.jpeg')`,
+                backgroundSize: 'cover',
+                backgroundRepeat: 'no-repeat',
+              border: '1px solid #18264D', 
+              borderRadius: '5px', 
+              width: '80%', 
+              maxWidth: '400px',
+              maxHeight: '60%', 
+              margin: '0 auto',
+              padding: '20px', 
+            },}}>
           <span className="close-modal" onClick={closeCancionModal}> X </span>
-          <Typography variant='h5' textAlign={'center'} fontFamily={'Inknut_Antiqua'} fontWeight='bold' color='#34ABA6' margin={2}>Sugerir Canción</Typography>
+          <Typography variant='h5' textAlign={'center'} fontFamily={'Inknut_Antiqua'} fontWeight='bold' color='#18264D' margin={2}>Sugerir Canción</Typography>
           <form action="php/enviarmensajefiesta.php" method="post"  className="form" id="form">
             <span className="close4" onClick={closeCancionModal}></span>
             <TextField
@@ -70,7 +88,7 @@ function ModalsParty() {
                 fontFamily:'Inknut_Antiqua',
                 fontWeight:'bold',
                 color:'white', 
-                backgroundColor:'#34ABA6', 
+                backgroundColor:'#18264D', 
                 margin:'1rem auto', 
                 display:'flex', 
                 textTransform: 'none', 
@@ -111,20 +129,35 @@ function ModalsParty() {
       <Modal
         isOpen={infoModalIsOpen}
         onRequestClose={closeInfoModal}
-        contentLabel="Modal de Tips" >
+        contentLabel="Modal de Tips"
+        style={{
+          overlay: {
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',},
+          content: {
+            
+              backgroundImage: `url('/images/fondo.jpeg')`,
+              backgroundSize: 'cover',
+              backgroundRepeat: 'no-repeat',
+            border: '1px solid #18264D', 
+            borderRadius: '5px', 
+            width: '80%', 
+            maxWidth: '400px',
+            maxHeight: '60%', 
+            margin: '0 auto',
+            padding: '20px', 
+          },}}>
         <span className="close-modal" onClick={closeInfoModal}> X </span>
         <Typography variant='h5' textAlign={'center'} fontFamily={'Inknut_Antiqua'} fontWeight='bold' color='#F48FB1' margin={2}>Información de interés</Typography>
         <List style={{ maxWidth: '600px', margin: '0 auto', textAlign: 'justify' }}>
         <ListItem>
-          <i className="bi bi-star-fill" style={{ color: '#F48FB1', marginRight: '8px' }}></i>
           <ListItemText primary="Adoramos a sus hijos, pero creemos que necesitan una noche libre. Niños: dulces sueños. Adultos: Busquen sus zapatos de baile." />
         </ListItem>
         <ListItem>
-          <i className="bi bi-star-fill" style={{ color: '#F48FB1', marginRight: '8px' }}></i>
           <ListItemText primary="Si eres celiaco, vegano o vegetariano haznoslo saber, asi te preparamos un menu especial" />
         </ListItem>
         <ListItem>
-          <i className="bi bi-star-fill" style={{ color: '#F48FB1', marginRight: '8px' }}></i>
           <ListItemText
             primary={
               <span>
