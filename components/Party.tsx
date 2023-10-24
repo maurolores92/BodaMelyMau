@@ -1,5 +1,5 @@
-import invitados from '../data/invitados.json';
-import { Card, CardContent, Typography, Box, Button  } from '@mui/material';
+import invitados from '../data/invitados.json' ;
+import {CardContent, Typography, Box, Button  } from '@mui/material';
 import React, { useState } from 'react';
 import Modal from 'react-modal';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
@@ -8,12 +8,6 @@ import Image from 'next/image';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { TextField } from '@mui/material';
-
-const cardStyles = {
-  borderRadius: '5px',
-  boxShadow: '0 2px 4px rgba(0, 0, 0, 0.4)',
-  margin:'10px'
-};
 
 function Party() {
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -34,26 +28,32 @@ function Party() {
     setModalIsOpen(false);
   };
 
+  const openMensajeModal = () => {
+    setMensajeModalIsOpen(true);
+  };
+
   const closeMensajeModal = () => {
     setMensajeModalIsOpen(false);
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const codigoIngresado = e.currentTarget.codigo.value;
+const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+  const codigoIngresado = e.currentTarget.codigo.value;
 
-    const invitado = invitados.find((invitado) => invitado.codigo === codigoIngresado);
+  console.log('Código ingresado:', codigoIngresado); // Agregado para depuración
 
-    if (invitado) {
-      setMensaje(invitado.mensaje);
-      setMensajeModalIsOpen(true);
-    } else {
-      alert('Código no válido');
-    }
+  const invitado = invitados.find((invitado) => invitado.codigo === codigoIngresado);
 
-    closeModal();
-  };
+  if (invitado) {
+    console.log('Mensaje del invitado:', invitado.mensaje); // Agregado para depuración
+    setMensaje(invitado.mensaje);
+    setMensajeModalIsOpen(true);
+  } else {
+    alert('Código no válido');
+  }
 
+  closeModal();
+};
 
 
   return (
@@ -77,6 +77,7 @@ function Party() {
       <Carousel
         showIndicators={true}
         emulateTouch={true}
+        showThumbs={false}
         useKeyboardArrows={true}
         centerMode={true} 
         centerSlidePercentage={80}>
@@ -145,12 +146,12 @@ function Party() {
               margin: '0 auto',
               padding: '20px'},}}>
         <Typography variant='h5' textAlign={'center'} fontFamily={'Inknut_Antiqua'} fontWeight='bold' color='#D38D8D' margin={2}>Confirmar asistencia</Typography>
-        <form onSubmit={handleSubmit} action="php/asistenciaCeremonia.php" method="post"  className="form" id="form">
+        <form onSubmit={handleSubmit} className="form" id="form">
           <span className="close5" onClick={closeModal}></span>
           <TextField id="nombre" className="form-input" name="nombre" label="Ingrese su nombre completo" variant="filled" fullWidth margin="normal"/>
           <TextField id="codigo-input" className="form-input" name="codigo" label="Ingrese su código de confirmación" variant="filled" fullWidth  margin="normal"/>
           <TextField id="datoImportante" className="form-input" name="datoImportante" label="Dato importante. Ej: Soy vegetariano, celiaco" variant="filled" fullWidth margin="normal"/>
-          <Button
+          <Button onClick={openMensajeModal}
             sx={{
               fontFamily:'Inknut_Antiqua',
               fontWeight:'bold',
@@ -166,11 +167,27 @@ function Party() {
         </form>
       </Modal>
       <Modal
-        isOpen={mensajeModalIsOpen}
-        onRequestClose={closeMensajeModal}
-        contentLabel="Mensaje del invitado"
-        className="custom-modal">
-        <Typography variant='h4'>Asistencia Confirmada</Typography>
+  isOpen={mensajeModalIsOpen}
+  onRequestClose={closeMensajeModal}
+  contentLabel="Mensaje del invitado"
+  className="custom-modal"
+  style={{
+    overlay: {
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center'},
+      content: {
+        backgroundImage: `url('/images/fondo.jpeg')`,
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+        border: '1px solid #D38D8D', 
+        borderRadius: '5px', 
+        width: '80%', 
+        maxWidth: '400px',
+        maxHeight: '80%', 
+        margin: '0 auto',
+        padding: '20px'},}}>
+        <Typography variant='h4' color='#D38D8D'>Asistencia Confirmada</Typography>
         <Typography variant='body1'>{mensaje}</Typography>
       </Modal>
     </Box>

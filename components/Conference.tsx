@@ -70,6 +70,7 @@ function Conference() {
               emulateTouch={true}
               useKeyboardArrows={true}
               centerMode={true} 
+              showThumbs={false}
               centerSlidePercentage={80}>
               <Box className="carousel-card" 
                 sx={{

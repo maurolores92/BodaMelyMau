@@ -80,6 +80,7 @@ function Carousel(): React.ReactNode {
               alt={`Imagen ${index + 1}`}
               width={image.width}
               height={image.height}
+              priority={true}
               style={imageStyles}/>
             </Box>
           ))}
