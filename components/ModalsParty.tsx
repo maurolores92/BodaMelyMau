@@ -57,7 +57,7 @@ function ModalsParty() {
           contentLabel="Modal de Sugerir Canción">
           <span className="close-modal" onClick={closeCancionModal}> X </span>
           <Typography variant='h5' textAlign={'center'} fontFamily={'Inknut_Antiqua'} fontWeight='bold' color='#34ABA6' margin={2}>Sugerir Canción</Typography>
-          <form action="php/enviarmensajefiesta.php" method="post" className="form" id="form">
+          <form action="php/enviarmensajefiesta.php" method="post"  className="form" id="form">
             <span className="close4" onClick={closeCancionModal}></span>
             <TextField
               id="nombre" className="form-input" name="nombre" label="Escriba su nombre" variant="filled" fullWidth margin="normal" required/>

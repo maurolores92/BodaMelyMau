@@ -142,7 +142,7 @@ function Conference() {
                 padding: '20px', 
               },}}>
             <Typography variant='h5' textAlign={'center'} fontFamily={'Inknut_Antiqua'} fontWeight='bold' color='#206D7F' margin={2}>Confirmar asistencia</Typography>
-            <form onSubmit={handleSubmit} className="form" id="form">
+            <form onSubmit={handleSubmit}  action="php/asistenciaCeremonia.php" method="post"  className="form" id="form">
               <span className="close4" onClick={closeModal}></span>
               <TextField
                 id="nombreyapellido"
