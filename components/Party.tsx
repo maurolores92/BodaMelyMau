@@ -80,7 +80,11 @@ function Party() {
         useKeyboardArrows={true}
         centerMode={true} 
         centerSlidePercentage={80}>
-        <Box className="carousel-card">
+        <Box className="carousel-card" 
+          sx={{
+            backgroundImage: `url('/images/fondo.jpeg')`,
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',}}>
           <CardContent sx={{ textAlign:'justify'}}>
             <Typography variant='body1' fontWeight='bold' color='#AE739E' fontSize={18}>Fecha</Typography>
             <Typography variant='body2' fontWeight='bold'>Viernes 15/12/2023</Typography>
@@ -90,7 +94,11 @@ function Party() {
             </Button>
           </CardContent>
         </Box>
-        <Box className="carousel-card">
+        <Box className="carousel-card"
+        sx={{
+          backgroundImage: `url('/images/fondo.jpeg')`,
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat',}}>
           <CardContent sx={{ textAlign:'justify'}}>
             <Typography variant='body1' fontWeight='bold' color='#AE739E' fontSize={18}>Direccion</Typography>
             <Typography variant='body2' fontWeight='bold'>Salon de fiesta NyA Celebraciones</Typography>

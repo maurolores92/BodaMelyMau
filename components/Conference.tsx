@@ -71,8 +71,11 @@ function Conference() {
               useKeyboardArrows={true}
               centerMode={true} 
               centerSlidePercentage={80}>
-              <Box className="carousel-card">
-                <Card>
+              <Box className="carousel-card" 
+                sx={{
+                  backgroundImage: `url('/images/fondo2.jpeg')`,
+                  backgroundSize: 'cover',
+                  backgroundRepeat: 'no-repeat',}}>
                   <CardContent sx={{ textAlign:'justify'}}>
                     <Typography variant='body1' fontWeight='bold' color='#206D7F' fontSize={18} >Fecha</Typography>
                     <Typography variant='body2' fontWeight='bold'>Viernes 15/12/2023</Typography>
@@ -88,10 +91,12 @@ function Conference() {
                       </a>
                     </Button>
                   </CardContent>
-                </Card>
               </Box>
-              <Box className="carousel-card">
-                <Card >
+              <Box className="carousel-card" 
+                sx={{
+                  backgroundImage: `url('/images/fondo2.jpeg')`,
+                  backgroundSize: 'cover',
+                  backgroundRepeat: 'no-repeat',}}>
                   <CardContent sx={{ textAlign:'justify'}}>
                     <Typography variant='body1' fontWeight='bold' color='#206D7F' fontSize={18}>Direccion</Typography>
                     <Typography variant='body2' fontWeight='bold' fontSize={14}>Salon del Reino de los Testigos de Jehova</Typography>
@@ -100,7 +105,6 @@ function Conference() {
                       <LocationOnIcon/>Como llegar
                     </Button>
                   </CardContent>
-                </Card>
               </Box>
             </Carousel>
           </Box>
