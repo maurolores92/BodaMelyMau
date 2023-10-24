@@ -34,7 +34,7 @@ function Conference() {
   return (
       <Box sx={{ boxShadow: '0 2px 4px rgba(0, 0, 0, 0.4)', borderRadius: '5px', margin: '4rem 1rem', paddingBottom:'1rem' }}>
         <Box
-          sx={{ backgroundColor:'#206D7F',
+          sx={{ backgroundColor:'#18264D',
           borderRadius: '5px 5px 0 0',
           display: 'flex',
           justifyContent: 'center',
@@ -62,7 +62,7 @@ function Conference() {
             position: 'absolute',
           }}/>
         </Box>
-        <Typography variant='h5' textAlign={'center'} fontFamily={'Inknut_Antiqua'} fontWeight='bold' color='#206D7F' margin={2}>Conferencia de Boda</Typography>
+        <Typography variant='h5' textAlign={'center'} fontFamily={'Inknut_Antiqua'} fontWeight='bold' color='#18264D' margin={2}>Conferencia de Boda</Typography>
         <Box>
           <Box sx={{height:'200px'}}>
             <Carousel
@@ -77,7 +77,7 @@ function Conference() {
                   backgroundSize: 'cover',
                   backgroundRepeat: 'no-repeat',}}>
                   <CardContent sx={{ textAlign:'justify'}}>
-                    <Typography variant='body1' fontWeight='bold' color='#206D7F' fontSize={18} >Fecha</Typography>
+                    <Typography variant='body1' fontWeight='bold' color='#18264D' fontSize={18} >Fecha</Typography>
                     <Typography variant='body2' fontWeight='bold'>Viernes 15/12/2023</Typography>
                     <Typography variant='body2' fontWeight='bold'>Hora 20:00 Hs</Typography>
                     <Button sx={{ background: '#FFFFFF', border:'#206D7F 1px solid',  textDecoration:'none', margin:'2rem auto 0', display:'flex', textTransform: 'none', fontWeight:'bold'}}>
@@ -98,7 +98,7 @@ function Conference() {
                   backgroundSize: 'cover',
                   backgroundRepeat: 'no-repeat',}}>
                   <CardContent sx={{ textAlign:'justify'}}>
-                    <Typography variant='body1' fontWeight='bold' color='#206D7F' fontSize={18}>Direccion</Typography>
+                    <Typography variant='body1' fontWeight='bold' color='#18264D' fontSize={18}>Direccion</Typography>
                     <Typography variant='body2' fontWeight='bold' fontSize={14}>Salon del Reino de los Testigos de Jehova</Typography>
                     <Typography variant='body2' fontWeight='bold' fontSize={14}>Cramer 2880, Belgrano.</Typography>
                     <Button onClick={openMapsConferencia} sx={{ background: '#FFFFFF', border:'#206D7F 1px solid', color:'#206D7F', textDecoration:'none', display:'flex', textTransform: 'none', fontWeight:'bold', margin:'.8rem auto 0'}}>
@@ -112,7 +112,7 @@ function Conference() {
             sx={{
               fontFamily: 'Inknut_Antiqua',
               fontWeight: 'bold',
-              backgroundColor: '#206D7F',
+              backgroundColor: '#18264D',
               margin: '1rem auto',
               display: 'flex',
               textTransform: 'none',
@@ -155,7 +155,7 @@ function Conference() {
                 sx={{
                   fontFamily: 'Inknut_Antiqua',
                   fontWeight: 'bold',
-                  backgroundColor: '#206D7F',
+                  backgroundColor: '#18264D',
                   margin: '1rem auto',
                   display: 'flex',
                   textTransform: 'none',

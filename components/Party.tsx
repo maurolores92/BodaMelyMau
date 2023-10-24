@@ -60,7 +60,7 @@ function Party() {
 
 <Box sx={{ boxShadow: '0 2px 4px rgba(0, 0, 0, 0.4)', borderRadius: '5px', margin: '4rem 1rem', paddingBottom:'1rem' }}>
   <Box
-    sx={{ backgroundColor:'#AE739E',
+    sx={{ backgroundColor:'#D38D8D',
     borderRadius: '5px 5px 0 0',
     display: 'flex',
     justifyContent: 'center',
@@ -71,7 +71,7 @@ function Party() {
     <Image src='/images/anilloFondo.svg' alt='' width={100} height={100} style={{ color: '#206D7F', position: 'absolute', marginTop:'5px'}}/>
     <Image src='/images/fiesta.svg' alt='' width={40} height={40} style={{ color: '#206D7F', position: 'absolute'}}/>
   </Box>
-  <Typography variant='h5' textAlign={'center'} fontFamily={'Inknut_Antiqua'} fontWeight='bold' color='#AE739E' margin={2}>Fiesta</Typography>
+  <Typography variant='h5' textAlign={'center'} fontFamily={'Inknut_Antiqua'} fontWeight='bold' color='#D38D8D' margin={2}>Fiesta</Typography>
   <Box>
     <Box sx={{height:'200px'}}>
       <Carousel
@@ -86,7 +86,7 @@ function Party() {
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',}}>
           <CardContent sx={{ textAlign:'justify'}}>
-            <Typography variant='body1' fontWeight='bold' color='#AE739E' fontSize={18}>Fecha</Typography>
+            <Typography variant='body1' fontWeight='bold' color='#D38D8D' fontSize={18}>Fecha</Typography>
             <Typography variant='body2' fontWeight='bold'>Viernes 15/12/2023</Typography>
             <Typography variant='body2' fontWeight='bold'>Hora 21:00 Hs</Typography>
             <Button onClick={openMapsFiesta} sx={{ background: '#FFFFFF', border:'#AE739E 1px solid', textDecoration:'none',  margin:'2rem auto 0', display:'flex', textTransform: 'none', fontWeight:'bold'}}>
@@ -100,7 +100,7 @@ function Party() {
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',}}>
           <CardContent sx={{ textAlign:'justify'}}>
-            <Typography variant='body1' fontWeight='bold' color='#AE739E' fontSize={18}>Direccion</Typography>
+            <Typography variant='body1' fontWeight='bold' color='#D38D8D' fontSize={18}>Direccion</Typography>
             <Typography variant='body2' fontWeight='bold'>Salon de fiesta NyA Celebraciones</Typography>
             <Typography variant='body2' fontWeight='bold'>Av. 101 Dr. Ricardo Balbín 5580, Billinghurst</Typography>
             <Button onClick={openMapsFiesta} sx={{ background: '#FFFFFF', border: '#AE739E 1px solid', color: '#AE739E', textDecoration: 'none', margin:'.8rem auto 0', display: 'flex', textTransform: 'none', fontWeight: 'bold' }}>
@@ -115,7 +115,7 @@ function Party() {
         fontFamily:'Inknut_Antiqua',
         fontWeight:'bold',
         color:'white', 
-        backgroundColor:'#AE739E', 
+        backgroundColor:'#D38D8D', 
         margin:'1rem auto', 
         display:'flex', 
         textTransform: 'none', 
@@ -153,7 +153,7 @@ function Party() {
               fontFamily:'Inknut_Antiqua',
               fontWeight:'bold',
               color:'white', 
-              backgroundColor:'#AE739E', 
+              backgroundColor:'#D38D8D', 
               margin:'1rem auto', 
               display:'flex', 
               textTransform: 'none', 
