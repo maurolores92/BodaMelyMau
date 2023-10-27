@@ -7,7 +7,6 @@
   $headers = "Nombre y Apellido: ".$nombreyapellido . "\n" . "Codigo de confirmacion: " . $codigo . "\n" . "Dato importante: " . $datoImportante;
 
   if(mail($to_email, $subject, $headers)) {
-    
     echo '<script language="javascript">
                 alert("Tu mensaje fue enviado");
             </script>';
