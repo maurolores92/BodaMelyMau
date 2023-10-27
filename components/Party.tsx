@@ -59,7 +59,9 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
 
   return (
 
-<Box sx={{ boxShadow: '0 2px 4px rgba(0, 0, 0, 0.4)', borderRadius: '5px', margin: '4rem 1rem', paddingBottom:'1rem' }}>
+<Box sx={{ boxShadow: '0 2px 4px rgba(0, 0, 0, 0.4)', borderRadius: '5px', margin: '4rem 1rem', paddingBottom:'1rem', backgroundImage: `url('/images/fondo.jpeg')`,
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat', }}>
   <Box
     sx={{ backgroundColor:'#D38D8D',
     borderRadius: '5px 5px 0 0',
@@ -82,11 +84,10 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         useKeyboardArrows={true}
         centerMode={true} 
         centerSlidePercentage={80}>
-        <Box className="carousel-card" 
-          sx={{
-            backgroundImage: `url('/images/fondo.jpeg')`,
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat',}}>
+        <Box className="carousel-card" sx={{
+          backgroundColor:'white'
+          }}
+          >
           <CardContent sx={{ textAlign:'justify'}}>
             <Typography variant='body1' fontWeight='bold' color='#D38D8D' fontSize={18}>Fecha</Typography>
             <Typography variant='body2' fontWeight='bold'>Viernes 15/12/2023</Typography>
@@ -98,9 +99,8 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         </Box>
         <Box className="carousel-card"
         sx={{
-          backgroundImage: `url('/images/fondo.jpeg')`,
-          backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat',}}>
+          backgroundColor:'white'
+          }}>
           <CardContent sx={{ textAlign:'justify'}}>
             <Typography variant='body1' fontWeight='bold' color='#D38D8D' fontSize={18}>Direccion</Typography>
             <Typography variant='body2' fontWeight='bold'>Salon de fiesta NyA Celebraciones</Typography>

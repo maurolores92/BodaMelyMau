@@ -1,5 +1,5 @@
 import { Card, CardContent, Typography, Box, Button  } from '@mui/material';
-import React, { useState } from 'react';
+import React, { useState, FormEvent  } from 'react';
 import Modal from 'react-modal';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
@@ -9,8 +9,8 @@ import TextField from '@mui/material/TextField';
 
 
 function Conference() {
+  const [cancionModalIsOpen, setCancionModalIsOpen] = useState(false);
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [nombreyapellido, setNombreyapellido] = useState('');
   const [mensajeEnviado, setMensajeEnviado] = useState(false);
 
   const openMapsConferencia = () => {
@@ -18,6 +18,15 @@ function Conference() {
     var mapsUrl = "https://www.google.com/maps/place/" + encodeURIComponent(direccion);
     window.open(mapsUrl, "_blank");
   };
+
+  const openCancionModal = () => {
+    setCancionModalIsOpen(true);
+  };
+
+  const closeCancionModal = () => {
+    setCancionModalIsOpen(false);
+  };
+
 
   const openModal = () => {
     setModalIsOpen(true);
@@ -27,18 +36,10 @@ function Conference() {
     setModalIsOpen(false);
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setMensajeEnviado(true);
-  
-    setTimeout(() => {
-      setMensajeEnviado(false);
-      closeModal(); 
-    }, 2000);
-  };
-
   return (
-      <Box sx={{ boxShadow: '0 2px 4px rgba(0, 0, 0, 0.4)', borderRadius: '5px', margin: '4rem 1rem', paddingBottom:'1rem' }}>
+      <Box sx={{ boxShadow: '0 2px 4px rgba(0, 0, 0, 0.4)', borderRadius: '5px', margin: '4rem 1rem', paddingBottom:'1rem', backgroundImage: `url('/images/fondo2.jpeg')`,
+      backgroundSize: 'cover',
+      backgroundRepeat: 'no-repeat', }}>
         <Box
           sx={{ backgroundColor:'#18264D',
           borderRadius: '5px 5px 0 0',
@@ -80,9 +81,7 @@ function Conference() {
               centerSlidePercentage={80}>
               <Box className="carousel-card" 
                 sx={{
-                  backgroundImage: `url('/images/fondo2.jpeg')`,
-                  backgroundSize: 'cover',
-                  backgroundRepeat: 'no-repeat',}}>
+                  backgroundColor:'white'}}>
                   <CardContent sx={{ textAlign:'justify'}}>
                     <Typography variant='body1' fontWeight='bold' color='#18264D' fontSize={18} >Fecha</Typography>
                     <Typography variant='body2' fontWeight='bold'>Viernes 15/12/2023</Typography>
@@ -101,9 +100,7 @@ function Conference() {
               </Box>
               <Box className="carousel-card" 
                 sx={{
-                  backgroundImage: `url('/images/fondo2.jpeg')`,
-                  backgroundSize: 'cover',
-                  backgroundRepeat: 'no-repeat',}}>
+                  backgroundColor:'white'}}>
                   <CardContent sx={{ textAlign:'justify'}}>
                     <Typography variant='body1' fontWeight='bold' color='#18264D' fontSize={18}>Direccion</Typography>
                     <Typography variant='body2' fontWeight='bold' fontSize={14}>Salon del Reino de los Testigos de Jehova</Typography>
@@ -129,63 +126,47 @@ function Conference() {
               Confirmar Asistencia
           </Button>
           <Modal
-            isOpen={modalIsOpen}
-            onRequestClose={closeModal}
-            contentLabel="Confirmar Asistencia Modal"
-            className="custom-modal"
-            style={{
-              overlay: {
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',},
-              content: {
-                
-                  backgroundImage: `url('/images/fondo2.jpeg')`,
-                  backgroundSize: 'cover',
-                  backgroundRepeat: 'no-repeat',
-                border: '1px solid #18264D', 
-                borderRadius: '5px', 
-                width: '80%', 
-                maxWidth: '400px',
-                maxHeight: '80%', 
-                margin: '0 auto',
-                padding: '20px', 
-              },}}>
-            <Typography variant='h5' textAlign={'center'} fontFamily={'Inknut_Antiqua'} fontWeight='bold' color='#18264D' margin={2}>Confirmar asistencia</Typography>
-            <form action="php/enviarmensajefiesta.php" method="post" onSubmit={handleSubmit} className="form" id="form">
-          <span className="close4" onClick={closeModal}></span>
-          <TextField
-            id="nombre"
-            className="form-input"
-            name="nombre" 
-            label="Ingrese su nombre completo"
-            variant="filled"
-            fullWidth
-            value={nombreyapellido}
-            onChange={(e) => setNombreyapellido(e.target.value)}
-          />
-          {mensajeEnviado && (
-            <Box sx={{fontWeight:'bold', fontSize:'1.4rem', color: '#18264D'}}>Tu confirmación ha sido enviada</Box>
-          )}
-          <Button
-            type="submit"
-            sx={{
-              fontFamily: 'Inknut_Antiqua',
-              fontWeight: 'bold',
-              backgroundColor: '#18264D',
-              margin: '1rem auto',
-              display: 'flex',
-              textTransform: 'none',
-              padding: '.5rem 3rem',
-              textDecoration: 'none',
-              color: 'white',
-              '&:hover': {backgroundColor: '#18264D'},
-              '&:active': {backgroundColor: '#18264D',},
-            }}>
-            Confirmar Asistencia
-          </Button>
-        </form>
-          </Modal>
+          isOpen={cancionModalIsOpen}
+          onRequestClose={closeCancionModal}
+          contentLabel="Modal de Sugerir Canción"
+          style={{
+            overlay: {
+            display: 'flex',
+            justifyContent: 'center',},
+            content: {
+              
+                backgroundImage: `url('/images/fondo2.jpeg')`,
+                backgroundSize: 'cover',
+                backgroundRepeat: 'no-repeat',
+              border: '1px solid #18264D', 
+              borderRadius: '5px', 
+              width: '80%', 
+              maxWidth: '400px',
+              maxHeight: '60%', 
+              margin: '0 auto',
+              padding: '20px', 
+            },}}>
+          <span className="close-modal" onClick={closeCancionModal}> X </span>
+          <Typography variant='h5' textAlign={'center'} fontFamily={'Inknut_Antiqua'} fontWeight='bold' color='#18264D' margin={2}>Sugerir Canción</Typography>
+          <form action="php/asistenciaConferencia.php" method="post"  className="form" id="form">
+            <span className="close4" onClick={closeCancionModal}></span>
+            <TextField
+              id="nombre" className="form-input" name="nombre" label="Escriba su nombre" variant="filled" fullWidth margin="normal" required/>
+            <Button type="submit"
+              sx={{
+                fontFamily:'Inknut_Antiqua',
+                fontWeight:'bold',
+                color:'white', 
+                backgroundColor:'#18264D', 
+                margin:'1rem auto', 
+                display:'flex', 
+                textTransform: 'none', 
+                textDecoration:'none',
+                padding:'.5rem 3rem'}}> 
+                Enviar
+            </Button>
+          </form>
+        </Modal>
         </Box>
       </Box>
   );
