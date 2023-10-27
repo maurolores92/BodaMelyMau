@@ -55,20 +55,18 @@ function Party() {
     closeModal();
   };
 
-const handleCodigoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-  const codigoIngresado = e.target.value;
-  setCodigoValido(false);
-
-  if (codigoIngresado.trim() !== '') {
-    const invitado = invitados.find((invitado) => invitado.codigo === codigoIngresado);
-
-    if (invitado) {
-      setMensajeModalIsOpen(true);
-    } else {
-      setMensaje('Código no válido');
+  const handleCodigoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const codigoIngresado = e.target.value;
+    setCodigoValido(false);
+  
+    if (codigoIngresado.trim() !== '') {
+      const invitado = invitados.find((invitado) => invitado.codigo === codigoIngresado);
+  
+      if (invitado) {
+        setCodigoValido(true);
+      }
     }
-  }
-};
+  };
 
   return (
 
