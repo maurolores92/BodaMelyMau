@@ -11,6 +11,7 @@ import TextField from '@mui/material/TextField';
 function Conference() {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [nombreyapellido, setNombreyapellido] = useState('');
+  const [mensajeEnviado, setMensajeEnviado] = useState(false);
 
   const openMapsConferencia = () => {
     var direccion = "Cramer 2880 belgrano CABA";
@@ -27,8 +28,13 @@ function Conference() {
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault(); 
-    
+    e.preventDefault();
+    setMensajeEnviado(true);
+  
+    setTimeout(() => {
+      setMensajeEnviado(false);
+      closeModal(); 
+    }, 2000);
   };
 
   return (
@@ -146,29 +152,37 @@ function Conference() {
                 padding: '20px', 
               },}}>
             <Typography variant='h5' textAlign={'center'} fontFamily={'Inknut_Antiqua'} fontWeight='bold' color='#18264D' margin={2}>Confirmar asistencia</Typography>
-            <form onSubmit={handleSubmit}  action="php/asistenciaCeremonia.php" method="post"  className="form" id="form">
-              <span className="close4" onClick={closeModal}></span>
-              <TextField
-                id="nombreyapellido"
-                label="Ingrese su nombre completo"
-                variant="filled"
-                fullWidth 
-                value={nombreyapellido} 
-                onChange={(e) => setNombreyapellido(e.target.value)}/>
-              <Button type="submit" 
-                sx={{
-                  fontFamily: 'Inknut_Antiqua',
-                  fontWeight: 'bold',
-                  backgroundColor: '#18264D',
-                  margin: '1rem auto',
-                  display: 'flex',
-                  textTransform: 'none',
-                  padding: '.5rem 3rem',
-                  textDecoration: 'none',
-                  color: 'white'}}> 
-                  Confirmar Asistencia
-                </Button>
-            </form>
+            <form onSubmit={handleSubmit} action="php/asistenciaCeremonia.php" method="post" className="form" id="form">
+          <span className="close4" onClick={closeModal}></span>
+          <TextField
+            id="nombreyapellido"
+            label="Ingrese su nombre completo"
+            variant="filled"
+            fullWidth
+            value={nombreyapellido}
+            onChange={(e) => setNombreyapellido(e.target.value)}
+          />
+          {mensajeEnviado && (
+            <Box sx={{fontWeight:'bold', fontSize:'1.4rem', color: '#18264D'}}>Tu confirmación ha sido enviada</Box>
+          )}
+          <Button
+            type="submit"
+            sx={{
+              fontFamily: 'Inknut_Antiqua',
+              fontWeight: 'bold',
+              backgroundColor: '#18264D',
+              margin: '1rem auto',
+              display: 'flex',
+              textTransform: 'none',
+              padding: '.5rem 3rem',
+              textDecoration: 'none',
+              color: 'white',
+              '&:hover': {backgroundColor: '#18264D'},
+              '&:active': {backgroundColor: '#18264D',},
+            }}>
+            Confirmar Asistencia
+          </Button>
+        </form>
           </Modal>
         </Box>
       </Box>

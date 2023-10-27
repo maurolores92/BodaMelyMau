@@ -13,6 +13,7 @@ function Party() {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [mensajeModalIsOpen, setMensajeModalIsOpen] = useState(false);
   const [mensaje, setMensaje] = useState('');
+  const [mensajeEnviado, setMensajeEnviado] = useState(false);
 
   const openMapsFiesta = () => {
     var direccion = "Av. 101 Dr. Ricardo Balbín 5580, Billinghurst, Provincia de Buenos Aires, Argentina";
@@ -151,6 +152,9 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
           <TextField id="nombre" className="form-input" name="nombre" label="Ingrese su nombre completo" variant="filled" fullWidth margin="normal"/>
           <TextField id="codigo-input" className="form-input" name="codigo" label="Ingrese su código de confirmación" variant="filled" fullWidth  margin="normal"/>
           <TextField id="datoImportante" className="form-input" name="datoImportante" label="Dato importante. Ej: Soy vegetariano, celiaco" variant="filled" fullWidth margin="normal"/>
+          {mensajeEnviado && (
+            <Box sx={{fontWeight:'bold', fontSize:'1.4rem', color: '#18264D'}}>Tu confirmación ha sido enviada</Box>
+          )}
           <Button onClick={openMensajeModal} type="submit"
             sx={{
               fontFamily:'Inknut_Antiqua',
@@ -161,9 +165,10 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
               display:'flex', 
               textTransform: 'none', 
               textDecoration:'none',
-              padding:'.5rem 3rem'}}> 
+              padding:'.5rem 3rem'}}>
               Confirmar Asistencia
           </Button>
+          
         </form>
       </Modal>
       <Modal
