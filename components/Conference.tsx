@@ -155,7 +155,7 @@ function Conference() {
                 fullWidth 
                 value={nombreyapellido} 
                 onChange={(e) => setNombreyapellido(e.target.value)}/>
-              <Button
+              <Button type="submit" 
                 sx={{
                   fontFamily: 'Inknut_Antiqua',
                   fontWeight: 'bold',

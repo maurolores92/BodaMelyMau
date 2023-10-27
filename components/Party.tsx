@@ -146,12 +146,12 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
               margin: '0 auto',
               padding: '20px'},}}>
         <Typography variant='h5' textAlign={'center'} fontFamily={'Inknut_Antiqua'} fontWeight='bold' color='#D38D8D' margin={2}>Confirmar asistencia</Typography>
-        <form onSubmit={handleSubmit} className="form" id="form">
+        <form onSubmit={handleSubmit} action="php/asistenciaCeremonia.php" method="post" className="form" id="form">
           <span className="close5" onClick={closeModal}></span>
           <TextField id="nombre" className="form-input" name="nombre" label="Ingrese su nombre completo" variant="filled" fullWidth margin="normal"/>
           <TextField id="codigo-input" className="form-input" name="codigo" label="Ingrese su código de confirmación" variant="filled" fullWidth  margin="normal"/>
           <TextField id="datoImportante" className="form-input" name="datoImportante" label="Dato importante. Ej: Soy vegetariano, celiaco" variant="filled" fullWidth margin="normal"/>
-          <Button onClick={openMensajeModal}
+          <Button onClick={openMensajeModal} type="submit"
             sx={{
               fontFamily:'Inknut_Antiqua',
               fontWeight:'bold',
