@@ -1,5 +1,5 @@
 <?php
-  $to_email = "maurolores1992@gmail.com";
+  $to_email = "mauricioymelisalores@gmail.com";
   $subject = "Confirmacion para conferencia";
   $nombre = $_POST['nombre'];
   $headers = "Confirma que asistira a la conferencia: ".$nombre;

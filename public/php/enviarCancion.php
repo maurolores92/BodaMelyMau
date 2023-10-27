@@ -1,5 +1,5 @@
 <?php
-  $to_email = "maurolores1992@gmail.com";
+  $to_email = "mauricioymelisalores@gmail.com";
   $subject = "Cancion sugerida para la fiesta";
   $nombre = $_POST['nombre'];
   $cancion = $_POST['cancion'];

@@ -1,10 +1,10 @@
 <?php
-  $to_email = "maurolores1992@gmail.com";
-  $subject = "Confirmacion Asistencia";
-  $nombreyapellido = $_POST['nombreyapellido'];
+  $to_email = "mauricioymelisalores@gmail.com";
+  $subject = "Confirmacion Fiesta";
+  $nombre = $_POST['nombre'];
   $codigo = $_POST['codigo'];
   $datoImportante = $_POST['datoImportante'];
-  $headers = "Nombre y Apellido: ".$nombreyapellido . "\n" . "Codigo de confirmacion: " . $codigo . "\n" . "Dato importante: " . $datoImportante;
+  $headers = "Nombre y Apellido: ".$nombre . "\n" . "Codigo de confirmacion: " . $codigo . "\n" . "Dato importante: " . $datoImportante;
 
   if(mail($to_email, $subject, $headers)) {
     echo '<script language="javascript">

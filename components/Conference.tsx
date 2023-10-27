@@ -10,7 +10,6 @@ import TextField from '@mui/material/TextField';
 
 function Conference() {
   const [cancionModalIsOpen, setCancionModalIsOpen] = useState(false);
-  const [modalIsOpen, setModalIsOpen] = useState(false);
   const [mensajeEnviado, setMensajeEnviado] = useState(false);
 
   const openMapsConferencia = () => {
@@ -19,22 +18,15 @@ function Conference() {
     window.open(mapsUrl, "_blank");
   };
 
-  const openCancionModal = () => {
+  const openModal = () => {
     setCancionModalIsOpen(true);
   };
 
-  const closeCancionModal = () => {
+  const closeModal = () => {
     setCancionModalIsOpen(false);
   };
 
 
-  const openModal = () => {
-    setModalIsOpen(true);
-  };
-
-  const closeModal = () => { 
-    setModalIsOpen(false);
-  };
 
   return (
       <Box sx={{ boxShadow: '0 2px 4px rgba(0, 0, 0, 0.4)', borderRadius: '5px', margin: '4rem 1rem', paddingBottom:'1rem', backgroundImage: `url('/images/fondo2.jpeg')`,
@@ -127,7 +119,7 @@ function Conference() {
           </Button>
           <Modal
           isOpen={cancionModalIsOpen}
-          onRequestClose={closeCancionModal}
+          onRequestClose={closeModal}
           contentLabel="Modal de Sugerir Canción"
           style={{
             overlay: {
@@ -146,10 +138,10 @@ function Conference() {
               margin: '0 auto',
               padding: '20px', 
             },}}>
-          <span className="close-modal" onClick={closeCancionModal}> X </span>
-          <Typography variant='h5' textAlign={'center'} fontFamily={'Inknut_Antiqua'} fontWeight='bold' color='#18264D' margin={2}>Sugerir Canción</Typography>
+          <span className="close-modal" onClick={closeModal}> X </span>
+          <Typography variant='h5' textAlign={'center'} fontFamily={'Inknut_Antiqua'} fontWeight='bold' color='#18264D' margin={2}>Conferencia de Boda</Typography>
           <form action="php/asistenciaConferencia.php" method="post"  className="form" id="form">
-            <span className="close4" onClick={closeCancionModal}></span>
+            <span className="close4" onClick={closeModal}></span>
             <TextField
               id="nombre" className="form-input" name="nombre" label="Escriba su nombre" variant="filled" fullWidth margin="normal" required/>
             <Button type="submit"

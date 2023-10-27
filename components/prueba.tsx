@@ -10,6 +10,7 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { TextField } from '@mui/material';
 import CheckIcon from '@mui/icons-material/Check';
 import ClearIcon from '@mui/icons-material/Clear';
+import axios from 'axios';
 
 function Party() {
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -40,35 +41,44 @@ function Party() {
     setMensajeModalIsOpen(false);
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleCodigoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const codigoIngresado = e.target.value;
+    setCodigoValido(false);
+
+    if (codigoIngresado.trim() !== '') {
+      const invitado = invitados.find((invitado) => invitado.codigo === codigoIngresado);
+
+      if (invitado) {
+        setCodigoValido(true);
+        setMensaje(invitado.mensaje);
+      } else {
+        setMensaje('Código no válido');
+      }
+    }
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const codigoIngresado = e.currentTarget.codigo.value;
     const invitado = invitados.find((invitado) => invitado.codigo === codigoIngresado);
-  
+
     if (invitado) {
-      setMensaje(invitado.mensaje);
-      setMensajeModalIsOpen(true);
+      try {
+        await axios.post('php/asistenciaFiesta.php', {
+          nombre: e.currentTarget.nombre.value,
+          codigo: codigoIngresado,
+          datoImportante: e.currentTarget.datoImportante.value,
+        });
+        setMensajeModalIsOpen(true);
+      } catch (error) {
+        console.error('Error al enviar el formulario', error);
+      }
     } else {
       alert('Código no válido');
     }
-  
+
     closeModal();
   };
-
-const handleCodigoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-  const codigoIngresado = e.target.value;
-  setCodigoValido(false);
-
-  if (codigoIngresado.trim() !== '') {
-    const invitado = invitados.find((invitado) => invitado.codigo === codigoIngresado);
-
-    if (invitado) {
-      setMensajeModalIsOpen(true);
-    } else {
-      setMensaje('Código no válido');
-    }
-  }
-};
 
   return (
 
@@ -160,10 +170,18 @@ const handleCodigoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
               margin: '0 auto',
               padding: '20px'},}}>
         <Typography variant='h5' textAlign={'center'} fontFamily={'Inknut_Antiqua'} fontWeight='bold' color='#D38D8D' margin={2}>Confirmar asistencia</Typography>
-        <form action="php/asistenciaFiesta.php" method="post" className="form" id="form">
-          <span className="close5" onClick={closeModal}></span>
-          <TextField id="nombre" className="form-input" name="nombre" label="Ingrese su nombre completo" variant="filled" fullWidth margin="normal"/>
-          <TextField
+        <form action="php/asistenciaFiesta.php" method="post" onSubmit={handleSubmit} className="form" id="form">
+      <span className="close5" onClick={closeModal}></span>
+      <TextField
+        id="nombre"
+        className="form-input"
+        name="nombre"
+        label="Ingrese su nombre completo"
+        variant="filled"
+        fullWidth
+        margin="normal"
+      />
+      <TextField
         id="codigo"
         className="form-input"
         name="codigo"
@@ -176,25 +194,33 @@ const handleCodigoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
           endAdornment: codigoValido ? <CheckIcon color="success" /> : <ClearIcon color="error" />,
         }}
       />
-          <TextField id="datoImportante" className="form-input" name="datoImportante" label="Dato importante. Ej: Soy vegetariano, celiaco" variant="filled" fullWidth margin="normal"/>
-          {mensajeEnviado && (
-            <Box sx={{fontWeight:'bold', fontSize:'1.4rem', color: '#18264D'}}>Tu confirmación ha sido enviada</Box>
-          )}
-          <Button onClick={openMensajeModal} type="submit"
-            sx={{
-              fontFamily:'Inknut_Antiqua',
-              fontWeight:'bold',
-              color:'white', 
-              backgroundColor:'#D38D8D', 
-              margin:'1rem auto', 
-              display:'flex', 
-              textTransform: 'none', 
-              textDecoration:'none',
-              padding:'.5rem 3rem'}}>
-              Confirmar Asistencia
-          </Button>
-          
-        </form>
+      <TextField
+        id="datoImportante"
+        className="form-input"
+        name="datoImportante"
+        label="Dato importante. Ej: Soy vegetariano, celiaco"
+        variant="filled"
+        fullWidth
+        margin="normal"
+      />
+      {mensajeEnviado && (
+        <Box sx={{ fontWeight: 'bold', fontSize: '1.4rem', color: '#18264D' }}>Tu confirmación ha sido enviada</Box>
+      )}
+      <Button onClick={openMensajeModal} type="submit"
+        sx={{
+          fontFamily: 'Inknut_Antiqua',
+          fontWeight: 'bold',
+          color: 'white',
+          backgroundColor: '#D38D8D',
+          margin: '1rem auto',
+          display: 'flex',
+          textTransform: 'none',
+          textDecoration: 'none',
+          padding: '.5rem 3rem',
+        }}>
+        Confirmar Asistencia
+      </Button>
+    </form>
       </Modal>
       <Modal
   isOpen={mensajeModalIsOpen}
