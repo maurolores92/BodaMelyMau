@@ -1,4 +1,4 @@
-import { Box, Button, Typography, Container, Link, List, ListItem, ListItemText, TextField, Card, CardContent } from '@mui/material';
+import { Box, Button, Typography, Link, List, ListItem, ListItemText, TextField, Card, CardContent } from '@mui/material';
 import React, { useState } from 'react';
 import Modal from 'react-modal';
 import { Icon } from '@iconify/react';
@@ -27,16 +27,24 @@ function ModalsParty() {
   const mercadolibreLink = 'ENLACE_DE_PAGO_DE_MERCADOLIBRE';
 
   return (
-    <Container 
-    sx={{
-      backgroundImage: `url('/images/fondo-invitacion.png')`,
-      backgroundSize: 'cover',
-      backgroundRepeat: 'no-repeat',
-      paddingTop: '5rem',
-      paddingBottom: '2rem',}}>
-      <Box sx={{width:'100%', textAlign:'center'}}>
-        <Typography variant='body1' fontFamily='Inria_Sans' fontWeight='bold' color={'#206D7F'} >HAGAMOS JUNTOS UNA FIESTA EPICA. AQUI LOS DETALLES A TENER EN CUENTA</Typography>
-      </Box>
+    <>
+    
+      <Box sx={{
+        backgroundImage: `url('/images/fondo-invitacion.png')`,
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        flexDirection: 'column',
+        position: 'relative',}}>
+        <Box
+          sx={{ 
+          background: 'linear-gradient(0deg, transparent, rgba(255, 255, 255, 1))',
+          height:'20px',
+          }}
+        />
+        <Box sx={{width:'100%', textAlign:'center'}}>
+          <Typography variant='body1' fontFamily='Inria_Sans' fontWeight='bold' color={'#206D7F'} >HAGAMOS JUNTOS UNA FIESTA EPICA. AQUI LOS DETALLES A TENER EN CUENTA</Typography>
+        </Box>
+      <Box sx={{display: {lg: 'flex', md:'flex', sm: '75%', xs: '95%'}}}>
       <Card sx={{width:'320px', margin:'2rem auto', borderRadius:'10px', display:'flex'}}>
         <Box>
           <Icon icon="foundation:music" style={{fontSize:'3rem', margin:'1rem 10px', color:'#34ABA6'}}/>
@@ -125,6 +133,7 @@ function ModalsParty() {
           </CardContent>
         </Box>
       </Card>
+      </Box>
       <Modal
         isOpen={infoModalIsOpen}
         onRequestClose={closeInfoModal}
@@ -168,7 +177,8 @@ function ModalsParty() {
           </ListItem>
         </List>
       </Modal>
-    </Container>
+      </Box>
+    </>
   );
 }
 

@@ -74,7 +74,7 @@ const handleCodigoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 
   return (
 
-<Box sx={{ boxShadow: '0 2px 4px rgba(0, 0, 0, 0.4)', borderRadius: '5px', margin: '4rem 1rem', paddingBottom:'1rem', backgroundImage: `url('/images/fondo.jpeg')`,
+<Box sx={{ boxShadow: '0 2px 4px rgba(0, 0, 0, 0.4)', borderRadius: '5px', width: {lg: '40%', md:'45%', sm: '75%', xs: '95%'} ,  margin: '4rem auto', paddingBottom:'1rem', backgroundImage: `url('/images/fondo.jpeg')`,
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat', }}>
   <Box
