@@ -35,36 +35,57 @@ function CountdownTimer({ deadline }: { deadline: Date }) {
   return (
     <>
       <Grid
-        container
-        height={'260px'}
-        sx={{ 
-          backgroundImage: `url('/images/fondo-invitacion.png')`,
-          backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          flexDirection: 'column',
-          position: 'relative',}}>
-        <Image
-          src='/images/imagenPrincipal.svg'
-          alt=''
-          width={300}
-          height={300}
-          style={{
-            color: '#206D7F',
-            position: 'absolute',
-            marginLeft:'1rem',
-            marginTop:'6rem'}}/>
-        <Image
-          src='/images/floresPrincipal.svg'
-          alt=''
-          width={360}
-          height={360}
-          style={{
-            color: '#206D7F',
-            position: 'absolute',
-            marginTop:'6rem'}}/>
+  container
+  height={'260px'}
+  sx={{
+    backgroundImage: `url('/images/fondo-invitacion.png')`,
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'column',
+    position: 'relative',
+  }}
+>
+  <div
+    style={{
+      position: 'absolute',
+      bottom: 0,
+      left: 0,
+      right: 0,
+      height: '20px',
+      background: 'linear-gradient(180deg, transparent, rgba(255, 255, 255, 1))',
+      zIndex: 1, // Ajusta el valor del z-index según tus necesidades
+    }}
+  />
+
+  <Image
+    src='/images/imagenPrincipal.svg'
+    alt=''
+    width={300}
+    height={300}
+    style={{
+      color: '#206D7F',
+      position: 'absolute',
+      marginLeft: '1rem',
+      marginTop: '6rem',
+      zIndex: 2, // Asegura que este componente esté por encima de la onda
+    }}
+  />
+
+  <Image
+    src='/images/floresPrincipal.svg'
+    alt=''
+    width={360}
+    height={360}
+    style={{
+      color: '#206D7F',
+      position: 'absolute',
+      marginTop: '6rem',
+      zIndex: 2, // Asegura que este componente esté por encima de la onda
+    }}
+  />
       </Grid>
       <Grid item xs={12}  className='textBible' textAlign={'center'}  display={'flex'} justifyContent={'center'} marginTop={8}>
         <Image src='/images/titulo.svg' alt='' width={380} height={100} style={{color:'#206D7F'}}></Image> 

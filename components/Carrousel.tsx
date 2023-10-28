@@ -1,4 +1,3 @@
-
 import Slider from 'react-slick';
 import { Box, Typography } from '@mui/material';
 import Image from 'next/image';
@@ -7,9 +6,16 @@ import React, { useState, useRef } from 'react';
 const sliderContainerStyles = {
   margin: '0px auto',
   backgroundImage: `url('/images/fondo-invitacion.png')`,
-  backgroundSize: 'cover',
-  backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'column',
+    position: 'relative',
+    
 };
+
+
 
 const imageStyles = {
   border: '1px solid',
@@ -50,14 +56,21 @@ function Carousel(): React.ReactNode {
   };
 
   return (
-    <>    
-      <Box style={sliderContainerStyles} >
+    <>   
+      <Box sx={sliderContainerStyles} >
+      <div
+        style={{
+          position: 'absolute',
+          bottom: 0,
+          left: 0,
+          right: 0,
+          height: '20px',
+          background: 'linear-gradient(180deg, transparent, rgba(255, 255, 255, 1))',
+          zIndex: 1,
+        }}
+      />
         <Box display={'flex'}  sx={{
-          justifyContent:'space-between', 
-          color:'#FFFFFF', 
-          backgroundImage: `url('/images/fondo-invitacion.png')`,
-          backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat',}}>
+          justifyContent:'space-between'}}>
           <Typography margin={2} fontFamily={'Inria_Sans'}  fontWeight='bold' fontSize={16} color={'#206D7F'} >GALERIA DE FOTOS</Typography>
           <Box>
             <Typography

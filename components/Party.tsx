@@ -40,33 +40,37 @@ function Party() {
     setMensajeModalIsOpen(false);
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const codigoIngresado = e.currentTarget.codigo.value;
+const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+  const codigoIngresado = e.currentTarget.codigo.value;
+  const invitado = invitados.find((invitado) => invitado.codigo === codigoIngresado);
+
+  if (invitado) {
+    console.log('Mensaje del invitado:', invitado.mensaje); 
+    setMensaje(invitado.mensaje);
+    setMensajeModalIsOpen(true);
+  } else {
+    alert('Código no válido');
+  }
+
+  closeModal();
+};
+
+const handleCodigoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const codigoIngresado = e.target.value;
+  setCodigoValido(false);
+
+  if (codigoIngresado.trim() !== '') {
     const invitado = invitados.find((invitado) => invitado.codigo === codigoIngresado);
-  
+
     if (invitado) {
       setMensaje(invitado.mensaje);
       setMensajeModalIsOpen(true);
     } else {
-      alert('Código no válido');
+      setMensaje('Código no válido');
     }
-  
-    closeModal();
-  };
-
-  const handleCodigoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const codigoIngresado = e.target.value;
-    setCodigoValido(false);
-  
-    if (codigoIngresado.trim() !== '') {
-      const invitado = invitados.find((invitado) => invitado.codigo === codigoIngresado);
-  
-      if (invitado) {
-        setCodigoValido(true);
-      }
-    }
-  };
+  }
+};
 
   return (
 
