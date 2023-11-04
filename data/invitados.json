@@ -1,32 +1,32 @@
 [
   {
     "id": 1,
-    "codigo": "FamiliaAular15122023",
+    "codigo": "FamiliaAular",
     "mensaje": "Familia Aular. Nos alegra poder contar con ustedes en este dia tan especial. Los esperamos para bailar toda la noche. Los casi celiacos y programadores tambien la pasan bien"
   },
   {
     "id": 2,
-    "codigo": "FamiliaBarros15122023",
+    "codigo": "FamiliaBarros",
     "mensaje": "Fatima y Miguel. Han sido un gran apoyo para nosotros desde siempre. Estamos contentos de que esten con nosotros en este dia tan especial.Gracias por todo lo que hacen por nosotros ¡Los queremos mucho!"
   },
   {
     "id": 3,
-    "codigo": "FamiliaSalamino15122023",
+    "codigo": "FamiliaSalamino",
     "mensaje": "Gus, Caro y Nachito. Estamos Felices de que esten con nosotros en este dia tan especial. Los esperamos...podríamos esperarlos en Monroe 2991 también XD"
   },
   {
       "id": 4,
-      "codigo": "FamiliaRodas15122023",
+      "codigo": "FamiliaRodas",
       "mensaje": "Her, Les y Ame. Han sido nuestra familia y amigos desde el dia 1 que comenzamos nuestra relacion. Asi que estamos muy felices de que puedan estar con nosotros este dia tan especial. Por mas partiditas juntos"
     },
     {
       "id": 5,
-      "codigo": "GalYNico15122023",
+      "codigo": "GalYNico",
       "mensaje": "Gala y Nico. Estamos muy felices de que esten con nosotros en este dia tan especial. Esperamos que con ustedes la fiesta nunca se apague. Si quieren les ponemos la de Maradó"
     },
     {
       "id": 6,
-      "codigo": "GianYJuampi15122023",
+      "codigo": "GianYJuampi",
       "mensaje": "Gianna y Juampi. Que felicidad que puedan estar con nosotros en este dia tan especial. Los esperamos para bailar toda la noche. No los queremos ver sentados"
     },
     {
@@ -36,37 +36,37 @@
     },
     {
       "id": 8,
-      "codigo": "FamiliaFiori15122023",
+      "codigo": "FamiliaFiori",
       "mensaje": "Isa, Clau y Fran. Estamos muy felices de que puedan estar con nosotros en este dia tan especial. Los esperamos. No hay conejo, pero hay comida rica"
     },
     {
       "id": 9,
-      "codigo": "Eli15122023",
+      "codigo": "Eli",
       "mensaje": "Eli estamos felices de que puedas acompañarnos a este dia tan especial. Preparate para bailar toda la noche. Te queremos siempre en la pista hemocha"
     },
     {
       "id": 10,
-      "codigo": "LiliYMigue15122023",
+      "codigo": "LiliYMigue",
       "mensaje": "Lili y Migue estamos muy felices de que puedan estar con nosotros en este dia tan especial. Los esperamos para bailar toda la noche. Unas de Lescano no pueden faltar"
     },
     {
       "id": 11,
-      "codigo": "DaniyColo15122023",
+      "codigo": "DaniyColo",
       "mensaje": "Dani y Colo estamos muy felices de que puedan estar con nosotros en este dia tan especial. Los esperamos para bailar toda la noche"
     },
     {
       "id": 12,
-      "codigo": "AgustinaMahli15122023",
+      "codigo": "AgustinaMahli",
       "mensaje": "Titi, estamos felices de que puedas acompañarnos a este dia tan especial. Preparate para bailar toda la noche. Representante oficial de La Plata"
     },
     {
       "id": 13,
-      "codigo": "FamiliaBande15122023",
+      "codigo": "FamiliaBande",
       "mensaje": "Pablo, Yeya y Tomi estamos muy felices de que puedan acompañarnos en este dia tan especial. Los esperamos. Por favor, sin accidentes"
     },
     {
       "id": 14,
-      "codigo": "FamiliaSilva15122023",
+      "codigo": "FamiliaSilva",
       "mensaje": "Karen y Diego estamos felices de que puedan acompañarnos en este dia tan especial. Los esperamos. Nos preparan el Fernet que nos prometieron"
     },
     {
@@ -81,7 +81,7 @@
     },
     {
       "id": 17,
-      "codigo": "MariaEster15122023",
+      "codigo": "MariaEster",
       "mensaje": "Maria Ester, estamos felices de que puedas acompañarnos a este dia tan especial. Preparate para bailar toda la noche"
     },
     {
@@ -91,92 +91,92 @@
     },
     {
       "id": 19,
-      "codigo": "LourdesTrompiz15122023",
+      "codigo": "Lourdes",
       "mensaje": "Lurdes Carolina. Gracias por confirmar tu asistencia. Estamos muy felices de que puedas estar con nosotros en este dia tan especial. Preparate para bailar toda la noche"
     },
     {
       "id": 20,
-      "codigo": "Chiquilina15122023",
+      "codigo": "Chiquilina",
       "mensaje": "Chiqui. Gracias por confirmar tu asistencia. Estamos muy felices de que puedas estar con nosotros en este dia tan especial. Preparate para bailar toda la noche"
     },
     {
       "id": 21,
-      "codigo": "EliuPerozo15122023",
+      "codigo": "Eliu",
       "mensaje": "Eliu. Gracias por confirmar tu asistencia. Estamos muy felices de que puedas estar con nosotros en este dia tan especial. Preparate para bailar toda la noche"
     },
     {
       "id": 22,
-      "codigo": "Steven15122023",
+      "codigo": "Steven",
       "mensaje": "Steven. Gracias por confirmar tu asistencia. Estamos muy felices de que puedas estar con nosotros en este dia tan especial. Preparate para bailar toda la noche"
     },
     {
       "id": 23,
-      "codigo": "FamiliaChacon15122023",
+      "codigo": "FamiliaChacon",
       "mensaje": "Daniel y Yusgle. La fiesta no estaria completa sin ustedes. Estamos felices de que puedan estar con nosotros en este dia tan especial. Preparense para bailar toda la noche"
     },
     {
       "id": 24,
-      "codigo": "GracielaLatouche15122023",
+      "codigo": "Graciela",
       "mensaje": "Gracielita querida. Estamos felices de que puedas estar con nosotros en este dia tan especial."
     },
     {
       "id": 25,
-      "codigo": "CarlosYMafer15122023",
+      "codigo": "Carlosymafer",
       "mensaje": "Carlos y Mafer. La fiesta no estaria completa sin ustedes. Estamos felices de que puedan estar con nosotros en este dia tan especial. Preparense para bailar toda la noche"
     },
     {
       "id": 26,
-      "codigo": "CarlosYNohemi15122023d",
+      "codigo": "Carlosynohemi",
       "mensaje": "Carlos y Nohemi estamos felices de que puedan acompañarnos en este dia tan especial. Los esperamos"
     },
     {
       "id": 27,
-      "codigo": "FamiliaSoler15122023",
+      "codigo": "FamiliaSoler",
       "mensaje": "Julio y Andre. Estamos felices de que puedan estar con nosotros en este dia tan especial. Los esperamos. Estupendo! Que los rulos no se detengan!"
     },
     {
       "id": 28,
-      "codigo": "",
-      "mensaje": ""
+      "codigo": "FamiliaMulki",
+      "mensaje": "Estamos felices de que puedan acompañarnos a este dia tan especial. Preparense para bailar toda la noche."
     },
     {
       "id": 29,
-      "codigo": "MicaYMelon15122023",
+      "codigo": "Micaymelon",
       "mensaje": "Mica y Melon. No estaria la fiesta completa sin ustedes. Estamos felices de que puedan estar con nosotros en este dia tan especial. Preparense para bailar toda la noche"
     },
     {
       "id": 30,
-      "codigo": "Ronald1512203",
+      "codigo": "Ronald",
       "mensaje": "Ronald estamos felices de que puedas estar con nosotros en este dia tan especial. Te esperamos a ti y a tu esposa para que bailemos toda la noche"
     },
     {
       "id": 31,
-      "codigo": "Joao15122023",
+      "codigo": "Joao",
       "mensaje": "No estaria la fiesta completa sin Joao. Asi que estamos muy felices de que puedas acompañarnos en este dia tan especial. Preparate para bailar toda la noche"
     },
     {
       "id": 32,
-      "codigo": "TamiGallardo15122023",
-      "mensaje": "Tami. Estamos felices de que puedan estar con nosotros en este dia tan especial. Los esperamos"
+      "codigo": "MorenayTizi",
+      "mensaje": "Estamos felices de que puedan acompañarnos a este dia tan especial. Preparate para bailar toda la noche."
     },
     {
       "id": 33,
-      "codigo": "Agus15122023",
+      "codigo": "Agus",
       "mensaje": "Amigo querido estoy feliz de que puedas estar en este dia tan especial para mi. Preparate para tomar y bailar toda la noche. NO OLVIDAR: 0 DROGAS xD"
     },
     {
       "id": 34,
-      "codigo": "MatiCogote15122023",
+      "codigo": "Maticogote",
       "mensaje": "Mati Cogote estoy feliz de que puedas estar en este dia tan especial para mi. Preparate para tomar y bailar toda la noche. NO OLVIDAR: 0 DROGAS xD"
     },
     {
       "id": 35,
-      "codigo": "Gonzalo15122023",
+      "codigo": "Chalo",
       "mensaje": "Chalo estoy feliz de que puedas estar en este dia tan especial para mi. Preparate para tomar y bailar toda la noche. NO OLVIDAR: 0 DROGAS xD"
     },
     {
       "id": 36,
-      "codigo": "Lauti15122023",
+      "codigo": "Lauti",
       "mensaje":"Amigo querido estoy feliz de que puedas estar en este dia tan especial para mi. Preparate para tomar y bailar toda la noche. NO OLVIDAR: 0 DROGAS xD"
     }
 ]

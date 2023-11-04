@@ -46,9 +46,7 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
   const invitado = invitados.find((invitado) => invitado.codigo === codigoIngresado);
 
   if (invitado) {
-    console.log('Mensaje del invitado:', invitado.mensaje); 
-    setMensaje(invitado.mensaje);
-    setMensajeModalIsOpen(true);
+    setMensajeModalIsOpen(false);
   } else {
     alert('Código no válido');
   }
@@ -60,15 +58,12 @@ const handleCodigoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
   const codigoIngresado = e.target.value;
   setCodigoValido(false);
 
-  if (codigoIngresado.trim() !== '') {
-    const invitado = invitados.find((invitado) => invitado.codigo === codigoIngresado);
+  const invitado = invitados.find((invitado) => invitado.codigo === codigoIngresado);
+  setCodigoValido(!!invitado);
 
-    if (invitado) {
-      setMensaje(invitado.mensaje);
-      setMensajeModalIsOpen(true);
-    } else {
-      setMensaje('Código no válido');
-    }
+  if (invitado) {
+    setMensaje(invitado.mensaje);
+    setMensajeModalIsOpen(true);
   }
 };
 
@@ -135,6 +130,7 @@ const handleCodigoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         backgroundColor:'#D38D8D', 
         margin:'1rem auto', 
         display:'flex', 
+        fontSize:'1.4rem',
         textTransform: 'none', 
         textDecoration:'none',
         padding:'.5rem 3rem'}}> 
@@ -219,8 +215,7 @@ const handleCodigoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         maxHeight: '80%', 
         margin: '0 auto',
         padding: '20px'},}}>
-        <Typography variant='h4' color='#D38D8D'>Asistencia Confirmada</Typography>
-        <Typography variant='body1'>{mensaje}</Typography>
+        <Typography variant='body1' margin={2} fontWeight='bold' sx={{color: '#18264D', textAlign:'justify', fontFamily:'Inknut_Antiqua',}}>{mensaje}</Typography>
       </Modal>
     </Box>
     </Box>

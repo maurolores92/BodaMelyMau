@@ -56,7 +56,7 @@ function CountdownTimer({ deadline }: { deadline: Date }) {
       right: 0,
       height: '20px',
       background: 'linear-gradient(180deg, transparent, rgba(255, 255, 255, 1))',
-      zIndex: 1, // Ajusta el valor del z-index según tus necesidades
+      zIndex: 1, 
     }}
   />
 

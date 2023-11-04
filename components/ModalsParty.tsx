@@ -7,6 +7,7 @@ import { Icon } from '@iconify/react';
 function ModalsParty() {
   const [cancionModalIsOpen, setCancionModalIsOpen] = useState(false);
   const [infoModalIsOpen, setInfoModalIsOpen] = useState(false);
+  const [gifModalIsOpen, setGifModalIsOpen] = useState(false);
 
   const openCancionModal = () => {
     setCancionModalIsOpen(true);
@@ -22,6 +23,14 @@ function ModalsParty() {
 
   const closeInfoModal = () => {
     setInfoModalIsOpen(false);
+  };
+
+  const openGifModal = () => {
+    setGifModalIsOpen(true);
+  };
+
+  const closeGifModal = () => {
+    setGifModalIsOpen(false);
   };
 
   const mercadolibreLink = 'ENLACE_DE_PAGO_DE_MERCADOLIBRE';
@@ -41,7 +50,7 @@ function ModalsParty() {
           height:'20px',
           }}
         />
-        <Box sx={{width:'100%', textAlign:'center'}}>
+        <Box sx={{width:'100%', textAlign:'center', marginTop:'2rem'}}>
           <Typography variant='body1' fontFamily='Inria_Sans' fontWeight='bold' color={'#206D7F'} >HAGAMOS JUNTOS UNA FIESTA EPICA. AQUI LOS DETALLES A TENER EN CUENTA</Typography>
         </Box>
       <Box sx={{display: {lg: 'flex', md:'flex', sm: '75%', xs: '95%'}}}>
@@ -74,7 +83,7 @@ function ModalsParty() {
                 backgroundRepeat: 'no-repeat',
               border: '1px solid #18264D', 
               borderRadius: '5px', 
-              width: '80%', 
+              width: '70%', 
               maxWidth: '400px',
               maxHeight: '60%', 
               margin: '0 auto',
@@ -113,7 +122,7 @@ function ModalsParty() {
             <CardContent>
               <Typography variant='body1' fontWeight='bold' color='#AF0F1B' fontSize={14}>REGALOS</Typography>
               <Typography variant='body2' fontWeight='bold' marginBottom={1.5} fontSize={13}>Nuestro mejor regalo es su presencia en este dia tan especial, pero si deseas colaborar con nuestra luna de miel...</Typography>
-              <Button  onClick={() => window.location.href = mercadolibreLink} sx={{ background: '#FFFFFF', border:'#AF0F1B 1px solid', color:'#AF0F1B', textDecoration:'none', margin:' 0 auto', display:'flex', textTransform: 'none', fontWeight:'bold'}}>
+              <Button  onClick={openGifModal} sx={{ background: '#FFFFFF', border:'#AF0F1B 1px solid', color:'#AF0F1B', textDecoration:'none', margin:' 0 auto', display:'flex', textTransform: 'none', fontWeight:'bold'}}>
                 <Icon icon="ion:gift" style={{fontSize:'1.8rem'}}/>  Pulsa aqui
               </Button>
             </CardContent>
@@ -177,7 +186,50 @@ function ModalsParty() {
           </ListItem>
         </List>
       </Modal>
+      <Modal
+        isOpen={gifModalIsOpen}
+        onRequestClose={closeGifModal}
+        contentLabel="Modal de Tips"
+        style={{
+          overlay: {
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',},
+          content: {
+              backgroundImage: `url('/images/fondo2.jpeg')`,
+                backgroundSize: 'cover',
+                backgroundRepeat: 'no-repeat',
+            border: '1px solid #18264D', 
+            borderRadius: '5px', 
+            width: '70%', 
+            maxWidth: '400px',
+            maxHeight: '80%', 
+            margin: '0 auto',
+            padding: '20px', 
+          },}}>
+        <span className="close-modal" onClick={closeGifModal}> X </span>
+        <Typography variant='h5' textAlign={'center'} fontFamily={'Inknut_Antiqua'} fontWeight='bold' color='#18264D'>Información de interés</Typography>
+        <Box sx={{display:'flex', flexDirection:'column', textAlign:'justify', margin:'1rem'}}>
+          <Box margin={1}>
+            <Typography variant='h6' fontWeight='Bold' color='#18264D' fontFamily={'Inknut_Antiqua'} >MercadoPago</Typography>
+            <Typography variant='body1' fontWeight='Bold' fontFamily={'Inknut_Antiqua'} >Alias: melibarros.mp <br/>CVU:0000003100095189558112</Typography>
+          </Box>
+          <Box margin={1}>
+            <Typography variant='h6' fontWeight='Bold' color='#18264D' fontFamily={'Inknut_Antiqua'} >UALA</Typography>
+            <Typography variant='body1' fontWeight='Bold' fontFamily={'Inknut_Antiqua'} >Alias: melisaabarros96.uala <br/>CBU:0000007900273991150656</Typography>
+          </Box>
+          <Box margin={1}>
+            <Typography variant='h6' fontWeight='Bold' color='#18264D' fontFamily={'Inknut_Antiqua'} >BINANCE</Typography>
+            <Typography variant='body1' fontWeight='Bold' fontFamily={'Inknut_Antiqua'} >Usuario: maurolores92 <br/>ID:213886969 <br/> mail:maurolores1992@gmail.com</Typography>
+          </Box>
+          <Box margin={1}>
+            <Typography variant='h6' fontWeight='Bold' color='#18264D' fontFamily={'Inknut_Antiqua'} >Lemon Cash</Typography>
+            <Typography variant='body1' fontWeight='Bold' fontFamily={'Inknut_Antiqua'} >$lemontag: $maurolores92  <br/>CVU: 0000168300000014062476  <br/> Alias: maurolores92.lemon </Typography>
+          </Box>
+        </Box>
+      </Modal>
       </Box>
+
     </>
   );
 }

@@ -109,12 +109,13 @@ function Conference() {
               fontFamily: 'Inknut_Antiqua',
               fontWeight: 'bold',
               backgroundColor: '#18264D',
-              margin: '1rem auto',
-              display: 'flex',
-              textTransform: 'none',
-              padding: '.5rem 3rem',
-              textDecoration: 'none',
-              color: 'white'}}> 
+              color:'white',
+              margin:'1rem auto', 
+              display:'flex', 
+              fontSize:'1.4rem',
+              textTransform: 'none', 
+              textDecoration:'none',
+              padding:'.5rem 3rem'}}>
               Confirmar Asistencia
           </Button>
           <Modal

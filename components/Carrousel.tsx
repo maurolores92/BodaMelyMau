@@ -26,12 +26,14 @@ const imageStyles = {
 };
 
 const images = [
-  { src: '/images/book/1.jpg', width: 280, height: 300 },
-  { src: '/images/book/2.jpg', width: 280, height: 300 },
-  { src: '/images/book/3.jpg', width: 280, height: 300 },
-  { src: '/images/book/4.jpg', width: 280, height: 300 },
-  { src: '/images/book/5.jpg', width: 280, height: 300 },
-  { src: '/images/book/6.jpg', width: 280, height: 300 },
+  { src: '/images/book/1.jpg', width: 230, height: 270 },
+  { src: '/images/book/2.jpg', width: 230, height: 270 },
+  { src: '/images/book/3.jpg', width: 230, height: 270 },
+  { src: '/images/book/4.jpg', width: 230, height: 270 },
+  { src: '/images/book/5.jpg', width: 230, height: 270 },
+  { src: '/images/book/6.jpg', width: 230, height: 270 },
+  { src: '/images/book/7.jpg', width: 230, height: 270 },
+  { src: '/images/book/8.jpg', width: 230, height: 270 },
 ];
 
 function Carousel(): React.ReactNode {
@@ -69,7 +71,7 @@ function Carousel(): React.ReactNode {
     settings.slidesToScroll = 1;
   } else if (isMobile) {
     // Configuración para dispositivos móviles
-    settings.slidesToShow = 1.2;
+    settings.slidesToShow = 1.6;
     settings.slidesToScroll = 1;
   
   }
@@ -118,7 +120,7 @@ function Carousel(): React.ReactNode {
           ))}
         </Slider>
         <Box display={'flex'}  sx={{justifyContent:'space-between', color:'#FFFFFF'}}>
-          <Typography fontFamily={'Inria_Sans'} sx={{margin:'1rem auto'}}  fontWeight='bold' fontSize={16} color={'#206D7F'} >VER GALERIA COMPLETA</Typography>
+          
         </Box>
         <div
     style={{
