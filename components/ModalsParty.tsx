@@ -2,12 +2,15 @@ import { Box, Button, Typography, Link, List, ListItem, ListItemText, TextField,
 import React, { useState } from 'react';
 import Modal from 'react-modal';
 import { Icon } from '@iconify/react';
+import Lightbox from 'react-image-lightbox';
+import 'react-image-lightbox/style.css';
 
 
 function ModalsParty() {
   const [cancionModalIsOpen, setCancionModalIsOpen] = useState(false);
   const [infoModalIsOpen, setInfoModalIsOpen] = useState(false);
   const [gifModalIsOpen, setGifModalIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const openCancionModal = () => {
     setCancionModalIsOpen(true);
@@ -33,7 +36,14 @@ function ModalsParty() {
     setGifModalIsOpen(false);
   };
 
-  const mercadolibreLink = 'ENLACE_DE_PAGO_DE_MERCADOLIBRE';
+  const handleOpenLightbox = () => {
+    setIsOpen(true);
+  };
+
+  const handleCloseLightbox = () => {
+    setIsOpen(false);
+  };
+
 
   return (
     <>
@@ -179,11 +189,29 @@ function ModalsParty() {
             primary={
               <span>
                 Les dejamos una mejor ruta para llegar al salón de fiestas{' '}
-                <Link href="#" style={{ textDecoration: 'none', color: '#F48FB1' }}>
+                <Link href="https://goo.gl/maps/g8dvhf2cweLHJpi59" style={{ textDecoration: 'none', color: '#F48FB1' }}>
                   Google Maps
                 </Link>
               </span>}/>
           </ListItem>
+          <ListItem>
+  {isOpen && (
+    <Lightbox
+      mainSrc={`/images/Ruta.png`} // Ruta absoluta a la imagen
+      onCloseRequest={handleCloseLightbox}
+    />
+  )}
+  <ListItemText
+    primary={
+      <span>
+        En caso de no poder utilizar Google Maps les dejamos un mapa{' '}
+        <a href="#" style={{ textDecoration: 'none', color: '#F48FB1' }} onClick={handleOpenLightbox}>
+          Ver Mapa
+        </a>
+      </span>
+    }
+  />
+</ListItem>
         </List>
       </Modal>
       <Modal

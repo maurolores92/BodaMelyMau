@@ -26,14 +26,15 @@ const imageStyles = {
 };
 
 const images = [
-  { src: '/images/book/1.jpg', width: 230, height: 270 },
-  { src: '/images/book/2.jpg', width: 230, height: 270 },
-  { src: '/images/book/3.jpg', width: 230, height: 270 },
-  { src: '/images/book/4.jpg', width: 230, height: 270 },
+  { src: '/images/book/1.svg', width: 230, height: 270 },
+  { src: '/images/book/2.svg', width: 230, height: 270 },
+  { src: '/images/book/3.svg', width: 230, height: 270 },
+  { src: '/images/book/4.svg', width: 230, height: 270 },
   { src: '/images/book/5.jpg', width: 230, height: 270 },
   { src: '/images/book/6.jpg', width: 230, height: 270 },
   { src: '/images/book/7.jpg', width: 230, height: 270 },
-  { src: '/images/book/8.jpg', width: 230, height: 270 },
+  { src: '/images/book/8.svg', width: 230, height: 270 },
+  { src: '/images/book/9.svg', width: 230, height: 270 },
 ];
 
 function Carousel(): React.ReactNode {
@@ -130,7 +131,7 @@ function Carousel(): React.ReactNode {
       right: 0,
       height: '20px',
       background: 'linear-gradient(180deg, transparent, rgba(255, 255, 255, 1))',
-      zIndex: 1, // Ajusta el valor del z-index según tus necesidades
+      zIndex: 1,
     }}
   />
       </Box>
