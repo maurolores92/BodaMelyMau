@@ -26,15 +26,13 @@ const imageStyles = {
 };
 
 const images = [
-  { src: '/images/book/1.svg', width: 230, height: 270 },
-  { src: '/images/book/2.svg', width: 230, height: 270 },
-  { src: '/images/book/3.svg', width: 230, height: 270 },
-  { src: '/images/book/4.svg', width: 230, height: 270 },
-  { src: '/images/book/5.jpg', width: 230, height: 270 },
-  { src: '/images/book/6.jpg', width: 230, height: 270 },
-  { src: '/images/book/7.jpg', width: 230, height: 270 },
-  { src: '/images/book/8.svg', width: 230, height: 270 },
-  { src: '/images/book/9.svg', width: 230, height: 270 },
+  { src: '/images/book/1.svg', width: 250, height: 270 },
+  { src: '/images/book/2.svg', width: 250, height: 270 },
+  { src: '/images/book/3.svg', width: 250, height: 270 },
+  { src: '/images/book/4.svg', width: 250, height: 270 },
+  { src: '/images/book/5.svg', width: 250, height: 270 },
+  { src: '/images/book/6.svg', width: 250, height: 270 },
+  { src: '/images/book/8.svg', width: 250, height: 270 },
 ];
 
 function Carousel(): React.ReactNode {
@@ -72,7 +70,7 @@ function Carousel(): React.ReactNode {
     settings.slidesToScroll = 1;
   } else if (isMobile) {
     // Configuración para dispositivos móviles
-    settings.slidesToShow = 1.6;
+    settings.slidesToShow = 2;
     settings.slidesToScroll = 1;
   
   }

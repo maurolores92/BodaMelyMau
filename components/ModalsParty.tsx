@@ -197,7 +197,7 @@ function ModalsParty() {
           <ListItem>
   {isOpen && (
     <Lightbox
-      mainSrc={`/images/Ruta.png`} // Ruta absoluta a la imagen
+      mainSrc={`/images/Ruta.png`} 
       onCloseRequest={handleCloseLightbox}
     />
   )}
