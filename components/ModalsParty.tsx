@@ -2,8 +2,6 @@ import { Box, Button, Typography, Link, List, ListItem, ListItemText, TextField,
 import React, { useState } from 'react';
 import Modal from 'react-modal';
 import { Icon } from '@iconify/react';
-import Lightbox from 'react-image-lightbox';
-import 'react-image-lightbox/style.css';
 
 
 function ModalsParty() {
@@ -195,12 +193,6 @@ function ModalsParty() {
               </span>}/>
           </ListItem>
           <ListItem>
-  {isOpen && (
-    <Lightbox
-      mainSrc={`/images/Ruta.png`} 
-      onCloseRequest={handleCloseLightbox}
-    />
-  )}
   <ListItemText
     primary={
       <span>
