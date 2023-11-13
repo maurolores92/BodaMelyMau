@@ -1,4 +1,4 @@
-import { Card, CardContent, Typography, Box, Button  } from '@mui/material';
+import { Card, CardContent, Typography, Box, Button, Divider  } from '@mui/material';
 import React, { useState, FormEvent  } from 'react';
 import Modal from 'react-modal';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
@@ -30,9 +30,9 @@ function Conference() {
 
 
   return (
-    <Box>
+    <Box >
       <Box sx={{margin:'2rem auto', textAlign:'center'}}>
-        <Box>
+        <Box sx={{backgroundColor:'white', width:'130px', height:'130px', borderRadius:'20rem', margin:'0 auto', border:'1px solid #AE739E'}}>
           <Image
             src='/images/conferencia.png'
             alt=''
@@ -40,48 +40,25 @@ function Conference() {
             height={100}
             style={{
               color: '#206D7F',
+              marginTop:'10px',
+              
               }}/>
           </Box>
         <Box>
-          <Typography fontFamily="WindSong" fontSize={40} textAlign='center' color="#002434">Conferencia de Boda</Typography>
+          <Typography fontFamily="WindSong" fontSize={40} textAlign='center' color="#002434" fontWeight={900}>Conferencia de Boda</Typography>
           </Box>
       
         
       </Box>
-      <Box textAlign="center" fontFamily='Inria_Sans'>
-        <Typography variant='body2' fontWeight='bold'>Viernes 15/12/2023</Typography>
-        <Typography variant='body2' fontWeight='bold'>Hora 20:00 Hs</Typography>
-        <Typography variant='body2' fontWeight='bold' fontSize={14}>Salon del Reino de los Testigos de Jehova</Typography>
-        <Typography variant='body2' fontWeight='bold' fontSize={14}>Cramer 2880, Belgrano.</Typography>
-        <Button onClick={openMapsConferencia} sx={{ background: ' #AE739E;', border:' #AE739E 1px solid', color:'white', textDecoration:'none', display:'flex', textTransform: 'none', fontWeight:'bold', margin:'.8rem auto 0', padding:'5px 2rem'}}>
-          <LocationOnIcon/>Como llegar
-        </Button>
-      </Box>
-
-      <Box sx={{margin:'3rem auto 0 auto', textAlign:'center'}}>
-        <Box>
-          <Image
-            src='/images/fiesta.png'
-            alt=''
-            width={100}
-            height={100}
-            style={{
-              color: '#206D7F',
-              }}/>
-          </Box>
-        <Box>
-          <Typography fontFamily="WindSong" fontSize={40} textAlign='center' color="#002434">Fiesta</Typography>
-          </Box>
-      
-        
-      </Box>
-      <Box textAlign="center" >
-        <Typography variant='body2' fontWeight='bold' fontFamily='Inria_Sans'>Viernes 15/12/2023</Typography>
-        <Typography variant='body2' fontWeight='bold' fontFamily='Inria_Sans'>Hora 20:00 Hs</Typography>
-        <Typography variant='body2' fontWeight='bold' fontSize={14} fontFamily='Inria_Sans'>Salon del Reino de los Testigos de Jehova</Typography>
-        <Typography variant='body2' fontWeight='bold' fontSize={14} fontFamily='Inria_Sans'>Cramer 2880, Belgrano.</Typography>
-        
-        <Button onClick={openMapsConferencia} sx={{ background: ' #AE739E;', border:' #AE739E 1px solid', color:'white', textDecoration:'none', display:'flex', textTransform: 'none', fontWeight:'bold', margin:'.8rem auto 0', padding:'5px 2rem'}}>
+      <Box textAlign="center">
+        <Box sx={{display:'flex', justifyContent:'space-evenly', margin:'2rem auto'}}> 
+        <Typography variant='body2' fontWeight='bold' fontSize={24} color="#AE739E">15 Dic</Typography>
+        <Divider orientation="vertical" flexItem color="#AE739E"/>
+        <Typography variant='body2' fontWeight='bold' fontSize={24} color="#AE739E">20:00 Hs</Typography>
+        </Box>
+        <Typography variant='body2' fontSize={24} fontWeight='bold' fontFamily='Dancing Script'>Salon del Reino de los Testigos de Jehova</Typography>
+        <Typography variant='body2' fontSize={24} fontWeight='bold' fontFamily='Dancing Script'>Cramer 2880, Belgrano.</Typography>
+        <Button onClick={openMapsConferencia}  sx={{ background: ' #AE739E;', border:' #AE739E 1px solid', color:'white', textDecoration:'none', display:'flex', textTransform: 'none', fontWeight:'bold', margin:'.8rem auto 0', padding:'5px 2rem',  borderRadius: '2rem'}}>
           <LocationOnIcon/>Como llegar
         </Button>
       </Box>

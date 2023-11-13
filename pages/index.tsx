@@ -10,16 +10,22 @@ const deadline = new Date('2023-12-15T20:00:00');
 
 function Home() {
   return (
-    < >
+    <Box  
+    sx={{
+    background:'url(/images/fondo-invitacion.png)',
+    backgroundPosition: 'center',
+    backgroundAttachment: 'fixed',
+    height: '100%',
+    overflowX: 'hidden',
+    backgroundRepeat:'repeat'}}>
     <CountdownTimer deadline={deadline}/>
-    {/* <Carousel/> */}
     <Box sx={{display: {lg: 'flex', md:'flex', sm: 'column'}}}>
     <Conference/>
+    <Party/>
     </Box>
-    
-    
+    <Carousel/>
     <ModalsParty/>
-    </>
+    </Box>
   );
 }
 

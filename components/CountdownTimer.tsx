@@ -38,9 +38,6 @@ function CountdownTimer({ deadline }: { deadline: Date }) {
   container
   height={'260px'}
   sx={{
-    backgroundImage: `url('/images/fondo-invitacion.png')`,
-    backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
@@ -48,17 +45,7 @@ function CountdownTimer({ deadline }: { deadline: Date }) {
     position: 'relative',
   }}
 >
-  <div
-    style={{
-      position: 'absolute',
-      bottom: 0,
-      left: 0,
-      right: 0,
-      height: '20px',
-      background: 'linear-gradient(180deg, transparent, rgba(255, 255, 255, 1))',
-      zIndex: 1, 
-    }}
-  />
+ 
 
   <Image
     src='/images/imagenPrincipal.svg'
@@ -70,7 +57,7 @@ function CountdownTimer({ deadline }: { deadline: Date }) {
       position: 'absolute',
       marginLeft: '1rem',
       marginTop: '6rem',
-      zIndex: 2, // Asegura que este componente esté por encima de la onda
+      zIndex: 2,
     }}
   />
 
@@ -83,7 +70,7 @@ function CountdownTimer({ deadline }: { deadline: Date }) {
       color: '#206D7F',
       position: 'absolute',
       marginTop: '6rem',
-      zIndex: 2, // Asegura que este componente esté por encima de la onda
+      zIndex: 2, 
     }}
   />
       </Grid>

@@ -7,13 +7,6 @@ import { useMediaQuery } from '@mui/material';
 
 const sliderContainerStyles = {
   margin: '0px auto',
-  backgroundImage: `url('/images/fondo-invitacion.png')`,
-    backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat',
-    justifyContent: 'center',
-    alignItems: 'center',
-    flexDirection: 'column',
-    position: 'relative',
     
 };
 
@@ -79,15 +72,11 @@ function Carousel(): React.ReactNode {
       <Box sx={sliderContainerStyles} >
       
       <Box
-        sx={{ background: 'linear-gradient(0deg, transparent, rgba(255, 255, 255, 1))',
-        zIndex: 1,
-        borderRadius: '5px 5px 0 0',
+        sx={{
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        height:'20px',
-        flexDirection: 'column',
-        position: 'relative',}}
+        flexDirection: 'column',}}
         />
         <Box display={'flex'}  sx={{
           justifyContent:'space-between'}}>
@@ -121,17 +110,6 @@ function Carousel(): React.ReactNode {
         <Box display={'flex'}  sx={{justifyContent:'space-between', color:'#FFFFFF'}}>
           
         </Box>
-        <div
-    style={{
-      position: 'absolute',
-      bottom: 0,
-      left: 0,
-      right: 0,
-      height: '20px',
-      background: 'linear-gradient(180deg, transparent, rgba(255, 255, 255, 1))',
-      zIndex: 1,
-    }}
-  />
       </Box>
     </>
   );

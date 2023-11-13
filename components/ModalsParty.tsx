@@ -46,18 +46,8 @@ function ModalsParty() {
   return (
     <>
     
-      <Box sx={{
-        backgroundImage: `url('/images/fondo-invitacion.png')`,
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
-        flexDirection: 'column',
-        position: 'relative',}}>
-        <Box
-          sx={{ 
-          background: 'linear-gradient(0deg, transparent, rgba(255, 255, 255, 1))',
-          height:'20px',
-          }}
-        />
+      <Box>
+        
         <Box sx={{width:'100%', textAlign:'center', marginTop:'2rem'}}>
           <Typography variant='body1' fontFamily='Inria_Sans' fontWeight='bold' color={'#206D7F'} >HAGAMOS JUNTOS UNA FIESTA EPICA. AQUI LOS DETALLES A TENER EN CUENTA</Typography>
         </Box>
