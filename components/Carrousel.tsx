@@ -4,13 +4,10 @@ import Image from 'next/image';
 import React, { useState, useRef } from 'react';
 import { useMediaQuery } from '@mui/material';
 
-
 const sliderContainerStyles = {
   margin: '0px auto',
     
 };
-
-
 
 const imageStyles = {
   border: '1px solid',

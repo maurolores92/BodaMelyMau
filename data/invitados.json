@@ -188,5 +188,26 @@
       "id": 38,
       "codigo": "Franco",
       "mensaje":"Amigo querido estoy feliz de que puedas estar en este dia tan especial para mi. Preparate para tomar y bailar toda la noche."
+    },
+    {
+      "id": 39,
+      "codigo": "FamiliaRuffinelli",
+      "mensaje":"Pau, Clau, Nico y Mica estamos felices de que esten con nosotros en este dia tan especial! Los esperamos, o nos esperan ustedes por Santa Clara"
+    },
+    {
+      "id": 40,
+      "codigo": "FamiliaLores",
+      "mensaje":"Nada me haria mas feliz que ver tener a toda mi familia en esta ocasion tan importante en mi vida. Lastimosamente no se puede, pero estoy seguro de que estaran de manera virtual por llamada o conectados por zoom. Los extraño mucho a todos y se que pronto nos volveremos a ver. Los quiero mucho a todos, a mis tias bellas, y a mis primos queridos. "
+    },
+    {
+      "id": 41,
+      "codigo": "FamiliaPartida",
+      "mensaje":"Nada me haria mas feliz que ver tener a toda mi familia en esta ocasion tan importante en mi vida. Lastimosamente no se puede, pero estoy seguro de que estaran de manera virtual por llamada o conectados por zoom. Los extraño mucho a todos y se que pronto nos volveremos a ver. Los quiero mucho a todos, a mis tias bellas, y a mis primos queridos y mi abuela bella."
+    },
+    {
+      "id": 42,
+      "codigo": "Rosnely",
+      "mensaje":"Nada me haria mas feliz que pudieras estar en este momento tan importante de mi vida. Lastimosamente no se puede, pero estoy seguro de que estaras de manera virtual por llamada o conectada por zoom. Te extraño mucho a ti  a Franco y a mi Fabi, pero estoy seguro de que pronto nos volveremos a ver. Los quiero mucho a todos."
     }
+
 ]

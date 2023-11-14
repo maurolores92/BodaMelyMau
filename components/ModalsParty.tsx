@@ -1,15 +1,13 @@
-import { Box, Button, Typography, Link, List, ListItem, ListItemText, TextField, Card, CardContent } from '@mui/material';
+import { Box, Button, Typography, List, ListItem, ListItemText, TextField, Card, CardContent } from '@mui/material';
 import React, { useState } from 'react';
 import Modal from 'react-modal';
 import { Icon } from '@iconify/react';
-import Lightbox from 'react-image-lightbox';
 
 
 function ModalsParty() {
   const [cancionModalIsOpen, setCancionModalIsOpen] = useState(false);
   const [infoModalIsOpen, setInfoModalIsOpen] = useState(false);
   const [gifModalIsOpen, setGifModalIsOpen] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
 
   const openCancionModal = () => {
     setCancionModalIsOpen(true);
@@ -35,14 +33,10 @@ function ModalsParty() {
     setGifModalIsOpen(false);
   };
 
-  const handleOpenLightbox = () => {
-    setIsOpen(true);
+  const handleOpenImage = () => {
+    const imageUrl = '/images/ruta.png'; // Reemplaza con la ruta correcta de tu imagen
+    window.open(imageUrl, '_blank');
   };
-
-  const handleCloseLightbox = () => {
-    setIsOpen(false);
-  };
-
 
   return (
     <>
@@ -171,31 +165,25 @@ function ModalsParty() {
         <ListItem>
           <ListItemText primary="Si eres celiaco, vegano o vegetariano haznoslo saber, asi te preparamos un menu especial" />
         </ListItem>
-        <ListItem>
-          {isOpen && (
-            <Lightbox
-              mainSrc={`/images/Ruta.png`} // Ruta absoluta a la imagen
-              onCloseRequest={handleCloseLightbox}
-            />
-          )}
-          <ListItemText
-            primary={
-              <span>
-                Al mismo tiempo les dejamos una imagen con la Ruta por si no tienen Google Maps{' '}
-                <a href="#" style={{ textDecoration: 'none', color: '#F48FB1' }} onClick={handleOpenLightbox}>
-                  Ver imagen
-                </a>
-              </span>
-            }
-          />
-        </ListItem>
           <ListItem>
   <ListItemText
     primary={
       <span>
         En caso de no poder utilizar Google Maps les dejamos un mapa{' '}
-        <a href="#" style={{ textDecoration: 'none', color: '#F48FB1' }} onClick={handleOpenLightbox}>
+        <a href="#" style={{ textDecoration: 'none', color: '#F48FB1' }} onClick={handleOpenImage}>
           Ver Mapa
+        </a>
+      </span>
+    }
+  />
+</ListItem>
+<ListItem>
+  <ListItemText
+    primary={
+      <span>
+        Les dejamos una mejor ruta para llegar al salon de fiesta{' '}
+        <a href="https://goo.gl/maps/g8dvhf2cweLHJpi59" style={{ textDecoration: 'none', color: '#F48FB1' }}>
+          Google Maps
         </a>
       </span>
     }

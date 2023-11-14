@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Typography from '@mui/material/Typography';
-import { Box, Container, Grid } from '@mui/material';
+import {Grid } from '@mui/material';
 import Image from 'next/image';
 
 function CountdownTimer({ deadline }: { deadline: Date }) {
@@ -45,8 +45,7 @@ function CountdownTimer({ deadline }: { deadline: Date }) {
     position: 'relative',
   }}
 >
- 
-
+  
   <Image
     src='/images/imagenPrincipal.svg'
     alt=''

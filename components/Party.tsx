@@ -1,12 +1,9 @@
 import invitados from '../data/invitados.json' ;
-import {CardContent, Typography, Box, Button, Divider  } from '@mui/material';
+import {Typography, Box, Button, Divider  } from '@mui/material';
 import React, { useState } from 'react';
 import Modal from 'react-modal';
-import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import Image from 'next/image';
-import { Carousel } from 'react-responsive-carousel';
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { TextField } from '@mui/material';
 import CheckIcon from '@mui/icons-material/Check';
 import ClearIcon from '@mui/icons-material/Clear';
@@ -24,35 +21,40 @@ function Party() {
     window.open(mapsUrl, "_blank");
   };
 
-  const openModal = () => {
-    setModalIsOpen(true);
-  };
+  const openModal = () => { setModalIsOpen(true); };
+  const closeModal = () => { setModalIsOpen(false); };
+  const openMensajeModal = () => { setMensajeModalIsOpen(true); };
+  const closeMensajeModal = () => { setMensajeModalIsOpen(false); };
 
-  const closeModal = () => {
-    setModalIsOpen(false);
-  };
-
-  const openMensajeModal = () => {
-    setMensajeModalIsOpen(true);
-  };
-
-  const closeMensajeModal = () => {
-    setMensajeModalIsOpen(false);
-  };
-
-const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+const handleSubmit = async(e: React.FormEvent<HTMLFormElement>) => {
   e.preventDefault();
   const codigoIngresado = e.currentTarget.codigo.value;
+
+  setMensajeModalIsOpen(false);
+  const response = await fetch('/php/asistenciaFiesta.php', {
+    method: 'POST',
+    headers: {
+      'content-type': 'application/json;charset=UTF-8',
+    },
+    body: JSON.stringify({
+      nombre : e.currentTarget.nombre.value,
+      codigo : e.currentTarget.codigo.value,
+      datoImportante : e.currentTarget.datoImportante.value
+    }),
+  })
   const invitado = invitados.find((invitado) => invitado.codigo === codigoIngresado);
 
-  if (invitado) {
-    setMensajeModalIsOpen(false);
+  if (response.ok && invitado) {
+    setMensaje(invitado.mensaje);
+    setMensajeModalIsOpen(true);
   } else {
     alert('Código no válido');
+    setMensaje('');
   }
 
   closeModal();
 };
+
 
 const handleCodigoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
   const codigoIngresado = e.target.value;
@@ -63,15 +65,15 @@ const handleCodigoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 
   if (invitado) {
     setMensaje(invitado.mensaje);
-    setMensajeModalIsOpen(true);
+    // setMensajeModalIsOpen(true);
   }
 };
 
   return (
 
     <Box sx={{marginTop:'6rem'}}>
-<Box sx={{margin:'3rem auto 0 auto', textAlign:'center'}}>
-<Box sx={{backgroundColor:'white', width:'130px', height:'130px', borderRadius:'20rem', margin:'0 auto', border:'1px solid #AE739E'}}>
+      <Box sx={{margin:'2rem auto', textAlign:'center'}}>
+        <Box sx={{backgroundColor:'white', width:'130px', height:'130px', borderRadius:'20rem', margin:'0 auto', border:'1px solid #AE739E'}}>
           <Image
             src='/images/fiesta.png'
             alt=''
@@ -97,7 +99,26 @@ const handleCodigoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         </Box>
         <Typography variant='body2' fontSize={24} fontFamily='Dancing Script' fontWeight='bold'>Salon de fiesta NyA Celebraciones</Typography>
         <Typography variant='body2' fontSize={24} fontFamily='Dancing Script' fontWeight='bold'>Av. 101 Dr. Ricardo Balbín 5580, Billinghurst</Typography>
-        <Button onClick={openMapsFiesta} sx={{ background: ' #AE739E', border:' #AE739E 1px solid', color:'white', textDecoration:'none', display:'flex', textTransform: 'none', fontWeight:'bold', margin:'.8rem auto 0', padding:'5px 2rem',  borderRadius: '2rem'}}>
+        <Button onClick={openMapsFiesta} sx={{
+        background: '#AE739E',
+        border: '#AE739E 1px solid',
+        color: 'white',
+        textDecoration: 'none',
+        display: 'flex',
+        textTransform: 'none',
+        fontWeight: 'bold',
+        margin: '.8rem auto 0',
+        padding: '5px 2rem',
+        borderRadius: '2rem',
+        ':active': {
+          background: 'white',
+          color: '#AE739E',
+        },
+        ':hover': {
+          background: 'white',
+          color: '#AE739E',
+        },
+      }}>
           <LocationOnIcon/>Como llegar
         </Button>
       </Box>
@@ -105,7 +126,29 @@ const handleCodigoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
       <Box sx={{margin:'3rem auto', textAlign:'center'}}>
         <Typography  fontFamily='Dancing Script' variant='body2' fontSize={24} sx={{margin:'auto 2rem'}}>Es muy importante para nosotros que confirmes tu asistencia</Typography>
         <Button onClick={openModal} 
-        sx={{ background: ' white', border:' #AE739E 1px solid', color:'#AE739E', textDecoration:'none', display:'flex', textTransform: 'none', fontWeight:'bold', margin:'.8rem auto 0', padding:'5px 2rem'}}> 
+        sx={{ 
+          background: ' white', 
+          border:' #AE739E 1px solid', 
+          color:'#AE739E', 
+          textDecoration:'none', 
+          display:'flex', 
+          textTransform: 'none', 
+          fontWeight:'bold', 
+          margin:'.8rem auto 0', 
+          padding:'5px 2rem'
+          ,
+              ':active': {
+                background: '#AE739E',
+                color: 'white',
+              },
+              ':hover': {
+                background: '#AE739E',
+                color: 'white',
+              },
+          }}> 
+        
+        
+        
         Confirmar Asistencia
       </Button>
       <Modal
@@ -130,7 +173,7 @@ const handleCodigoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
               margin: '0 auto',
               padding: '20px'},}}>
         <Typography variant='h5' textAlign={'center'} fontFamily={'Inknut_Antiqua'} fontWeight='bold' color='#D38D8D' margin={2}>Confirmar asistencia</Typography>
-        <form action="php/asistenciaFiesta.php" method="post" className="form" id="form">
+        <form onSubmit={handleSubmit} method="post" className="form" id="form">
           <span className="close5" onClick={closeModal}></span>
           <TextField id="nombre" className="form-input" name="nombre" label="Ingrese su nombre completo" variant="filled" fullWidth margin="normal"/>
           <TextField
@@ -161,6 +204,10 @@ const handleCodigoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
               textTransform: 'none', 
               textDecoration:'none',
               padding:'.5rem 3rem'}}>
+
+
+
+                
               Confirmar Asistencia
           </Button>
           

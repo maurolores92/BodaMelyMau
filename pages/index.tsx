@@ -19,7 +19,7 @@ function Home() {
     overflowX: 'hidden',
     backgroundRepeat:'repeat'}}>
     <CountdownTimer deadline={deadline}/>
-    <Box sx={{display: {lg: 'flex', md:'flex', sm: 'column'}}}>
+    <Box sx={{display: {lg: 'flex', md:'flex', sm: 'column'}, justifyContent:'space-evenly'}}>
     <Conference/>
     <Party/>
     </Box>
