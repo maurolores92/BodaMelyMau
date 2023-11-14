@@ -2,6 +2,7 @@ import { Box, Button, Typography, Link, List, ListItem, ListItemText, TextField,
 import React, { useState } from 'react';
 import Modal from 'react-modal';
 import { Icon } from '@iconify/react';
+import Lightbox from 'react-image-lightbox';
 
 
 function ModalsParty() {
@@ -171,15 +172,23 @@ function ModalsParty() {
           <ListItemText primary="Si eres celiaco, vegano o vegetariano haznoslo saber, asi te preparamos un menu especial" />
         </ListItem>
         <ListItem>
+          {isOpen && (
+            <Lightbox
+              mainSrc={`/images/Ruta.png`} // Ruta absoluta a la imagen
+              onCloseRequest={handleCloseLightbox}
+            />
+          )}
           <ListItemText
             primary={
               <span>
-                Les dejamos una mejor ruta para llegar al salón de fiestas{' '}
-                <Link href="https://goo.gl/maps/g8dvhf2cweLHJpi59" style={{ textDecoration: 'none', color: '#F48FB1' }}>
-                  Google Maps
-                </Link>
-              </span>}/>
-          </ListItem>
+                Al mismo tiempo les dejamos una imagen con la Ruta por si no tienen Google Maps{' '}
+                <a href="#" style={{ textDecoration: 'none', color: '#F48FB1' }} onClick={handleOpenLightbox}>
+                  Ver imagen
+                </a>
+              </span>
+            }
+          />
+        </ListItem>
           <ListItem>
   <ListItemText
     primary={
