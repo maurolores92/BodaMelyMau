@@ -24,7 +24,6 @@ function Home() {
     <Party/>
     </Box>
     <Carousel/>
-    <ModalsParty/>
     </Box>
   );
 }

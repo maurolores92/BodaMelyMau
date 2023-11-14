@@ -30,7 +30,7 @@ function Conference() {
 
 
   return (
-    <Box >
+    <Box sx={{marginTop:'6rem'}}>
       <Box sx={{margin:'2rem auto', textAlign:'center'}}>
         <Box sx={{backgroundColor:'white', width:'130px', height:'130px', borderRadius:'20rem', margin:'0 auto', border:'1px solid #AE739E'}}>
           <Image
@@ -52,9 +52,9 @@ function Conference() {
       </Box>
       <Box textAlign="center">
         <Box sx={{display:'flex', justifyContent:'space-evenly', margin:'2rem auto'}}> 
-        <Typography variant='body2' fontWeight='bold' fontSize={24} color="#AE739E">15 Dic</Typography>
+        <Typography variant='body2' fontWeight='bold' fontSize={34} color="#AE739E" fontFamily='Dancing Script'>15 Dic</Typography>
         <Divider orientation="vertical" flexItem color="#AE739E"/>
-        <Typography variant='body2' fontWeight='bold' fontSize={24} color="#AE739E">20:00 Hs</Typography>
+        <Typography variant='body2' fontWeight='bold' fontSize={34} color="#AE739E" fontFamily='Dancing Script'>20:00 Hs</Typography>
         </Box>
         <Typography variant='body2' fontSize={24} fontWeight='bold' fontFamily='Dancing Script'>Salon del Reino de los Testigos de Jehova</Typography>
         <Typography variant='body2' fontSize={24} fontWeight='bold' fontFamily='Dancing Script'>Cramer 2880, Belgrano.</Typography>

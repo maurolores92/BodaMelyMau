@@ -81,7 +81,7 @@ function CountdownTimer({ deadline }: { deadline: Date }) {
         <Typography variant='body1' fontFamily='Dancing Script' fontSize={26}  fontWeight='bold'>El amor es paciente y bondadoso [...] todo lo soporta, todo lo cree, todo lo espera, todo lo aguanta</Typography>
         <Typography variant='body1' fontFamily='Dancing Script' fontSize={26}  fontWeight='bold'>(1 Corintios 13:4-7)</Typography>
       </Grid>
-      <Grid  className='countdown' margin={6}>
+      <Grid  className='countdown' margin={4}>
         <Grid item  >
             <Typography variant="body1" padding={'10px 3px'} fontFamily={'Inria_Sans'} fontSize={20} fontWeight='bold'>
               {timeLeft.days} DIAS /

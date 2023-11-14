@@ -69,7 +69,7 @@ const handleCodigoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 
   return (
 
-    <Box>
+    <Box sx={{marginTop:'6rem'}}>
 <Box sx={{margin:'3rem auto 0 auto', textAlign:'center'}}>
 <Box sx={{backgroundColor:'white', width:'130px', height:'130px', borderRadius:'20rem', margin:'0 auto', border:'1px solid #AE739E'}}>
           <Image
@@ -91,9 +91,9 @@ const handleCodigoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
       </Box>
       <Box textAlign="center" sx={{margin:'auto 1rem'}} >
         <Box sx={{display:'flex', justifyContent:'space-evenly', margin:'2rem auto'}}> 
-        <Typography variant='body2' fontWeight='bold' fontSize={24} color="#AE739E" >15 Dic</Typography>
+        <Typography variant='body2' fontWeight='bold' fontSize={34} color="#AE739E" fontFamily='Dancing Script'>15 Dic</Typography>
         <Divider orientation="vertical" flexItem color="#AE739E"/>
-        <Typography variant='body2' fontWeight='bold' fontSize={24} color="#AE739E">21:00 Hs</Typography>
+        <Typography variant='body2' fontWeight='bold'fontSize={34} color="#AE739E" fontFamily='Dancing Script'>21:00 Hs</Typography>
         </Box>
         <Typography variant='body2' fontSize={24} fontFamily='Dancing Script' fontWeight='bold'>Salon de fiesta NyA Celebraciones</Typography>
         <Typography variant='body2' fontSize={24} fontFamily='Dancing Script' fontWeight='bold'>Av. 101 Dr. Ricardo Balbín 5580, Billinghurst</Typography>
