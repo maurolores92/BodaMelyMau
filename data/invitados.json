@@ -7,7 +7,7 @@
   {
     "id": 2,
     "codigo": "FamiliaBarros",
-    "mensaje": "Fatima y Miguel. Han sido un gran apoyo para nosotros desde siempre. Estamos contentos de que esten con nosotros en este dia tan especial.Gracias por todo lo que hacen por nosotros ¡Los queremos mucho!"
+    "mensaje": "Fatima y Miguel. Han sido un gran apoyo para nosotros desde siempre. Estamos contentos de que esten con nosotros en este dia tan especial. Gracias por todo lo que hacen por nosotros ¡Los queremos mucho!"
   },
   {
     "id": 3,
@@ -71,8 +71,8 @@
     },
     {
       "id": 15,
-      "codigo": "FamiliaParra",
-      "mensaje": "Angel y Yeni estamos felices de que puedan acompañarnos en este dia tan especial. Los esperamos. Preparados para hacer challenges"
+      "codigo": "CamiloyPaola",
+      "mensaje": "Camilo y Paola estamos felices de que puedan acompañarnos en este dia tan especial. Los esperamos. "
     },
     {
       "id": 16,
@@ -178,5 +178,15 @@
       "id": 36,
       "codigo": "Lauti",
       "mensaje":"Amigo querido estoy feliz de que puedas estar en este dia tan especial para mi. Preparate para tomar y bailar toda la noche. NO OLVIDAR: 0 DROGAS xD"
+    },
+    {
+      "id": 37,
+      "codigo": "MauricioAguilera",
+      "mensaje":"Amigo querido estoy feliz de que puedas estar en este dia tan especial para mi. Preparate para tomar y bailar toda la noche."
+    },
+    {
+      "id": 38,
+      "codigo": "Franco",
+      "mensaje":"Amigo querido estoy feliz de que puedas estar en este dia tan especial para mi. Preparate para tomar y bailar toda la noche."
     }
 ]
