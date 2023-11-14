@@ -69,7 +69,7 @@ const handleCodigoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 
   return (
 
-    <Box >
+    <Box>
 <Box sx={{margin:'3rem auto 0 auto', textAlign:'center'}}>
 <Box sx={{backgroundColor:'white', width:'130px', height:'130px', borderRadius:'20rem', margin:'0 auto', border:'1px solid #AE739E'}}>
           <Image
@@ -187,7 +187,7 @@ const handleCodigoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         maxHeight: '80%', 
         margin: '0 auto',
         padding: '20px'},}}>
-        <Typography variant='body1' margin={2} fontWeight='bold' sx={{color: '#18264D', textAlign:'justify', fontFamily:'Inknut_Antiqua',}}>{mensaje}</Typography>
+        <Typography variant='body1' margin={2} fontWeight='bold' fontFamily='Dancing Script' fontSize={24} sx={{color: '#18264D', textAlign:'justify'}}>{mensaje}</Typography>
       </Modal>
       </Box>
 </Box>

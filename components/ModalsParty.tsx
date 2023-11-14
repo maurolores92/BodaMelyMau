@@ -45,9 +45,7 @@ function ModalsParty() {
 
   return (
     <>
-    
       <Box>
-        
         <Box sx={{width:'100%', textAlign:'center', marginTop:'2rem'}}>
           <Typography variant='body1' fontFamily='Inria_Sans' fontWeight='bold' color={'#206D7F'} >HAGAMOS JUNTOS UNA FIESTA EPICA. AQUI LOS DETALLES A TENER EN CUENTA</Typography>
         </Box>
@@ -76,7 +74,7 @@ function ModalsParty() {
             justifyContent: 'center',},
             content: {
               
-                backgroundImage: `url('/images/fondo2.jpeg')`,
+                backgroundImage: `url('/images/fondo.jpeg')`,
                 backgroundSize: 'cover',
                 backgroundRepeat: 'no-repeat',
               border: '1px solid #18264D', 
@@ -88,7 +86,7 @@ function ModalsParty() {
               padding: '20px', 
             },}}>
           <span className="close-modal" onClick={closeCancionModal}> X </span>
-          <Typography variant='h5' textAlign={'center'} fontFamily={'Inknut_Antiqua'} fontWeight='bold' color='#18264D' margin={2}>Sugerir Canción</Typography>
+          <Typography variant='h5' textAlign={'center'} fontFamily={'Inknut_Antiqua'} fontWeight='bold' color='#f56e9b' margin={2}>Sugerir Canción</Typography>
           <form action="php/enviarCancion.php" method="post"  className="form" id="form">
             <span className="close4" onClick={closeCancionModal}></span>
             <TextField
@@ -102,7 +100,7 @@ function ModalsParty() {
                 fontFamily:'Inknut_Antiqua',
                 fontWeight:'bold',
                 color:'white', 
-                backgroundColor:'#18264D', 
+                backgroundColor:'#f56e9b', 
                 margin:'1rem auto', 
                 display:'flex', 
                 textTransform: 'none', 
@@ -202,38 +200,38 @@ function ModalsParty() {
         contentLabel="Modal de Tips"
         style={{
           overlay: {
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',},
-          content: {
-              backgroundImage: `url('/images/fondo2.jpeg')`,
+            display: 'flex',
+            justifyContent: 'center',},
+            content: {
+              
+                backgroundImage: `url('/images/fondo.jpeg')`,
                 backgroundSize: 'cover',
                 backgroundRepeat: 'no-repeat',
-            border: '1px solid #18264D', 
-            borderRadius: '5px', 
-            width: '70%', 
-            maxWidth: '400px',
-            maxHeight: '80%', 
-            margin: '0 auto',
-            padding: '20px', 
+              border: '1px solid #18264D', 
+              borderRadius: '5px', 
+              width: '70%', 
+              maxWidth: '400px',
+              maxHeight: '60%', 
+              margin: '0 auto',
+              padding: '20px', 
           },}}>
         <span className="close-modal" onClick={closeGifModal}> X </span>
-        <Typography variant='h5' textAlign={'center'} fontFamily={'Inknut_Antiqua'} fontWeight='bold' color='#18264D'>Información de interés</Typography>
+        <Typography variant='h5' textAlign={'center'} fontFamily={'Inknut_Antiqua'} fontWeight='bold' color='#F48FB1' margin={2}>Información de interés</Typography>
         <Box sx={{display:'flex', flexDirection:'column', textAlign:'justify', margin:'1rem'}}>
           <Box margin={1}>
-            <Typography variant='h6' fontWeight='Bold' color='#18264D' fontFamily={'Inknut_Antiqua'} >MercadoPago</Typography>
+            <Typography variant='h6' fontWeight='Bold' color='#f56e9b' fontFamily={'Inknut_Antiqua'} >MercadoPago</Typography>
             <Typography variant='body1' fontWeight='Bold' fontFamily={'Inknut_Antiqua'} >Alias: melibarros.mp <br/>CVU:0000003100095189558112</Typography>
           </Box>
           <Box margin={1}>
-            <Typography variant='h6' fontWeight='Bold' color='#18264D' fontFamily={'Inknut_Antiqua'} >UALA</Typography>
+            <Typography variant='h6' fontWeight='Bold' color='#f56e9b' fontFamily={'Inknut_Antiqua'} >UALA</Typography>
             <Typography variant='body1' fontWeight='Bold' fontFamily={'Inknut_Antiqua'} >Alias: melisaabarros96.uala <br/>CBU:0000007900273991150656</Typography>
           </Box>
           <Box margin={1}>
-            <Typography variant='h6' fontWeight='Bold' color='#18264D' fontFamily={'Inknut_Antiqua'} >BINANCE</Typography>
+            <Typography variant='h6' fontWeight='Bold' color='#f56e9b' fontFamily={'Inknut_Antiqua'} >BINANCE</Typography>
             <Typography variant='body1' fontWeight='Bold' fontFamily={'Inknut_Antiqua'} >Usuario: maurolores92 <br/>ID:213886969 <br/> mail:maurolores1992@gmail.com</Typography>
           </Box>
           <Box margin={1}>
-            <Typography variant='h6' fontWeight='Bold' color='#18264D' fontFamily={'Inknut_Antiqua'} >Lemon Cash</Typography>
+            <Typography variant='h6' fontWeight='Bold' color='#f56e9b' fontFamily={'Inknut_Antiqua'} >Lemon Cash</Typography>
             <Typography variant='body1' fontWeight='Bold' fontFamily={'Inknut_Antiqua'} >$lemontag: $maurolores92  <br/>CVU: 0000168300000014062476  <br/> Alias: maurolores92.lemon </Typography>
           </Box>
         </Box>
