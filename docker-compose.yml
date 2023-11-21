@@ -1,0 +1,29 @@
+version: "3.8"
+services:
+    # PHP service
+    app-boda:
+        build: .
+        container_name: php-boda
+        working_dir: /var/www/
+        volumes:
+            - ./out:/var/www
+        networks:
+            - app-boda
+
+    # Nginx service
+    nginx-boda:
+        image: nginx:1.24.0-alpine
+        container_name: php-nginx-boda
+        restart: unless-stopped
+        tty: true
+        ports:
+            - 9012:80
+        volumes:
+            - ./out:/var/www
+            - ./nginx/conf.d/:/etc/nginx/conf.d/
+        networks:
+            - app-boda
+
+networks:
+    app-boda:
+        driver: bridge
