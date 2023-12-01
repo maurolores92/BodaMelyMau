@@ -101,8 +101,8 @@
     },
     {
       "id": 21,
-      "codigo": "Eliu",
-      "mensaje": "Eliu. Gracias por confirmar tu asistencia. Estamos muy felices de que puedas estar con nosotros en este dia tan especial. Preparate para bailar toda la noche"
+      "codigo": "Erica",
+      "mensaje": "Erica. Gracias por confirmar tu asistencia. Estamos muy felices de que puedas estar con nosotros en este dia tan especial. Preparate para bailar toda la noche"
     },
     {
       "id": 22,
@@ -208,6 +208,22 @@
       "id": 42,
       "codigo": "Rosnely",
       "mensaje":"Nada me haria mas feliz que pudieras estar en este momento tan importante de mi vida. Lastimosamente no se puede, pero estoy seguro de que estaras de manera virtual por llamada o conectada por zoom. Te extraño mucho a ti  a Franco y a mi Fabi, pero estoy seguro de que pronto nos volveremos a ver. Los quiero mucho a todos."
+    },
+    {
+      "id": 43,
+      "codigo": "FamiliaLopez",
+      "mensaje":"Marcelo y Patricia. Estamos felices de que puedan acompañarnos a este dia tan especial. Preparense para bailar toda la noche."
+    },
+    {
+      "id": 44,
+      "codigo": "FamiliaZanotti",
+      "mensaje":"David y Karina. Estamos felices de que puedan acompañarnos a este dia tan especial. Preparense para bailar toda la noche."
+    },
+    {
+      "id": 45,
+      "codigo": "Erica",
+      "mensaje":"Erica Estamos felices de que puedan acompañarnos a este dia tan especial. Preparate para bailar toda la noche."
     }
+  
 
 ]
